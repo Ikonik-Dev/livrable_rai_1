@@ -1,0 +1,6 @@
+# Documents confidentiels — ne pas versionner
+*.pdf
+
+# Système
+.DS_Store
+Thumbs.db
