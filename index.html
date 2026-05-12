@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programme IA — AUXILIA 2026</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- BACKGROUND ANIMATED -->
+    <div class="bg-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="logo-zone">
+          <div class="logo-badge">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <div>
+            <span class="brand">AUXILIA</span>
+            <span class="brand-sub">Une nouvelle chance</span>
+          </div>
+        </div>
+        <div class="hero-text">
+          <div class="tag-pill">
+            <i class="fa-solid fa-circle-dot pulse"></i> Version 1.0 — Soumis à
+            validation
+          </div>
+          <h1>
+            Programme prévisionnel<br /><span class="gradient-text"
+              >Sensibilisation & Formation IA</span
+            >
+          </h1>
+          <p class="hero-desc">
+            À destination du personnel · Période Mai → Décembre 2026
+          </p>
+          <div class="hero-meta">
+            <span
+              ><i class="fa-solid fa-user-tie"></i> Animateur : Référent IA —
+              Référent IA AUXILIA</span
+            >
+            <span><i class="fa-solid fa-calendar"></i> Mai 2026</span>
+            <span
+              ><i class="fa-solid fa-flag-checkered"></i> Livrable attendu :
+              <strong>30 juin 2026</strong></span
+            >
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card glass">
+            <span class="stat-num" data-target="30">0</span>
+            <span class="stat-label">Salariés concernés</span>
+          </div>
+          <div class="stat-card glass">
+            <span class="stat-num" data-target="5">0</span>
+            <span class="stat-label">Sessions collectives</span>
+          </div>
+          <div class="stat-card glass">
+            <span class="stat-num" data-target="70">0</span
+            ><span class="stat-suffix">%</span>
+            <span class="stat-label">Taux cible de participation</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- NAVIGATION TABS -->
+      <nav class="tab-nav glass-nav">
+        <button class="tab-btn active" data-tab="objectifs">
+          <i class="fa-solid fa-bullseye"></i> Objectifs
+        </button>
+        <button class="tab-btn" data-tab="public">
+          <i class="fa-solid fa-users"></i> Public
+        </button>
+        <button class="tab-btn" data-tab="pedagogie">
+          <i class="fa-solid fa-chalkboard-user"></i> Pédagogie
+        </button>
+        <button class="tab-btn" data-tab="calendrier">
+          <i class="fa-solid fa-calendar-days"></i> Calendrier
+        </button>
+        <button class="tab-btn" data-tab="indicateurs">
+          <i class="fa-solid fa-chart-line"></i> Indicateurs
+        </button>
+        <button class="tab-btn" data-tab="outils">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Outils
+        </button>
+      </nav>
+
+      <!-- TAB CONTENTS -->
+      <div class="tab-content-wrapper">
+        <!-- OBJECTIFS -->
+        <section class="tab-content active" id="tab-objectifs">
+          <div class="section-header">
+            <h2>
+              <i class="fa-solid fa-bullseye"></i> Objectifs généraux du
+              programme
+            </h2>
+          </div>
+          <div class="cards-grid">
+            <div class="card glass reveal">
+              <div
+                class="card-icon"
+                style="background: linear-gradient(135deg, #6366f1, #8b5cf6)"
+              >
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <h3>RGPD — Priorité absolue</h3>
+              <p>
+                Le respect strict du RGPD est <strong>non négociable</strong>,
+                quel que soit le poste, dès la première session et dans toutes
+                les circonstances.
+              </p>
+              <div class="badge badge-red">Priorité 1</div>
+            </div>
+            <div class="card glass reveal">
+              <div
+                class="card-icon"
+                style="background: linear-gradient(135deg, #06b6d4, #3b82f6)"
+              >
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <h3>Comprendre & utiliser l'IA</h3>
+              <p>
+                Permettre à l'ensemble du personnel de comprendre et d'utiliser
+                l'IA de façon <strong>éclairée, éthique et sécurisée</strong>.
+              </p>
+              <div class="badge badge-blue">Transversal</div>
+            </div>
+            <div class="card glass reveal">
+              <div
+                class="card-icon"
+                style="background: linear-gradient(135deg, #10b981, #059669)"
+              >
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <h3>Usages métiers concrets</h3>
+              <p>
+                Développer des usages <strong>adaptés à chaque profil</strong> :
+                automatisation pour la direction, création de contenus pour les
+                formateurs.
+              </p>
+              <div class="badge badge-green">Opérationnel</div>
+            </div>
+            <div class="card glass reveal">
+              <div
+                class="card-icon"
+                style="background: linear-gradient(135deg, #f59e0b, #ef4444)"
+              >
+                <i class="fa-solid fa-heart-handshake"></i>
+              </div>
+              <h3>Réduire les résistances</h3>
+              <p>
+                Approche <strong>progressive et bienveillante</strong>,
+                accompagnement individuel doux pour les profils les plus
+                éloignés du numérique.
+              </p>
+              <div class="badge badge-orange">Inclusion</div>
+            </div>
+            <div class="card glass reveal">
+              <div
+                class="card-icon"
+                style="background: linear-gradient(135deg, #ec4899, #8b5cf6)"
+              >
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+              <h3>≥ 70 % de participation</h3>
+              <p>
+                Atteindre un taux de participation d'au moins
+                <strong>70 % des effectifs</strong> avant la fin de l'année
+                2026.
+              </p>
+              <div class="badge badge-purple">Objectif chiffré</div>
+            </div>
+            <div class="card glass reveal">
+              <div
+                class="card-icon"
+                style="background: linear-gradient(135deg, #14b8a6, #6366f1)"
+              >
+                <i class="fa-solid fa-file-signature"></i>
+              </div>
+              <h3>Charte d'usage IA</h3>
+              <p>
+                Co-construire avec les équipes une
+                <strong>charte interne d'usage de l'IA</strong>, validée
+                collectivement en décembre 2026.
+              </p>
+              <div class="badge badge-teal">Livrable</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PUBLIC -->
+        <section class="tab-content" id="tab-public">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-users"></i> Public & segmentation</h2>
+          </div>
+          <div class="table-glass">
+            <table>
+              <thead>
+                <tr>
+                  <th>Groupe</th>
+                  <th>Effectif</th>
+                  <th>Profil IA</th>
+                  <th>Besoins prioritaires</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="reveal">
+                  <td>
+                    <i class="fa-solid fa-star" style="color: #f59e0b"></i>
+                    Direction
+                  </td>
+                  <td><span class="pill pill-purple">~5</span></td>
+                  <td>Curieux</td>
+                  <td>Automatisation, synthèse, aide à la décision</td>
+                </tr>
+                <tr class="reveal">
+                  <td>
+                    <i
+                      class="fa-solid fa-folder-open"
+                      style="color: #06b6d4"
+                    ></i>
+                    Administration
+                  </td>
+                  <td><span class="pill pill-blue">~8</span></td>
+                  <td>Curieux / Novices</td>
+                  <td>Rédaction, mise en forme, gain de temps</td>
+                </tr>
+                <tr class="reveal">
+                  <td>
+                    <i
+                      class="fa-solid fa-chalkboard-user"
+                      style="color: #10b981"
+                    ></i>
+                    Formateurs
+                  </td>
+                  <td><span class="pill pill-green">~15</span></td>
+                  <td>Mixte <span class="pill pill-red">2 résistants</span></td>
+                  <td>Création de contenus, ressources pédagogiques</td>
+                </tr>
+                <tr class="reveal">
+                  <td>
+                    <i class="fa-solid fa-sitemap" style="color: #ec4899"></i>
+                    Resp. Pédagogique
+                  </td>
+                  <td><span class="pill pill-pink">2</span></td>
+                  <td>À évaluer</td>
+                  <td>Transversal</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-box glass reveal">
+            <i class="fa-solid fa-circle-info"></i>
+            <p>
+              Les <strong>2 formateurs résistants</strong> bénéficieront d'un
+              accompagnement individuel doux, en dehors du groupe, afin de
+              préserver la dynamique collective et de respecter leur rythme
+              d'appropriation.
+            </p>
+          </div>
+        </section>
+
+        <!-- PEDAGOGIE -->
+        <section class="tab-content" id="tab-pedagogie">
+          <div class="section-header">
+            <h2>
+              <i class="fa-solid fa-chalkboard-user"></i> Approche pédagogique —
+              Modèle 70·20·10
+            </h2>
+          </div>
+          <div class="model-70">
+            <div class="model-bar">
+              <div class="bar-segment seg-70 reveal" style="--w: 70%">
+                <span class="bar-label">70%</span>
+                <span class="bar-text">Pratique</span>
+              </div>
+              <div class="bar-segment seg-20 reveal" style="--w: 20%">
+                <span class="bar-label">20%</span>
+                <span class="bar-text">Pairs</span>
+              </div>
+              <div class="bar-segment seg-10 reveal" style="--w: 10%">
+                <span class="bar-label">10%</span>
+                <span class="bar-text">Théorie</span>
+              </div>
+            </div>
+          </div>
+          <div class="cards-grid three-col">
+            <div class="card glass reveal">
+              <div
+                class="card-icon big"
+                style="background: linear-gradient(135deg, #6366f1, #8b5cf6)"
+              >
+                <span class="big-pct">70%</span>
+              </div>
+              <h3>Mise en pratique directe</h3>
+              <p>
+                Manipulation d'outils IA en conditions réelles, exercices sur
+                des cas concrets du quotidien professionnel d'Auxilia (prompts,
+                automatisation, synthèse...).
+              </p>
+            </div>
+            <div class="card glass reveal">
+              <div
+                class="card-icon big"
+                style="background: linear-gradient(135deg, #06b6d4, #3b82f6)"
+              >
+                <span class="big-pct">20%</span>
+              </div>
+              <h3>Apprentissage entre pairs</h3>
+              <p>
+                Échanges de pratiques, retours d'expérience, co-résolution de
+                problèmes au sein des groupes. La dynamique collective est un
+                levier fort d'adhésion.
+              </p>
+            </div>
+            <div class="card glass reveal">
+              <div
+                class="card-icon big"
+                style="background: linear-gradient(135deg, #10b981, #059669)"
+              >
+                <span class="big-pct">10%</span>
+              </div>
+              <h3>Apports théoriques ciblés</h3>
+              <p>
+                Notions clés sur le fonctionnement de l'IA, cadre légal RGPD,
+                éléments de culture numérique — toujours mis en lien avec la
+                pratique.
+              </p>
+            </div>
+          </div>
+          <div class="info-box glass reveal" style="margin-top: 1.5rem">
+            <i class="fa-solid fa-clock"></i>
+            <p>
+              Chaque session se tient le <strong>jeudi</strong> (créneau
+              institutionnel dédié) sur une durée de
+              <strong>4h (13h30 → 17h30)</strong>. Le format favorise
+              l'engagement sans surcharger les agendas.
+            </p>
+          </div>
+        </section>
+
+        <!-- CALENDRIER -->
+        <section class="tab-content" id="tab-calendrier">
+          <div class="section-header">
+            <h2>
+              <i class="fa-solid fa-calendar-days"></i> Calendrier prévisionnel
+            </h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item reveal" data-session="1">
+              <div
+                class="timeline-dot"
+                style="background: linear-gradient(135deg, #ef4444, #f59e0b)"
+              >
+                1
+              </div>
+              <div class="timeline-card glass">
+                <div class="session-header">
+                  <span class="session-date"
+                    ><i class="fa-solid fa-calendar"></i> Jeudi 18 juin
+                    2026</span
+                  >
+                  <span
+                    class="session-pill"
+                    style="
+                      background: linear-gradient(135deg, #ef4444, #f59e0b);
+                    "
+                    >Session 1 — Tous</span
+                  >
+                </div>
+                <h3>
+                  "L'IA, qu'est-ce que c'est vraiment ? Et le RGPD dans tout ça
+                  ?"
+                </h3>
+                <div class="session-details">
+                  <div class="detail-row">
+                    <i
+                      class="fa-solid fa-shield-halved"
+                      style="color: #ef4444"
+                    ></i>
+                    <strong>RGPD — Cadre légal obligatoire</strong> (dès cette
+                    première session)
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-users"></i> Démystifier l'IA, lever
+                    les craintes, identifier les usages potentiels
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-hammer"></i> Premier contact avec
+                    ChatGPT — prompts simples en live
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-comments"></i> Tour de table :
+                    attentes, freins, envies
+                  </div>
+                </div>
+                <div class="session-tag">
+                  Public : <strong>Tous les salariés</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal" data-session="2">
+              <div
+                class="timeline-dot"
+                style="background: linear-gradient(135deg, #6366f1, #8b5cf6)"
+              >
+                2
+              </div>
+              <div class="timeline-card glass">
+                <div class="session-header">
+                  <span class="session-date"
+                    ><i class="fa-solid fa-calendar"></i> Jeudi 11 septembre
+                    2026</span
+                  >
+                  <span
+                    class="session-pill"
+                    style="
+                      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                    "
+                    >Session 2 — Direction & Admin</span
+                  >
+                </div>
+                <h3>
+                  "L'IA au service de l'organisation : automatiser sans risquer"
+                </h3>
+                <div class="session-details">
+                  <div class="detail-row">
+                    <i class="fa-solid fa-microphone"></i> Transcription et
+                    synthèse de réunions (Whisper, Otter.ai — conformité RGPD
+                    vérifiée)
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-file-word"></i> Rédaction assistée :
+                    comptes-rendus, courriers, notes internes
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-hammer"></i> Atelier pratique :
+                    automatiser un compte-rendu en direct
+                  </div>
+                  <div class="detail-row">
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #f59e0b"
+                    ></i>
+                    Vigilance données sensibles — RGPD appliqué
+                  </div>
+                </div>
+                <div class="session-tag">
+                  Public : <strong>Direction + Administration</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item estival reveal">
+              <div
+                class="timeline-dot"
+                style="background: linear-gradient(135deg, #94a3b8, #64748b)"
+              >
+                <i class="fa-solid fa-umbrella-beach"></i>
+              </div>
+              <div class="timeline-card glass muted">
+                <h3>☀️ Période estivale — Juillet / Août 2026</h3>
+                <p>
+                  Chassé-croisé estival :
+                  <strong>aucune session collective prévue</strong>. Possibilité
+                  d'accompagnements individuels légers pour les volontaires
+                  présents.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal" data-session="3">
+              <div
+                class="timeline-dot"
+                style="background: linear-gradient(135deg, #06b6d4, #3b82f6)"
+              >
+                3
+              </div>
+              <div class="timeline-card glass">
+                <div class="session-header">
+                  <span class="session-date"
+                    ><i class="fa-solid fa-calendar"></i> Jeudi 12 novembre
+                    2026</span
+                  >
+                  <span
+                    class="session-pill"
+                    style="
+                      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+                    "
+                    >Session 3 — Formateurs</span
+                  >
+                </div>
+                <h3>"L'IA comme co-créateur pédagogique"</h3>
+                <div class="session-details">
+                  <div class="detail-row">
+                    <i class="fa-solid fa-book-open"></i> Générer des ressources
+                    de cours, exercices, évaluations avec l'IA
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Rendre ses
+                    supports plus dynamiques et engageants
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-hammer"></i> Atelier : créer une fiche
+                    de cours ou un quiz avec ChatGPT
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-comments"></i> Échanges entre
+                    formateurs : ce qui marche, ce qui pose question
+                  </div>
+                </div>
+                <div class="session-tag">
+                  Public : <strong>Formateurs + Resp. Pédagogique</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal" data-session="4">
+              <div
+                class="timeline-dot"
+                style="background: linear-gradient(135deg, #10b981, #059669)"
+              >
+                4
+              </div>
+              <div class="timeline-card glass">
+                <div class="session-header">
+                  <span class="session-date"
+                    ><i class="fa-solid fa-calendar"></i> Jeudi 26 novembre
+                    2026</span
+                  >
+                  <span
+                    class="session-pill"
+                    style="
+                      background: linear-gradient(135deg, #10b981, #059669);
+                    "
+                    >Session 4 — Tous</span
+                  >
+                </div>
+                <h3>
+                  "Croiser les pratiques : ce qu'on a appris, ce qu'on garde"
+                </h3>
+                <div class="session-details">
+                  <div class="detail-row">
+                    <i class="fa-solid fa-share-nodes"></i> Restitution croisée
+                    : chaque groupe partage ses découvertes
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-trophy"></i> Mise en valeur des
+                    réussites et cas d'usage concrets
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-hammer"></i> Mini-atelier libre :
+                    chacun choisit son défi IA du jour
+                  </div>
+                </div>
+                <div class="session-tag">
+                  Public : <strong>Tous les salariés</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal" data-session="5">
+              <div
+                class="timeline-dot"
+                style="background: linear-gradient(135deg, #ec4899, #8b5cf6)"
+              >
+                5
+              </div>
+              <div class="timeline-card glass">
+                <div class="session-header">
+                  <span class="session-date"
+                    ><i class="fa-solid fa-calendar"></i> Jeudi 10 décembre
+                    2026</span
+                  >
+                  <span
+                    class="session-pill"
+                    style="
+                      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+                    "
+                    >Session 5 — Tous</span
+                  >
+                </div>
+                <h3>"Notre charte IA : co-construire nos règles communes"</h3>
+                <div class="session-details">
+                  <div class="detail-row">
+                    <i
+                      class="fa-solid fa-shield-halved"
+                      style="color: #ef4444"
+                    ></i>
+                    Bilan RGPD : audit des pratiques observées depuis juin
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-scale-balanced"></i> Identifier usages
+                    pertinents vs. dérives à éviter
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-pen-to-square"></i> Co-rédaction de la
+                    Charte d'usage IA Auxilia
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-check-circle"></i> Validation
+                    collective + perspectives 2027
+                  </div>
+                </div>
+                <div class="session-tag">
+                  Public : <strong>Tous les salariés</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal" data-session="R">
+              <div
+                class="timeline-dot"
+                style="background: linear-gradient(135deg, #64748b, #334155)"
+              >
+                <i class="fa-solid fa-rotate"></i>
+              </div>
+              <div class="timeline-card glass">
+                <div class="session-header">
+                  <span class="session-date"
+                    ><i class="fa-solid fa-calendar"></i> Fin décembre
+                    2026</span
+                  >
+                  <span
+                    class="session-pill"
+                    style="
+                      background: linear-gradient(135deg, #64748b, #334155);
+                    "
+                    >Rattrapage & Bilan</span
+                  >
+                </div>
+                <h3>"Pour ceux qui n'ont pas pu — et pour aller plus loin"</h3>
+                <div class="session-details">
+                  <div class="detail-row">
+                    <i class="fa-solid fa-user-clock"></i> Sessions ouvertes aux
+                    absents des sessions précédentes
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-person-chalkboard"></i>
+                    Accompagnements individuels finaux
+                  </div>
+                  <div class="detail-row">
+                    <i class="fa-solid fa-chart-bar"></i> Bilan quantitatif et
+                    qualitatif du programme
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- INDICATEURS -->
+        <section class="tab-content" id="tab-indicateurs">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-chart-line"></i> Indicateurs de suivi</h2>
+          </div>
+          <div class="kpi-grid">
+            <div class="kpi-card glass reveal">
+              <div class="kpi-icon" style="color: #6366f1">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div class="kpi-value">≥ 70%</div>
+              <div class="kpi-label">Taux de participation global</div>
+              <div class="kpi-bar">
+                <div
+                  class="kpi-fill"
+                  style="
+                    --fill: 70%;
+                    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+                  "
+                ></div>
+              </div>
+            </div>
+            <div class="kpi-card glass reveal">
+              <div class="kpi-icon" style="color: #06b6d4">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div class="kpi-value">≥ 5</div>
+              <div class="kpi-label">Sessions collectives réalisées</div>
+              <div class="kpi-bar">
+                <div
+                  class="kpi-fill"
+                  style="
+                    --fill: 100%;
+                    background: linear-gradient(90deg, #06b6d4, #3b82f6);
+                  "
+                ></div>
+              </div>
+            </div>
+            <div class="kpi-card glass reveal">
+              <div class="kpi-icon" style="color: #10b981">
+                <i class="fa-solid fa-user-gear"></i>
+              </div>
+              <div class="kpi-value">≥ 2</div>
+              <div class="kpi-label">Accompagnements individuels</div>
+              <div class="kpi-bar">
+                <div
+                  class="kpi-fill"
+                  style="
+                    --fill: 40%;
+                    background: linear-gradient(90deg, #10b981, #059669);
+                  "
+                ></div>
+              </div>
+            </div>
+            <div class="kpi-card glass reveal">
+              <div class="kpi-icon" style="color: #f59e0b">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="kpi-value">Questionnaire</div>
+              <div class="kpi-label">Satisfaction post-session</div>
+              <div class="kpi-bar">
+                <div
+                  class="kpi-fill"
+                  style="
+                    --fill: 60%;
+                    background: linear-gradient(90deg, #f59e0b, #ef4444);
+                  "
+                ></div>
+              </div>
+            </div>
+            <div class="kpi-card glass reveal">
+              <div class="kpi-icon" style="color: #ec4899">
+                <i class="fa-solid fa-file-signature"></i>
+              </div>
+              <div class="kpi-value">Déc. 2026</div>
+              <div class="kpi-label">Charte IA co-construite livrée</div>
+              <div class="kpi-bar">
+                <div
+                  class="kpi-fill"
+                  style="
+                    --fill: 85%;
+                    background: linear-gradient(90deg, #ec4899, #8b5cf6);
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="info-box glass reveal" style="margin-top: 2rem">
+            <i class="fa-solid fa-rotate"></i>
+            <p>
+              Un <strong>point mensuel</strong> avec la Direction permettra
+              d'ajuster le calendrier si nécessaire. Un
+              <strong>compte-rendu synthétique</strong> sera produit après
+              chaque session.
+            </p>
+          </div>
+        </section>
+
+        <!-- OUTILS -->
+        <section class="tab-content" id="tab-outils">
+          <div class="section-header">
+            <h2>
+              <i class="fa-solid fa-screwdriver-wrench"></i> Ressources & outils
+              mobilisés
+            </h2>
+          </div>
+          <div class="cards-grid">
+            <div class="card glass reveal">
+              <div
+                class="card-icon"
+                style="background: linear-gradient(135deg, #10a37f, #059669)"
+              >
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <h3>ChatGPT</h3>
+              <p>
+                Point d'entrée naturel — déjà connu du personnel. Utilisé pour
+                les prompts, la rédaction, la synthèse et la création de
+                contenus pédagogiques.
+              </p>
+              <div class="badge badge-green">Déjà utilisé</div>
+            </div>
+            <div class="card glass reveal">
+              <div
+                class="card-icon"
+                style="background: linear-gradient(135deg, #6366f1, #3b82f6)"
+              >
+                <i class="fa-solid fa-microphone-lines"></i>
+              </div>
+              <h3>Whisper / Otter.ai</h3>
+              <p>
+                Outils de transcription et synthèse audio — à destination
+                principalement de la Direction pour l'automatisation des
+                comptes-rendus.
+              </p>
+              <div class="badge badge-orange">RGPD à vérifier</div>
+            </div>
+            <div class="card glass reveal">
+              <div
+                class="card-icon"
+                style="background: linear-gradient(135deg, #ec4899, #8b5cf6)"
+              >
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <h3>Outils de création IA</h3>
+              <p>
+                Outils de génération de contenus pédagogiques dynamiques —
+                présentés progressivement aux formateurs au fil des sessions.
+              </p>
+              <div class="badge badge-purple">À introduire</div>
+            </div>
+            <div class="card glass reveal">
+              <div
+                class="card-icon"
+                style="background: linear-gradient(135deg, #f59e0b, #ef4444)"
+              >
+                <i class="fa-solid fa-chalkboard"></i>
+              </div>
+              <h3>Supports de formation</h3>
+              <p>
+                Diaporamas, fiches pratiques, guides — produits par le référent
+                IA et adaptés à chaque public (FALC pour les guides stagiaires).
+              </p>
+              <div class="badge badge-blue">Produit en interne</div>
+            </div>
+          </div>
+          <div class="rgpd-box glass reveal">
+            <div class="rgpd-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div>
+              <h3>🔴 Engagement RGPD — Non négociable</h3>
+              <p>
+                Tout outil retenu dans le cadre de ce programme fera l'objet
+                d'une
+                <strong
+                  >vérification de conformité RGPD avant toute
+                  utilisation</strong
+                >. Aucune donnée personnelle, sensible ou relative aux usagers
+                ne sera traitée via un outil non validé.
+              </p>
+            </div>
+          </div>
+          <div class="info-box glass reveal" style="margin-top: 1.5rem">
+            <i class="fa-solid fa-pen-nib"></i>
+            <p>
+              Document produit par <strong>Référent IA</strong> — Référent IA
+              AUXILIA · Version 1.0 · Mai 2026 · Soumis à validation Direction
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>© 2026 AUXILIA — Une nouvelle chance</span>
+        <span>Programme IA Personnel · Référent : Référent IA</span>
+        <span>Version 1.0 — Confidentiel Direction</span>
+      </div>
+    </footer>
+
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
