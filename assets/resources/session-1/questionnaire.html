@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questionnaire de Satisfaction — Session 1 IA · AUXILIA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+      .print-note {
+        background: #fff3cd;
+        border: 1px solid #f59e0b;
+        border-radius: 8px;
+        padding: 0.65rem 1rem;
+        font-size: 0.78rem;
+        color: #92400e;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      header {
+        background: linear-gradient(135deg, #ec4899, #8b5cf6);
+        color: #fff;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      header .tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+      }
+      header h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        font-size: 0.85rem;
+        opacity: 0.85;
+      }
+      .meta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+      .meta span {
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.18);
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+      }
+      .anonymous-note {
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 12px;
+        padding: 0.85rem 1.1rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.84rem;
+        color: #1d4ed8;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      .q-block {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+      .q-num {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #94a3b8;
+        margin-bottom: 0.4rem;
+      }
+      .q-text {
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 0.9rem;
+        line-height: 1.45;
+      }
+      .likert-row {
+        display: flex;
+        gap: 0.4rem;
+        align-items: flex-start;
+      }
+      .likert-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.68rem;
+        color: #94a3b8;
+        margin-top: 0.3rem;
+      }
+      .likert-label-left {
+        text-align: left;
+      }
+      .likert-label-right {
+        text-align: right;
+      }
+      .likert-option {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.35rem;
+      }
+      .likert-option input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        accent-color: #8b5cf6;
+        cursor: pointer;
+      }
+      .likert-option .likert-val {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #64748b;
+      }
+      .emoji-row {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        margin-top: 0.25rem;
+      }
+      .emoji-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        cursor: pointer;
+      }
+      .emoji-option input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        accent-color: #8b5cf6;
+        margin: 0;
+      }
+      .emoji-option .emoji-val {
+        font-size: 1.4rem;
+      }
+      .emoji-option .emoji-label {
+        font-size: 0.7rem;
+        color: #64748b;
+        text-align: center;
+        max-width: 55px;
+      }
+      .checkbox-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-size: 0.86rem;
+        color: #334155;
+        cursor: pointer;
+      }
+      .checkbox-item input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: #8b5cf6;
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+      textarea {
+        width: 100%;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 0.75rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.84rem;
+        color: #334155;
+        resize: vertical;
+        min-height: 80px;
+        line-height: 1.55;
+        transition: border-color 0.2s;
+      }
+      textarea:focus {
+        outline: none;
+        border-color: #8b5cf6;
+      }
+      textarea::placeholder {
+        color: #94a3b8;
+      }
+      .q-sub {
+        font-size: 0.78rem;
+        color: #94a3b8;
+        margin-bottom: 0.75rem;
+        font-style: italic;
+      }
+      .submit-area {
+        margin-top: 1.5rem;
+        text-align: center;
+      }
+      .submit-btn {
+        background: linear-gradient(135deg, #ec4899, #8b5cf6);
+        color: #fff;
+        border: none;
+        border-radius: 999px;
+        padding: 0.75rem 2rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          opacity 0.2s,
+          transform 0.2s;
+        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+      }
+      .submit-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+      .thank-you {
+        display: none;
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 14px;
+        padding: 1.5rem;
+        text-align: center;
+        margin-top: 1rem;
+      }
+      .thank-you h3 {
+        font-family: "Space Grotesk", sans-serif;
+        color: #16a34a;
+        margin-bottom: 0.5rem;
+      }
+      .thank-you p {
+        font-size: 0.85rem;
+        color: #166534;
+      }
+      footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e2e8f0;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      /* Version papier */
+      .paper-note {
+        font-size: 0.72rem;
+        color: #94a3b8;
+        text-align: center;
+        margin-top: 0.75rem;
+        font-style: italic;
+      }
+      @media print {
+        .print-note,
+        .submit-area,
+        .thank-you {
+          display: none !important;
+        }
+        body {
+          padding: 1rem;
+        }
+        header {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .q-block {
+          break-inside: avoid;
+        }
+        .likert-option input,
+        .checkbox-item input {
+          display: none;
+        }
+        .likert-option::after {
+          content: "☐";
+          font-size: 1rem;
+        }
+        textarea {
+          border: 1px solid #000;
+          min-height: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="print-note">
+      💡 <strong>Pour télécharger en PDF / version papier :</strong> Fichier →
+      Imprimer → Enregistrer en PDF
+    </div>
+
+    <header>
+      <div class="tag">Session 1 — 18 juin 2026 · AUXILIA</div>
+      <h1>Questionnaire<br />de Satisfaction</h1>
+      <p>
+        Votre avis nous aide à améliorer les prochaines sessions — 5 minutes
+      </p>
+      <div class="meta">
+        <span>🔒 Anonyme</span>
+        <span>⏱️ 5 minutes</span>
+        <span>5 questions</span>
+      </div>
+    </header>
+
+    <div class="anonymous-note">
+      🔒 Ce questionnaire est <strong>entièrement anonyme</strong>. Vos réponses
+      sont utilisées uniquement pour améliorer le programme de formation IA
+      d'AUXILIA.
+    </div>
+
+    <form id="satisfaction-form" onsubmit="submitForm(event)">
+      <!-- Q1 — Satisfaction globale (Likert) -->
+      <div class="q-block">
+        <div class="q-num">Question 1 / 5</div>
+        <div class="q-text">
+          De manière générale, êtes-vous satisfait(e) de cette session ?
+        </div>
+        <div class="q-sub">
+          1 = Pas du tout satisfait(e) · 5 = Très satisfait(e)
+        </div>
+        <div class="likert-row">
+          <div class="likert-option">
+            <input type="radio" name="q1" value="1" id="q1-1" />
+            <label for="q1-1" class="likert-val">1</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q1" value="2" id="q1-2" />
+            <label for="q1-2" class="likert-val">2</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q1" value="3" id="q1-3" />
+            <label for="q1-3" class="likert-val">3</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q1" value="4" id="q1-4" />
+            <label for="q1-4" class="likert-val">4</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q1" value="5" id="q1-5" />
+            <label for="q1-5" class="likert-val">5</label>
+          </div>
+        </div>
+        <div class="likert-labels">
+          <span class="likert-label-left">Pas du tout</span>
+          <span class="likert-label-right">Très satisfait(e)</span>
+        </div>
+      </div>
+
+      <!-- Q2 — Clarté du contenu (Likert) -->
+      <div class="q-block">
+        <div class="q-num">Question 2 / 5</div>
+        <div class="q-text">
+          Le contenu de la session était-il clair et compréhensible ?
+        </div>
+        <div class="q-sub">1 = Pas du tout clair · 5 = Très clair</div>
+        <div class="likert-row">
+          <div class="likert-option">
+            <input type="radio" name="q2" value="1" id="q2-1" />
+            <label for="q2-1" class="likert-val">1</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q2" value="2" id="q2-2" />
+            <label for="q2-2" class="likert-val">2</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q2" value="3" id="q2-3" />
+            <label for="q2-3" class="likert-val">3</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q2" value="4" id="q2-4" />
+            <label for="q2-4" class="likert-val">4</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q2" value="5" id="q2-5" />
+            <label for="q2-5" class="likert-val">5</label>
+          </div>
+        </div>
+        <div class="likert-labels">
+          <span class="likert-label-left">Pas du tout</span>
+          <span class="likert-label-right">Très clair</span>
+        </div>
+      </div>
+
+      <!-- Q3 — RGPD compris (Likert) -->
+      <div class="q-block">
+        <div class="q-num">Question 3 / 5</div>
+        <div class="q-text">
+          Après cette session, savez-vous ce que vous avez le droit de faire (ou
+          non) avec l'IA dans votre travail ?
+        </div>
+        <div class="q-sub">1 = Pas du tout · 5 = Tout à fait</div>
+        <div class="likert-row">
+          <div class="likert-option">
+            <input type="radio" name="q3" value="1" id="q3-1" />
+            <label for="q3-1" class="likert-val">1</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q3" value="2" id="q3-2" />
+            <label for="q3-2" class="likert-val">2</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q3" value="3" id="q3-3" />
+            <label for="q3-3" class="likert-val">3</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q3" value="4" id="q3-4" />
+            <label for="q3-4" class="likert-val">4</label>
+          </div>
+          <div class="likert-option">
+            <input type="radio" name="q3" value="5" id="q3-5" />
+            <label for="q3-5" class="likert-val">5</label>
+          </div>
+        </div>
+        <div class="likert-labels">
+          <span class="likert-label-left">Pas du tout</span>
+          <span class="likert-label-right">Tout à fait</span>
+        </div>
+      </div>
+
+      <!-- Q4 — Ce qui a le plus aidé (cases à cocher) -->
+      <div class="q-block">
+        <div class="q-num">Question 4 / 5</div>
+        <div class="q-text">
+          Qu'est-ce qui vous a le plus aidé(e) pendant cette session ?
+        </div>
+        <div class="q-sub">Cochez tout ce qui s'applique</div>
+        <div class="checkbox-list">
+          <label class="checkbox-item"
+            ><input type="checkbox" name="q4" value="demos" /> Les
+            démonstrations en direct (prompts en live)</label
+          >
+          <label class="checkbox-item"
+            ><input type="checkbox" name="q4" value="atelier" /> L'atelier
+            pratique (j'ai pu tester moi-même)</label
+          >
+          <label class="checkbox-item"
+            ><input type="checkbox" name="q4" value="mythes" /> La partie
+            "mythes à oublier" sur l'IA</label
+          >
+          <label class="checkbox-item"
+            ><input type="checkbox" name="q4" value="rgpd" /> Les explications
+            sur le RGPD</label
+          >
+          <label class="checkbox-item"
+            ><input type="checkbox" name="q4" value="tour" /> Le tour de table
+            (partager avec les collègues)</label
+          >
+          <label class="checkbox-item"
+            ><input type="checkbox" name="q4" value="ressources" /> Les fiches
+            ressources à télécharger</label
+          >
+          <label class="checkbox-item"
+            ><input type="checkbox" name="q4" value="rythme" /> Le rythme et la
+            durée de la session</label
+          >
+        </div>
+      </div>
+
+      <!-- Q5 — Commentaires libres -->
+      <div class="q-block">
+        <div class="q-num">Question 5 / 5</div>
+        <div class="q-text">
+          Avez-vous des suggestions pour améliorer les prochaines sessions ? Un
+          sujet que vous aimeriez approfondir ?
+        </div>
+        <div class="q-sub">Champ libre — facultatif</div>
+        <textarea
+          name="q5"
+          placeholder="Vos suggestions, vos envies pour les prochaines sessions, ce qui vous a manqué..."
+          rows="4"
+        ></textarea>
+      </div>
+
+      <div class="submit-area">
+        <button type="submit" class="submit-btn">Envoyer mes réponses ✓</button>
+        <p class="paper-note">
+          Version papier : déposez le questionnaire dans la boîte prévue à cet
+          effet ou remettez-le au référent IA
+        </p>
+      </div>
+
+      <div class="thank-you" id="thank-you-msg">
+        <h3>Merci pour votre retour ! 🙏</h3>
+        <p>
+          Vos réponses ont bien été enregistrées. Elles nous aideront à
+          améliorer les prochaines sessions.<br />À bientôt pour la Session 2 !
+        </p>
+      </div>
+    </form>
+
+    <footer>
+      <span>AUXILIA — Une nouvelle chance · Session 1 · 18 juin 2026</span>
+      <span>Référent IA : stéphane.assaby@auxilia.fr</span>
+    </footer>
+
+    <script>
+      function submitForm(e) {
+        e.preventDefault();
+        document.getElementById("thank-you-msg").style.display = "block";
+        e.target
+          .querySelectorAll('input, textarea, button[type="submit"]')
+          .forEach((el) => (el.disabled = true));
+        document
+          .getElementById("thank-you-msg")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>

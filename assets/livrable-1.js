@@ -15,6 +15,7 @@ window.Livrable1 = (() => {
       setupTilt(root);
       setupTimeline(root);
       setupKeyboard(root);
+      setupSession1Modal();
       initialized = true;
     }
 
@@ -149,6 +150,35 @@ window.Livrable1 = (() => {
       card.addEventListener("mouseleave", () => {
         card.style.boxShadow = "";
       });
+    });
+  }
+
+  // ── MODALE SESSION 1 ────────────────────
+  function setupSession1Modal() {
+    const openBtn = document.getElementById("s1-open-btn");
+    const modal = document.getElementById("session1-modal");
+    const closeBtn = document.getElementById("s1-modal-close");
+    const overlay = document.getElementById("s1-modal-overlay");
+    if (!openBtn || !modal) return;
+
+    function openModal() {
+      modal.hidden = false;
+      document.body.classList.add("s1-modal-open");
+      closeBtn && closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      document.body.classList.remove("s1-modal-open");
+      openBtn.focus();
+    }
+
+    openBtn.addEventListener("click", openModal);
+    closeBtn && closeBtn.addEventListener("click", closeModal);
+    overlay && overlay.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.hidden) closeModal();
     });
   }
 

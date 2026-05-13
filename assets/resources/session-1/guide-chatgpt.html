@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide ChatGPT pour Débutants — AUXILIA Session 1</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+      .print-note {
+        background: #fff3cd;
+        border: 1px solid #f59e0b;
+        border-radius: 8px;
+        padding: 0.65rem 1rem;
+        font-size: 0.78rem;
+        color: #92400e;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      header {
+        background: linear-gradient(135deg, #10b981, #06b6d4);
+        color: #fff;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      header .tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+      }
+      header h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        font-size: 0.85rem;
+        opacity: 0.85;
+      }
+      .meta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+      .meta span {
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.18);
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+      }
+      .step-section {
+        margin-bottom: 2rem;
+      }
+      .step-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+      }
+      .step-badge {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: #fff;
+        flex-shrink: 0;
+      }
+      .step-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #1e293b;
+      }
+      .step-desc {
+        font-size: 0.84rem;
+        color: #475569;
+        margin-bottom: 1rem;
+        line-height: 1.55;
+      }
+      .step-box {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1.1rem;
+        margin-bottom: 0.75rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+      .step-box h4 {
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .step-box p,
+      .step-box li {
+        font-size: 0.82rem;
+        color: #475569;
+        line-height: 1.55;
+      }
+      .step-box ul {
+        padding-left: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      .step-box ol {
+        padding-left: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .screenshot-placeholder {
+        background: #f1f5f9;
+        border: 2px dashed #cbd5e1;
+        border-radius: 10px;
+        padding: 2rem;
+        text-align: center;
+        color: #94a3b8;
+        font-size: 0.8rem;
+        margin: 0.5rem 0;
+      }
+      .screenshot-placeholder strong {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+      }
+      .tip-box {
+        background: #ecfdf5;
+        border: 1px solid #a7f3d0;
+        border-radius: 10px;
+        padding: 0.75rem 1rem;
+        margin-top: 0.75rem;
+        font-size: 0.82rem;
+        color: #065f46;
+      }
+      .tip-box strong {
+        color: #047857;
+      }
+      .warn-box {
+        background: #fff5f5;
+        border: 1px solid #fecaca;
+        border-radius: 10px;
+        padding: 0.75rem 1rem;
+        margin-top: 0.75rem;
+        font-size: 0.82rem;
+        color: #7f1d1d;
+      }
+      .prompt-structure {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-top: 1rem;
+      }
+      .prompt-structure-title {
+        padding: 0.6rem 1rem;
+        background: #f8fafc;
+        border-bottom: 1px solid #e2e8f0;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .prompt-parts {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .prompt-part {
+        padding: 0.55rem 0.8rem;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        font-family: "Courier New", monospace;
+        line-height: 1.5;
+      }
+      .p-role {
+        background: #eff6ff;
+        color: #1d4ed8;
+        border-left: 3px solid #3b82f6;
+      }
+      .p-context {
+        background: #f0fdf4;
+        color: #15803d;
+        border-left: 3px solid #10b981;
+      }
+      .p-task {
+        background: #faf5ff;
+        color: #6d28d9;
+        border-left: 3px solid #8b5cf6;
+      }
+      .p-format {
+        background: #fff7ed;
+        color: #c2410c;
+        border-left: 3px solid #f97316;
+      }
+      .prompt-part .label {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.2rem;
+        display: block;
+        opacity: 0.7;
+      }
+      .examples-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+      .example-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 0.85rem;
+      }
+      .example-card .level {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 0.35rem;
+      }
+      .example-card .prompt {
+        font-size: 0.78rem;
+        font-family: "Courier New", monospace;
+        color: #334155;
+        line-height: 1.5;
+        background: #f8fafc;
+        padding: 0.4rem 0.6rem;
+        border-radius: 6px;
+      }
+      .example-card .result {
+        font-size: 0.75rem;
+        color: #64748b;
+        margin-top: 0.4rem;
+        font-style: italic;
+      }
+      .level-bad {
+        color: #dc2626;
+      }
+      .level-ok {
+        color: #d97706;
+      }
+      .level-good {
+        color: #16a34a;
+      }
+      .faq {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+      .faq-item {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .faq-q {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #1e293b;
+        background: #f8fafc;
+        border-bottom: 1px solid #e2e8f0;
+        cursor: default;
+      }
+      .faq-a {
+        padding: 0.75rem 1rem;
+        font-size: 0.82rem;
+        color: #475569;
+        line-height: 1.55;
+      }
+      footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e2e8f0;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      @media (max-width: 600px) {
+        .examples-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media print {
+        .print-note {
+          display: none;
+        }
+        body {
+          padding: 1rem;
+        }
+        header {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .tip-box,
+        .warn-box,
+        .p-role,
+        .p-context,
+        .p-task,
+        .p-format {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .step-box,
+        .example-card,
+        .faq-item {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="print-note">
+      💡 <strong>Pour télécharger en PDF :</strong> Fichier → Imprimer →
+      Enregistrer en PDF (dans votre navigateur)
+    </div>
+
+    <header>
+      <div class="tag">Session 1 — 18 juin 2026 · AUXILIA</div>
+      <h1>Guide ChatGPT<br />pour Débutants</h1>
+      <p>
+        Tout ce qu'il faut savoir pour commencer à utiliser ChatGPT au travail
+      </p>
+      <div class="meta">
+        <span>🤖 ChatGPT</span>
+        <span>Niveau : Débutant absolu</span>
+        <span>🔴 RGPD inclus</span>
+      </div>
+    </header>
+
+    <!-- ÉTAPE 1 — CRÉER UN COMPTE -->
+    <div class="step-section">
+      <div class="step-header">
+        <div
+          class="step-badge"
+          style="background: linear-gradient(135deg, #6366f1, #8b5cf6)"
+        >
+          1
+        </div>
+        <div class="step-title">Créer un compte ChatGPT (gratuit)</div>
+      </div>
+      <p class="step-desc">
+        Vous aurez besoin d'un compte pour accéder à ChatGPT. La version
+        gratuite est suffisante pour commencer.
+      </p>
+
+      <div class="step-box">
+        <h4>📋 Étapes pour créer votre compte</h4>
+        <ol>
+          <li>
+            Allez sur <strong>https://chat.openai.com</strong> dans votre
+            navigateur
+          </li>
+          <li>Cliquez sur <strong>"Sign up"</strong> (S'inscrire)</li>
+          <li>Entrez votre adresse email professionnelle ou personnelle</li>
+          <li>Créez un mot de passe sécurisé (au moins 12 caractères)</li>
+          <li>Vérifiez votre email (cliquez sur le lien de confirmation)</li>
+          <li>Acceptez les conditions d'utilisation</li>
+          <li>C'est prêt ! Vous arrivez directement sur l'interface de chat</li>
+        </ol>
+      </div>
+
+      <div class="tip-box">
+        <strong>💡 Conseil :</strong> Vous pouvez aussi vous connecter via votre
+        compte Google ou Microsoft si c'est plus simple.
+      </div>
+      <div class="warn-box">
+        ⚠️ <strong>RGPD :</strong> Utilisez de préférence votre email
+        professionnel, mais ne donnez jamais de données personnelles de
+        stagiaires dans les conversations.
+      </div>
+    </div>
+
+    <!-- ÉTAPE 2 — L'INTERFACE -->
+    <div class="step-section">
+      <div class="step-header">
+        <div
+          class="step-badge"
+          style="background: linear-gradient(135deg, #3b82f6, #06b6d4)"
+        >
+          2
+        </div>
+        <div class="step-title">Comprendre l'interface</div>
+      </div>
+
+      <div class="step-box">
+        <h4>🖥️ Les éléments principaux</h4>
+        <ul>
+          <li>
+            <strong>Zone de texte en bas</strong> : c'est là que vous tapez vos
+            questions (appelées "prompts")
+          </li>
+          <li>
+            <strong>Panneau gauche</strong> : historique de vos conversations
+            précédentes
+          </li>
+          <li>
+            <strong>Bouton "New chat"</strong> : démarrer une nouvelle
+            conversation vierge
+          </li>
+          <li>
+            <strong>Zone centrale</strong> : affiche la conversation en cours
+            (votre message + réponse de l'IA)
+          </li>
+          <li>
+            <strong>Bouton envoi</strong> : la flèche à droite de la zone de
+            texte (ou touche Entrée)
+          </li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <h4>⚙️ Paramètre important : désactiver l'entraînement du modèle</h4>
+        <ol>
+          <li>
+            Cliquez sur votre <strong>photo de profil</strong> (en haut à
+            droite)
+          </li>
+          <li>Allez dans <strong>"Settings"</strong> (Paramètres)</li>
+          <li>Cliquez sur <strong>"Data controls"</strong></li>
+          <li>Désactivez <strong>"Improve the model for everyone"</strong></li>
+        </ol>
+        <div class="tip-box" style="margin-top: 0.5rem">
+          <strong>Pourquoi ?</strong> Cela empêche OpenAI d'utiliser vos
+          conversations pour entraîner leur modèle. Recommandé pour un usage
+          professionnel.
+        </div>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 3 — ÉCRIRE UN BON PROMPT -->
+    <div class="step-section">
+      <div class="step-header">
+        <div
+          class="step-badge"
+          style="background: linear-gradient(135deg, #8b5cf6, #ec4899)"
+        >
+          3
+        </div>
+        <div class="step-title">Écrire un bon prompt</div>
+      </div>
+      <p class="step-desc">
+        Un "prompt" est le message que vous envoyez à ChatGPT. Plus votre prompt
+        est précis, meilleure sera la réponse.
+      </p>
+
+      <div class="prompt-structure">
+        <div class="prompt-structure-title">
+          🏗️ La structure d'un bon prompt (méthode RTCF)
+        </div>
+        <div class="prompt-parts">
+          <div class="prompt-part p-role">
+            <span class="label">R — Rôle</span>
+            "Tu es un assistant administratif dans un organisme de formation…"
+          </div>
+          <div class="prompt-part p-context">
+            <span class="label">T — Tâche</span>
+            "Rédige une lettre de relance professionnelle…"
+          </div>
+          <div class="prompt-part p-context">
+            <span class="label">C — Contexte</span>
+            "…pour un stagiaire qui n'a pas remis son devoir depuis 2 semaines."
+          </div>
+          <div class="prompt-part p-format">
+            <span class="label">F — Format</span>
+            "Ton : bienveillant et professionnel. Maximum 150 mots."
+          </div>
+        </div>
+      </div>
+
+      <div class="examples-grid">
+        <div class="example-card">
+          <div class="level level-bad">❌ Prompt trop vague</div>
+          <div class="prompt">"Écris une lettre"</div>
+          <div class="result">Résultat : lettre générique inutilisable</div>
+        </div>
+        <div class="example-card">
+          <div class="level level-ok">⚠️ Prompt moyen</div>
+          <div class="prompt">
+            "Écris une lettre de relance pour un stagiaire"
+          </div>
+          <div class="result">Résultat : correct mais trop générique</div>
+        </div>
+        <div class="example-card" style="grid-column: 1/-1">
+          <div class="level level-good">✅ Bon prompt</div>
+          <div class="prompt">
+            "Tu es un assistant pédagogique. Rédige une lettre de relance
+            bienveillante pour un stagiaire qui n'a pas remis son devoir
+            d'action de développement. Ton : professionnel et encourageant.
+            Maximum 150 mots. Utilise [Prénom] comme variable."
+          </div>
+          <div class="result">
+            Résultat : lettre directement utilisable, à personnaliser
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 4 — ASTUCES -->
+    <div class="step-section">
+      <div class="step-header">
+        <div
+          class="step-badge"
+          style="background: linear-gradient(135deg, #f59e0b, #ef4444)"
+        >
+          4
+        </div>
+        <div class="step-title">Astuces pour progresser</div>
+      </div>
+
+      <div class="step-box">
+        <h4>🔄 Améliorer une réponse insatisfaisante</h4>
+        <ul>
+          <li>"C'est trop long, raccourcis à 100 mots"</li>
+          <li>"Reformule ça de façon plus formelle"</li>
+          <li>"Donne-moi 3 autres versions différentes"</li>
+          <li>"Ajoute un paragraphe sur [sujet]"</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <h4>📝 Demander des formats spécifiques</h4>
+        <ul>
+          <li>"Mets le résultat sous forme de tableau"</li>
+          <li>"Crée une liste à puces"</li>
+          <li>"Format : email formel avec objet et corps"</li>
+          <li>"Numérote chaque étape"</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <h4>⚠️ Ce que ChatGPT ne sait pas faire</h4>
+        <ul>
+          <li>Accéder à Internet (sauf version payante avec plugins)</li>
+          <li>
+            Connaître les actualités récentes (sa connaissance a une date
+            limite)
+          </li>
+          <li>
+            Toujours avoir raison — il peut inventer des faits
+            ("<em>halluciner</em>")
+          </li>
+          <li>Remplacer votre jugement professionnel</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="step-section">
+      <div class="step-header">
+        <div
+          class="step-badge"
+          style="background: linear-gradient(135deg, #10b981, #06b6d4)"
+        >
+          ❓
+        </div>
+        <div class="step-title">Questions fréquentes</div>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-q">Est-ce que ChatGPT lit mes conversations ?</div>
+          <div class="faq-a">
+            Par défaut, OpenAI peut utiliser vos conversations pour améliorer
+            son modèle. Vous pouvez désactiver cela dans les paramètres (voir
+            Étape 2). Pour les données sensibles, n'entrez jamais rien dans
+            ChatGPT.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">ChatGPT peut-il se tromper ?</div>
+          <div class="faq-a">
+            Oui, absolument. L'IA peut inventer des faits, des citations ou des
+            statistiques ("hallucinations"). Relisez toujours et vérifiez les
+            informations importantes avant de les utiliser.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">La version gratuite suffit-elle ?</div>
+          <div class="faq-a">
+            Pour les usages de base (rédaction, reformulation, quiz, résumés),
+            la version gratuite (GPT-3.5 ou GPT-4o mini) est tout à fait
+            suffisante. La version payante (20€/mois) permet d'utiliser GPT-4
+            avec des capacités plus avancées.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Puis-je utiliser ChatGPT pour mes cours ?</div>
+          <div class="faq-a">
+            Oui, pour créer des contenus génériques (quiz, exercices, plans de
+            cours, idées d'activités). Non, pour traiter des données réelles de
+            stagiaires. Voir les 10 Règles d'Or RGPD.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span>AUXILIA — Une nouvelle chance · Session 1 · 18 juin 2026</span>
+      <span>Référent IA : stéphane.assaby@auxilia.fr</span>
+    </footer>
+  </body>
+</html>

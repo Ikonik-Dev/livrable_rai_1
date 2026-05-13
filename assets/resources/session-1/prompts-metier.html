@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 Bons Prompts pour Votre Métier — AUXILIA Session 1</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+      .print-note {
+        background: #fff3cd;
+        border: 1px solid #f59e0b;
+        border-radius: 8px;
+        padding: 0.65rem 1rem;
+        font-size: 0.78rem;
+        color: #92400e;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .print-note strong {
+        color: #78350f;
+      }
+      header {
+        background: linear-gradient(135deg, #6366f1, #ec4899);
+        color: #fff;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      header .tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+      }
+      header h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        font-size: 0.85rem;
+        opacity: 0.85;
+      }
+      .meta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+      .meta span {
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+      }
+      .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #475569;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin: 1.5rem 0 0.75rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 2px solid #e2e8f0;
+      }
+      .prompt-card {
+        background: #fff;
+        border-radius: 14px;
+        border: 1px solid #e2e8f0;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
+      .prompt-card-header {
+        padding: 0.75rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .prompt-num {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #fff;
+        flex-shrink: 0;
+      }
+      .prompt-card-title {
+        font-weight: 700;
+        font-size: 0.88rem;
+      }
+      .prompt-card-body {
+        padding: 1rem;
+      }
+      .prompt-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #94a3b8;
+        margin-bottom: 0.35rem;
+      }
+      .prompt-text {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 0.65rem 0.85rem;
+        font-size: 0.84rem;
+        font-family: "Courier New", monospace;
+        line-height: 1.55;
+        color: #334155;
+        white-space: pre-wrap;
+      }
+      .prompt-tip {
+        font-size: 0.78rem;
+        color: #64748b;
+        margin-top: 0.6rem;
+        padding: 0.5rem 0.75rem;
+        background: #f0fdf4;
+        border-radius: 6px;
+        border-left: 3px solid #10b981;
+      }
+      .rgpd-box {
+        background: #fff5f5;
+        border: 2px solid #fecaca;
+        border-radius: 14px;
+        padding: 1.25rem;
+        margin-top: 1.5rem;
+      }
+      .rgpd-box-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: #dc2626;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .rgpd-rule {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+        font-size: 0.82rem;
+        color: #7f1d1d;
+        margin-bottom: 0.4rem;
+        line-height: 1.4;
+      }
+      .rgpd-rule strong {
+        color: #dc2626;
+      }
+      .rule-yes {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 10px;
+        padding: 0.75rem;
+        margin-top: 0.75rem;
+      }
+      .rule-yes p {
+        font-size: 0.82rem;
+        color: #14532d;
+        font-weight: 600;
+      }
+      .rule-no {
+        background: #fff5f5;
+        border: 1px solid #fecaca;
+        border-radius: 10px;
+        padding: 0.75rem;
+        margin-top: 0.5rem;
+      }
+      .rule-no p {
+        font-size: 0.82rem;
+        color: #7f1d1d;
+        font-weight: 600;
+      }
+      footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e2e8f0;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      @media print {
+        .print-note {
+          display: none;
+        }
+        body {
+          padding: 1rem;
+        }
+        header {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .rgpd-box,
+        .rule-yes,
+        .rule-no {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="print-note">
+      💡 <strong>Pour télécharger en PDF :</strong> Fichier → Imprimer →
+      Enregistrer en PDF (dans votre navigateur)
+    </div>
+
+    <header>
+      <div class="tag">Session 1 — 18 juin 2026 · AUXILIA</div>
+      <h1>5 Bons Prompts<br />pour Votre Métier</h1>
+      <p>
+        Exemples concrets et prêts à l'emploi — Direction, Administration,
+        Formateurs
+      </p>
+      <div class="meta">
+        <span>📋 Fiche pratique</span>
+        <span>🔴 RGPD inclus</span>
+        <span>Référent IA : Référent IA</span>
+      </div>
+    </header>
+
+    <!-- DIRECTION -->
+    <div class="section-title">👑 Direction</div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <div
+          class="prompt-num"
+          style="background: linear-gradient(135deg, #8b5cf6, #6366f1)"
+        >
+          1
+        </div>
+        <div class="prompt-card-title">Résumer une réunion d'équipe</div>
+      </div>
+      <div class="prompt-card-body">
+        <div class="prompt-label">Prompt à copier-coller</div>
+        <div class="prompt-text">
+          Tu es mon assistant de direction. Je vais te donner le contenu d'une
+          réunion d'équipe (anonymisée, sans noms propres). Tu dois me fournir :
+          1. Un résumé en 5 bullet points maximum 2. Les décisions prises 3. Les
+          actions à faire (sans noms, juste les rôles : "la direction",
+          "l'équipe admin"…) 4. Le ton du résumé : professionnel, factuel Voici
+          le contenu : [COLLER LE TEXTE ICI — sans noms ni données perso]
+        </div>
+        <div class="prompt-tip">
+          ✅ Rappel RGPD : Anonymisez avant de coller (remplacez les noms par
+          les fonctions)
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <div
+          class="prompt-num"
+          style="background: linear-gradient(135deg, #8b5cf6, #6366f1)"
+        >
+          2
+        </div>
+        <div class="prompt-card-title">Préparer un ordre du jour</div>
+      </div>
+      <div class="prompt-card-body">
+        <div class="prompt-label">Prompt à copier-coller</div>
+        <div class="prompt-text">
+          Crée un ordre du jour structuré pour une réunion de direction de 2h
+          sur le thème : [VOTRE THÈME]. Inclure : horaires pour chaque point,
+          animateur de chaque point (rôles génériques), objectif de chaque
+          point. Format : tableau ou liste structurée. Ton : professionnel.
+        </div>
+        <div class="prompt-tip">
+          ✅ 100% autorisé — aucune donnée personnelle impliquée
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMINISTRATION -->
+    <div class="section-title">📂 Administration</div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <div
+          class="prompt-num"
+          style="background: linear-gradient(135deg, #3b82f6, #06b6d4)"
+        >
+          3
+        </div>
+        <div class="prompt-card-title">Rédiger une lettre de relance</div>
+      </div>
+      <div class="prompt-card-body">
+        <div class="prompt-label">Prompt à copier-coller</div>
+        <div class="prompt-text">
+          Rédige une lettre de relance professionnelle et bienveillante pour un
+          stagiaire qui n'a pas encore remis son devoir. Contraintes : - Ton :
+          professionnel mais chaleureux, encourageant - Longueur : maximum 150
+          mots - Pas de données personnelles (utilise "[Prénom]" comme variable)
+          - Inclure une date limite fictive "[Date limite]" - Signer de "[Votre
+          nom]"
+        </div>
+        <div class="prompt-tip">
+          ⚠️ Personnalisez ensuite en local — ne remettez pas les vrais noms
+          dans ChatGPT
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <div
+          class="prompt-num"
+          style="background: linear-gradient(135deg, #3b82f6, #06b6d4)"
+        >
+          4
+        </div>
+        <div class="prompt-card-title">Créer un modèle de courrier type</div>
+      </div>
+      <div class="prompt-card-body">
+        <div class="prompt-label">Prompt à copier-coller</div>
+        <div class="prompt-text">
+          Crée un modèle de courrier officiel pour [TYPE DE COURRIER :
+          convocation / accusé de réception / confirmation d'inscription…].
+          Format : courrier formel avec en-tête, corps, formule de politesse.
+          Utilise des variables entre crochets pour les informations à
+          personnaliser : [Nom], [Date], [Lieu], etc. Ton : formel, clair,
+          professionnel.
+        </div>
+        <div class="prompt-tip">
+          ✅ Excellent usage — les modèles avec variables ne contiennent aucune
+          donnée réelle
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMATEURS -->
+    <div class="section-title">🎓 Formateurs</div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <div
+          class="prompt-num"
+          style="background: linear-gradient(135deg, #10b981, #059669)"
+        >
+          5
+        </div>
+        <div class="prompt-card-title">Générer des questions de quiz</div>
+      </div>
+      <div class="prompt-card-body">
+        <div class="prompt-label">Prompt à copier-coller</div>
+        <div class="prompt-text">
+          Je suis formateur et j'ai besoin d'évaluer mes apprenants sur le
+          module suivant : [NOM DU MODULE]. Crée 5 questions de quiz avec les
+          caractéristiques suivantes : - Type : QCM (4 choix de réponse) -
+          Niveau : débutant / intermédiaire / avancé [CHOISIR] - Inclure la
+          bonne réponse (indiquée avec ✅) - Inclure une courte explication de
+          la bonne réponse (1 phrase) - Format : numérotée, claire à lire
+        </div>
+        <div class="prompt-tip">
+          ✅ 100% autorisé — contenu pédagogique générique, aucune donnée
+          stagiaire
+        </div>
+      </div>
+    </div>
+
+    <!-- RGPD BOX -->
+    <div class="rgpd-box">
+      <div class="rgpd-box-title">🔴 Mini-guide RGPD — Règles essentielles</div>
+      <div class="rgpd-rule">
+        ⚠️
+        <div>
+          <strong>Ne jamais mettre</strong> dans ChatGPT : noms de stagiaires,
+          emails, numéros de dossier, données médicales ou sociales, bulletins
+          de notes
+        </div>
+      </div>
+      <div class="rgpd-rule">
+        ⚠️
+        <div>
+          <strong>Anonymisez toujours</strong> avant de coller un texte :
+          remplacez les noms par les fonctions ("le formateur", "l'apprenant")
+        </div>
+      </div>
+      <div class="rgpd-rule">
+        ⚠️
+        <div>
+          <strong>ChatGPT peut stocker</strong> vos entrées — vérifiez les
+          paramètres de confidentialité ou utilisez le mode temporaire
+        </div>
+      </div>
+
+      <div class="rule-yes">
+        <p>
+          ✅ OUI : brouillons, modèles, reformulations, quiz génériques, résumés
+          anonymisés
+        </p>
+      </div>
+      <div class="rule-no">
+        <p>
+          ❌ NON : données personnelles, dossiers stagiaires, informations
+          médicales ou sociales
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <span>AUXILIA — Une nouvelle chance · Session 1 · 18 juin 2026</span>
+      <span>Référent IA : stéphane.assaby@auxilia.fr</span>
+    </footer>
+  </body>
+</html>

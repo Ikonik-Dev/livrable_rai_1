@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10 Règles d'Or — IA &amp; RGPD · AUXILIA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+      .print-note {
+        background: #fff3cd;
+        border: 1px solid #f59e0b;
+        border-radius: 8px;
+        padding: 0.65rem 1rem;
+        font-size: 0.78rem;
+        color: #92400e;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .print-note strong {
+        color: #78350f;
+      }
+      header {
+        background: linear-gradient(135deg, #ef4444, #f59e0b);
+        color: #fff;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      header .tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+      }
+      header h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        font-size: 0.85rem;
+        opacity: 0.85;
+      }
+      .meta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+      .meta span {
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+      }
+      .intro-box {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        color: #475569;
+        line-height: 1.6;
+      }
+      .intro-box strong {
+        color: #1e293b;
+      }
+      .rules-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+      .rule {
+        background: #fff;
+        border-radius: 14px;
+        border: 1px solid #e2e8f0;
+        padding: 1rem 1.25rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+      .rule-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        font-weight: 700;
+        flex-shrink: 0;
+        color: #fff;
+      }
+      .rule-content {
+      }
+      .rule-title {
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+      }
+      .rule-desc {
+        font-size: 0.82rem;
+        color: #64748b;
+        line-height: 1.5;
+      }
+      .rule-example {
+        font-size: 0.78rem;
+        color: #475569;
+        margin-top: 0.4rem;
+        padding: 0.35rem 0.65rem;
+        background: #f8fafc;
+        border-radius: 6px;
+        border-left: 3px solid #cbd5e1;
+        font-style: italic;
+      }
+      .r-red .rule-icon {
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+      }
+      .r-orange.rule-icon,
+      .r-orange .rule-icon {
+        background: linear-gradient(135deg, #f97316, #f59e0b);
+      }
+      .r-green .rule-icon {
+        background: linear-gradient(135deg, #10b981, #059669);
+      }
+      .r-blue .rule-icon {
+        background: linear-gradient(135deg, #3b82f6, #6366f1);
+      }
+      .r-purple.rule-icon,
+      .r-purple .rule-icon {
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      }
+      .summary-box {
+        background: linear-gradient(135deg, #fef3c7, #fde68a);
+        border: 2px solid #f59e0b;
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      .summary-box h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #78350f;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .summary-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+      .summary-col h4 {
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+      .summary-col ul {
+        list-style: none;
+        font-size: 0.78rem;
+        color: #78350f;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .summary-col ul li::before {
+        content: "• ";
+        font-weight: 700;
+      }
+      .yes-col h4 {
+        color: #166534;
+      }
+      .yes-col ul {
+        color: #14532d;
+      }
+      .yes-col ul li::before {
+        content: "✅ ";
+      }
+      .no-col h4 {
+        color: #7f1d1d;
+      }
+      .no-col ul {
+        color: #7f1d1d;
+      }
+      .no-col ul li::before {
+        content: "❌ ";
+      }
+      .contact-box {
+        background: #f0f9ff;
+        border: 1px solid #bae6fd;
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        margin-top: 1rem;
+        font-size: 0.84rem;
+        color: #0c4a6e;
+      }
+      footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e2e8f0;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      @media print {
+        .print-note {
+          display: none;
+        }
+        body {
+          padding: 1rem;
+        }
+        header,
+        .summary-box {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .rule {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="print-note">
+      💡 <strong>Pour télécharger en PDF :</strong> Fichier → Imprimer →
+      Enregistrer en PDF (dans votre navigateur)
+    </div>
+
+    <header>
+      <div class="tag">Session 1 — 18 juin 2026 · AUXILIA — Format FALC</div>
+      <h1>10 Règles d'Or<br />IA &amp; RGPD</h1>
+      <p>Ce que tout le monde doit savoir avant d'utiliser l'IA au travail</p>
+      <div class="meta">
+        <span>🔴 Obligatoire</span>
+        <span>📌 À afficher + télécharger</span>
+        <span>Format FALC</span>
+      </div>
+    </header>
+
+    <div class="intro-box">
+      <strong>Pourquoi ces règles ?</strong> Le RGPD (Règlement Général sur la
+      Protection des Données) oblige chaque organisation à protéger les données
+      personnelles des personnes. Chez AUXILIA, cela concerne les données de nos
+      stagiaires, salariés et partenaires. Les outils IA peuvent présenter un
+      risque si on ne fait pas attention. Ces 10 règles vous protègent — et
+      protègent AUXILIA.
+    </div>
+
+    <div class="rules-list">
+      <div class="rule r-red">
+        <div class="rule-icon">🚫</div>
+        <div class="rule-content">
+          <div class="rule-title">Règle 1 — Jamais de noms dans l'IA</div>
+          <div class="rule-desc">
+            Ne mettez jamais les prénoms et noms de stagiaires, collègues ou
+            bénéficiaires dans ChatGPT ou un autre outil IA en ligne.
+          </div>
+          <div class="rule-example">
+            ❌ Interdit : "Rédige un bilan pour Jean Dupont, stagiaire
+            n°2345"<br />✅ Autorisé : "Rédige un bilan pour un stagiaire en
+            insertion professionnelle"
+          </div>
+        </div>
+      </div>
+
+      <div class="rule r-red">
+        <div class="rule-icon">📧</div>
+        <div class="rule-content">
+          <div class="rule-title">
+            Règle 2 — Jamais d'emails ni de coordonnées
+          </div>
+          <div class="rule-desc">
+            Les adresses email, numéros de téléphone et adresses postales sont
+            des données personnelles. Ne les copiez pas dans l'IA.
+          </div>
+          <div class="rule-example">
+            ❌ Interdit : "Écris un email à jean.dupont@gmail.com"<br />✅
+            Autorisé : "Écris un email de relance pour un stagiaire absent"
+          </div>
+        </div>
+      </div>
+
+      <div class="rule r-red">
+        <div class="rule-icon">📋</div>
+        <div class="rule-content">
+          <div class="rule-title">
+            Règle 3 — Jamais de dossiers de stagiaires
+          </div>
+          <div class="rule-desc">
+            Les informations contenues dans les dossiers d'admission, de suivi
+            ou d'évaluation ne doivent jamais être partagées avec un outil IA.
+          </div>
+          <div class="rule-example">
+            ❌ Interdit : coller le contenu d'un dossier de suivi dans
+            ChatGPT<br />✅ Autorisé : demander un modèle de fiche de suivi
+            vierge
+          </div>
+        </div>
+      </div>
+
+      <div class="rule r-red">
+        <div class="rule-icon">🏥</div>
+        <div class="rule-content">
+          <div class="rule-title">
+            Règle 4 — Jamais de données médicales ou sociales
+          </div>
+          <div class="rule-desc">
+            Les informations sur la santé, la situation sociale, le handicap ou
+            les difficultés personnelles sont des données sensibles — catégorie
+            spéciale RGPD. Strict interdit.
+          </div>
+          <div class="rule-example">
+            ❌ Interdit : toute mention d'un diagnostic, d'une situation de
+            handicap, d'un contexte familial
+          </div>
+        </div>
+      </div>
+
+      <div class="rule" style="border-color: #bfdbfe">
+        <div
+          class="rule-icon"
+          style="background: linear-gradient(135deg, #3b82f6, #6366f1)"
+        >
+          🔍
+        </div>
+        <div class="rule-content">
+          <div class="rule-title">Règle 5 — Anonymisez avant de coller</div>
+          <div class="rule-desc">
+            Si vous voulez utiliser un vrai texte comme base, remplacez d'abord
+            tous les éléments identifiants par des termes génériques.
+          </div>
+          <div class="rule-example">
+            Noms → "le stagiaire" · Emails → "[email]" · Dates précises →
+            "récemment" · Lieux spécifiques → "notre structure"
+          </div>
+        </div>
+      </div>
+
+      <div class="rule" style="border-color: #bbf7d0">
+        <div
+          class="rule-icon"
+          style="background: linear-gradient(135deg, #10b981, #059669)"
+        >
+          ✅
+        </div>
+        <div class="rule-content">
+          <div class="rule-title">
+            Règle 6 — L'IA pour les contenus génériques, c'est OK
+          </div>
+          <div class="rule-desc">
+            Brouillons, modèles de documents, reformulations, idées, quiz
+            génériques, résumés de concepts : c'est l'usage idéal de l'IA et il
+            est pleinement autorisé.
+          </div>
+          <div class="rule-example">
+            ✅ Modèle de lettre, quiz pédagogique, résumé d'une réunion
+            anonymisée, plan de cours
+          </div>
+        </div>
+      </div>
+
+      <div class="rule" style="border-color: #ddd6fe">
+        <div
+          class="rule-icon"
+          style="background: linear-gradient(135deg, #8b5cf6, #6366f1)"
+        >
+          👁️
+        </div>
+        <div class="rule-content">
+          <div class="rule-title">Règle 7 — Relisez toujours le résultat</div>
+          <div class="rule-desc">
+            L'IA peut se tromper, inventer des faits (on appelle cela
+            "halluciner") ou reproduire des biais. Ne publiez jamais un texte
+            d'IA sans le relire et le valider vous-même.
+          </div>
+          <div class="rule-example">
+            Exemple : l'IA peut citer une loi qui n'existe pas, ou donner une
+            date incorrecte — toujours vérifier
+          </div>
+        </div>
+      </div>
+
+      <div class="rule" style="border-color: #fed7aa">
+        <div
+          class="rule-icon"
+          style="background: linear-gradient(135deg, #f97316, #ef4444)"
+        >
+          💰
+        </div>
+        <div class="rule-content">
+          <div class="rule-title">
+            Règle 8 — Les outils gratuits ont un coût caché
+          </div>
+          <div class="rule-desc">
+            Quand un outil IA est gratuit, vous payez souvent avec vos données.
+            Vos conversations peuvent être utilisées pour entraîner le modèle.
+            Vérifiez toujours les conditions d'utilisation.
+          </div>
+          <div class="rule-example">
+            ChatGPT en mode gratuit : vos conversations peuvent être lues par
+            OpenAI pour améliorer le modèle (sauf si vous désactivez cette
+            option)
+          </div>
+        </div>
+      </div>
+
+      <div class="rule" style="border-color: #bfdbfe">
+        <div
+          class="rule-icon"
+          style="background: linear-gradient(135deg, #3b82f6, #06b6d4)"
+        >
+          ❓
+        </div>
+        <div class="rule-content">
+          <div class="rule-title">
+            Règle 9 — En cas de doute, demandez avant d'agir
+          </div>
+          <div class="rule-desc">
+            Si vous n'êtes pas sûr qu'un usage est autorisé, posez la question à
+            le Référent IA ou à la Direction avant d'utiliser l'outil.
+            Mieux vaut attendre que prendre un risque.
+          </div>
+          <div class="rule-example">Contact : stéphane.assaby@auxilia.fr</div>
+        </div>
+      </div>
+
+      <div class="rule" style="border-color: #bbf7d0">
+        <div
+          class="rule-icon"
+          style="background: linear-gradient(135deg, #10b981, #6366f1)"
+        >
+          🛡️
+        </div>
+        <div class="rule-content">
+          <div class="rule-title">
+            Règle 10 — AUXILIA est responsable devant la loi
+          </div>
+          <div class="rule-desc">
+            En cas de violation du RGPD, c'est AUXILIA (en tant qu'organisation)
+            qui est responsable. Les amendes peuvent aller jusqu'à 20 millions €
+            ou 4% du chiffre d'affaires. Chaque salarié contribue à protéger
+            l'organisation.
+          </div>
+          <div class="rule-example">
+            Un simple copier-coller d'un dossier de stagiaire dans ChatGPT peut
+            constituer une violation du RGPD
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RÉSUMÉ -->
+    <div class="summary-box">
+      <h3>⚡ Résumé rapide</h3>
+      <div class="summary-grid">
+        <div class="summary-col yes-col">
+          <h4>✅ JE PEUX faire avec l'IA</h4>
+          <ul>
+            <li>Créer des modèles de lettres</li>
+            <li>Générer des quiz génériques</li>
+            <li>Reformuler, améliorer un texte</li>
+            <li>Résumer une réunion anonymisée</li>
+            <li>Préparer un ordre du jour</li>
+            <li>Obtenir des idées et de l'inspiration</li>
+          </ul>
+        </div>
+        <div class="summary-col no-col">
+          <h4>❌ JE NE DOIS PAS faire</h4>
+          <ul>
+            <li>Coller des noms de stagiaires</li>
+            <li>Partager des dossiers de suivi</li>
+            <li>Envoyer des données médicales</li>
+            <li>Copier des emails réels</li>
+            <li>Transmettre des bulletins de notes</li>
+            <li>Partager des infos sociales ou perso</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <strong>📞 Des questions ?</strong> Contactez le Référent IA AUXILIA :
+      <strong>stéphane.assaby@auxilia.fr</strong><br />
+      <small
+        >Il est là pour vous aider à utiliser l'IA de manière sûre et
+        efficace.</small
+      >
+    </div>
+
+    <footer>
+      <span
+        >AUXILIA — Une nouvelle chance · Session 1 · 18 juin 2026 · Format
+        FALC</span
+      >
+      <span>Référent IA : stéphane.assaby@auxilia.fr</span>
+    </footer>
+  </body>
+</html>

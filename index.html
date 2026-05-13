@@ -615,6 +615,14 @@
                   <div class="session-tag">
                     Public : <strong>Tous les salariés</strong>
                   </div>
+                  <button
+                    class="s1-open-btn"
+                    id="s1-open-btn"
+                    aria-haspopup="dialog"
+                  >
+                    <i class="fa-solid fa-book-open"></i> Voir le programme
+                    détaillé
+                  </button>
                 </div>
               </div>
 
@@ -1075,6 +1083,999 @@
           <span>Version 1.0 — Confidentiel Direction</span>
         </div>
       </footer>
+      <!-- ══════════════════════════════════════════════════════════
+         MODALE SESSION 1
+    ══════════════════════════════════════════════════════════ -->
+      <div
+        id="session1-modal"
+        class="s1-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="s1-modal-title"
+        hidden
+      >
+        <div class="s1-modal-overlay" id="s1-modal-overlay"></div>
+        <div class="s1-modal-panel">
+          <!-- HEADER -->
+          <div class="s1-modal-header">
+            <div class="s1-modal-header-meta">
+              <span class="s1-modal-pill"
+                ><i class="fa-solid fa-shield-halved"></i> RGPD
+                obligatoire</span
+              >
+              <span class="s1-modal-pill s1-pill-blue"
+                ><i class="fa-solid fa-users"></i> Tous les salariés (~28)</span
+              >
+            </div>
+            <h2 id="s1-modal-title">
+              Session 1 — "L'IA, qu'est-ce que c'est vraiment ?<br />Et le RGPD
+              dans tout ça ?"
+            </h2>
+            <div class="s1-modal-header-info">
+              <span
+                ><i class="fa-solid fa-calendar"></i> Jeudi 18 juin 2026</span
+              >
+              <span
+                ><i class="fa-solid fa-clock"></i> 13h30 – 17h00 (3h30)</span
+              >
+              <span><i class="fa-solid fa-location-dot"></i> Présentiel</span>
+            </div>
+            <button
+              class="s1-modal-close"
+              id="s1-modal-close"
+              aria-label="Fermer la modale"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- BODY -->
+          <div class="s1-modal-body">
+            <!-- OBJECTIFS -->
+            <div class="s1-section">
+              <h3 class="s1-section-title">
+                <i class="fa-solid fa-bullseye"></i> Objectifs pédagogiques
+              </h3>
+              <div class="s1-objectives-grid">
+                <div class="s1-obj-card s1-obj-blue">
+                  <i class="fa-solid fa-brain"></i>
+                  <p>
+                    <strong>Comprendre</strong> ce qu'est l'IA générative
+                    (au-delà des mythes)
+                  </p>
+                </div>
+                <div class="s1-obj-card s1-obj-red">
+                  <i class="fa-solid fa-shield-halved"></i>
+                  <p>
+                    <strong>Identifier</strong> les enjeux légaux (RGPD) dans
+                    l'usage de l'IA
+                  </p>
+                </div>
+                <div class="s1-obj-card s1-obj-green">
+                  <i class="fa-solid fa-laptop-code"></i>
+                  <p>
+                    <strong>Utiliser</strong> ChatGPT de manière simple et
+                    sécurisée
+                  </p>
+                </div>
+                <div class="s1-obj-card s1-obj-purple">
+                  <i class="fa-solid fa-comments"></i>
+                  <p>
+                    <strong>Exprimer</strong> attentes, freins et envies liés à
+                    l'IA professionnelle
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BLOC 1 -->
+            <details class="s1-bloc" open>
+              <summary class="s1-bloc-summary s1-bloc-orange">
+                <div class="s1-bloc-summary-inner">
+                  <span class="s1-bloc-num">BLOC 1</span>
+                  <span class="s1-bloc-title"
+                    >Accueil &amp; Mise en contexte</span
+                  >
+                  <span class="s1-bloc-time"
+                    >13h30 – 14h00 <em>(30 min)</em></span
+                  >
+                </div>
+                <i class="fa-solid fa-chevron-down s1-chevron"></i>
+              </summary>
+              <div class="s1-bloc-body">
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">13h30 – 13h40</span>
+                    <span class="s1-sub-title"
+                      >Accueil bienveillant <em>(10 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      <i class="fa-solid fa-mug-hot"></i> Bienvenue, café/eau à
+                      disposition
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-comment-dots"></i> Ton détendu,
+                      accessible, zéro jargon technique
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-display"></i> Présentation rapide du
+                      programme de l'après-midi (slide visuelle)
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-hand"></i>
+                      <strong>Icebreaker</strong> : "Levez la main si vous avez
+                      déjà utilisé ChatGPT" — pas de jugement
+                    </li>
+                  </ul>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">13h40 – 14h00</span>
+                    <span class="s1-sub-title"
+                      >Pourquoi on en parle maintenant ? <em>(20 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      <i class="fa-solid fa-building"></i>
+                      <strong>Contexte AUXILIA</strong> : transformation
+                      pédagogique, nouveau parcours PPNI
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-chart-line"></i>
+                      <strong>Enjeux</strong> : l'IA transforme le métier de
+                      formateur, administratif, direction
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-star"></i> Affichage clair :
+                      <em
+                        >"Cette session n'est PAS un cours d'informatique, c'est
+                        une exploration collective"</em
+                      >
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-heart"></i> Règle d'or affichée :
+                      <em
+                        >"Il n'y a pas de question bête — on apprend
+                        ensemble"</em
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <!-- BLOC 2 -->
+            <details class="s1-bloc">
+              <summary class="s1-bloc-summary s1-bloc-blue">
+                <div class="s1-bloc-summary-inner">
+                  <span class="s1-bloc-num">BLOC 2</span>
+                  <span class="s1-bloc-title"
+                    >Comprendre l'IA (sans prise de tête)</span
+                  >
+                  <span class="s1-bloc-time"
+                    >14h00 – 14h45 <em>(45 min)</em></span
+                  >
+                </div>
+                <i class="fa-solid fa-chevron-down s1-chevron"></i>
+              </summary>
+              <div class="s1-bloc-body">
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">14h00 – 14h15</span>
+                    <span class="s1-sub-title"
+                      >Qu'est-ce que l'IA générative, vraiment ?
+                      <em>(15 min)</em></span
+                    >
+                  </div>
+
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-display"></i> Slide — Les 3 mythes à
+                      oublier
+                    </div>
+                    <div class="s1-myth-grid">
+                      <div class="s1-myth">
+                        <div class="s1-myth-bad">
+                          ❌ Mythe 1 : "L'IA c'est un robot qui pense comme moi"
+                        </div>
+                        <div class="s1-myth-good">
+                          ✅ Réalité : Un outil qui trouve des patterns dans des
+                          textes
+                        </div>
+                      </div>
+                      <div class="s1-myth">
+                        <div class="s1-myth-bad">
+                          ❌ Mythe 2 : "L'IA va nous voler notre travail"
+                        </div>
+                        <div class="s1-myth-good">
+                          ✅ Réalité : L'IA fait certaines tâches répétitives,
+                          on se concentre sur la création
+                        </div>
+                      </div>
+                      <div class="s1-myth">
+                        <div class="s1-myth-bad">
+                          ❌ Mythe 3 : "L'IA est magique et infaillible"
+                        </div>
+                        <div class="s1-myth-good">
+                          ✅ Réalité : L'IA se trompe, hallucine, n'a pas de
+                          conscience
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-display"></i> Slide — Comment ça
+                      marche ? (très simplifié)
+                    </div>
+                    <ul class="s1-list">
+                      <li>
+                        L'IA = apprendre des patterns dans des milliards de
+                        textes
+                      </li>
+                      <li>
+                        Tu poses une question → l'IA prédit le mot suivant, puis
+                        le suivant… (statistiques)
+                      </li>
+                      <li>
+                        Exemple :
+                        <em
+                          >"Quand on dit 'Bonjour, comment', l'IA 'sait' que le
+                          mot suivant est souvent 'allez'"</em
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-display"></i> Slide — Cas d'usage
+                      concrets à AUXILIA
+                    </div>
+                    <div class="s1-usecases-grid">
+                      <div class="s1-usecase">
+                        <span class="s1-role-badge s1-role-purple"
+                          >Direction</span
+                        >
+                        <p>"Résumer 45 min de réunion en 5 points clés"</p>
+                      </div>
+                      <div class="s1-usecase">
+                        <span class="s1-role-badge s1-role-blue">Admin</span>
+                        <p>"Rédiger une lettre de suivi de dossier"</p>
+                      </div>
+                      <div class="s1-usecase">
+                        <span class="s1-role-badge s1-role-green"
+                          >Formateurs</span
+                        >
+                        <p>"Générer 10 questions de quiz sur un sujet"</p>
+                      </div>
+                      <div class="s1-usecase">
+                        <span class="s1-role-badge s1-role-orange">Tous</span>
+                        <p>"Comprendre un concept difficile"</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RGPD sous-section -->
+                <div class="s1-sub-bloc s1-rgpd-sub">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge s1-time-red">14h15 – 14h45</span>
+                    <span class="s1-sub-title"
+                      >🔴 RGPD — Les règles du jeu (NON NÉGOCIABLE)
+                      <em>(30 min)</em></span
+                    >
+                  </div>
+
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-display"></i> Slide — Qu'est-ce que
+                      le RGPD en 3 points ?
+                    </div>
+                    <ol class="s1-list s1-list-ol">
+                      <li>
+                        <strong>Protéger les données personnelles</strong> —
+                        nom, email, adresse, données d'élève, notes, infos
+                        médicales…
+                      </li>
+                      <li>
+                        <strong>Respect du droit des personnes</strong> — chacun
+                        doit savoir qu'on utilise ses données
+                      </li>
+                      <li>
+                        <strong>Responsabilité de l'organisation</strong> —
+                        violation RGPD → amendes + dégâts réputationnels
+                      </li>
+                    </ol>
+                  </div>
+
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-display"></i> Slide — RGPD + IA =
+                      Danger potentiel ?
+                    </div>
+                    <ul class="s1-list s1-list-warn">
+                      <li>
+                        ⚠️ <strong>Problème 1</strong> : Mettre des données d'un
+                        stagiaire dans ChatGPT → elles vont où ? ChatGPT peut
+                        les garder, les utiliser pour s'entraîner, les revendre
+                      </li>
+                      <li>
+                        ⚠️ <strong>Problème 2</strong> : Les outils IA gratuits
+                        → qui paie ? Souvent, c'est tes données
+                      </li>
+                      <li>
+                        ⚠️ <strong>Problème 3</strong> : Pas toutes les IA sont
+                        conformes RGPD
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="s1-regle-or">
+                    <div class="s1-regle-or-title">
+                      <i class="fa-solid fa-triangle-exclamation"></i> Règle
+                      d'or — À afficher visiblement
+                    </div>
+                    <div class="s1-regle-or-body">
+                      <p class="s1-regle-no">
+                        🔴 JAMAIS de données personnelles / sensibles dans
+                        l'IA<br /><em
+                          >(noms, emails, dossiers élèves, notes, infos
+                          médico-sociales)</em
+                        >
+                      </p>
+                      <p class="s1-regle-yes">
+                        ✅ OUI à l'IA pour : brouillons, idées, formatage,
+                        résumés génériques
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-display"></i> Slide — Exemples
+                      pratiques
+                    </div>
+                    <div class="s1-table-wrap">
+                      <table class="s1-table">
+                        <thead>
+                          <tr>
+                            <th>Cas</th>
+                            <th>✅ Autorisé</th>
+                            <th>❌ Interdit</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Générer un modèle de lettre</td>
+                            <td class="s1-td-ok">✅</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Rédiger un CR avec noms des participants</td>
+                            <td></td>
+                            <td class="s1-td-ko">❌ données perso</td>
+                          </tr>
+                          <tr>
+                            <td>Créer des questions de quiz génériques</td>
+                            <td class="s1-td-ok">✅</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Analyser un dossier de stagiaire</td>
+                            <td></td>
+                            <td class="s1-td-ko">❌ données médicales</td>
+                          </tr>
+                          <tr>
+                            <td>Résumer une réunion (termes génériques)</td>
+                            <td class="s1-td-ok">✅ si pas de noms</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-display"></i> Slide — Outils
+                      conformes RGPD à AUXILIA
+                    </div>
+                    <ul class="s1-list">
+                      <li>
+                        ✅ <strong>ChatGPT</strong> (si pas de données perso)
+                      </li>
+                      <li>
+                        ✅ <strong>Outils open-source</strong> (Llama, etc.)
+                        auto-hébergés
+                      </li>
+                      <li>
+                        ❓ <strong>À valider</strong> : Whisper, Otter.ai pour
+                        transcription (selon config)
+                      </li>
+                      <li>
+                        ❌
+                        <strong>Google Bard, Copilot gratuits</strong> (données
+                        non protégées)
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-display"></i> Slide — En cas de
+                      doute ?
+                    </div>
+                    <ul class="s1-list">
+                      <li>
+                        <i class="fa-solid fa-user-tie"></i> Demandez à
+                        <strong>Stéphane</strong> (Référent IA)
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-building"></i> Demandez à la
+                        <strong>Direction</strong>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-shield-halved"></i> Mieux vaut
+                        attendre validation que risquer une amende RGPD
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- BLOC 3 -->
+            <details class="s1-bloc">
+              <summary class="s1-bloc-summary s1-bloc-green">
+                <div class="s1-bloc-summary-inner">
+                  <span class="s1-bloc-num">BLOC 3</span>
+                  <span class="s1-bloc-title"
+                    >Premier contact avec ChatGPT</span
+                  >
+                  <span class="s1-bloc-time"
+                    >14h45 – 15h45 <em>(60 min — 70% pratique)</em></span
+                  >
+                </div>
+                <i class="fa-solid fa-chevron-down s1-chevron"></i>
+              </summary>
+              <div class="s1-bloc-body">
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">14h45 – 14h50</span>
+                    <span class="s1-sub-title"
+                      >Préparation technique <em>(5 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>"Qui a un compte ChatGPT ?" — lever les mains</li>
+                    <li>
+                      "Pas grave si non — accès sur vidéoprojecteur + tutos en
+                      PDF"
+                    </li>
+                    <li>
+                      <strong>Important</strong> : On travaille sur des exemples
+                      <strong>génériques, sans données perso</strong>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">14h50 – 15h10</span>
+                    <span class="s1-sub-title"
+                      >Démo en direct par le référent IA <em>(20 min)</em></span
+                    >
+                  </div>
+
+                  <div class="s1-prompt-demo">
+                    <div class="s1-prompt-label">
+                      Scénario 1 — Le prompt simple (rédaction)
+                    </div>
+                    <div class="s1-prompt-bad">
+                      <span>❌ Trop vague</span> "Écris une lettre"
+                    </div>
+                    <div class="s1-prompt-good">
+                      <span>✅ Structuré</span> "Écris une lettre de relance à
+                      un stagiaire qui n'a pas remis son devoir. Ton
+                      professionnel, courtois, max 150 mots."
+                    </div>
+                    <div class="s1-prompt-result">
+                      → Affichage du résultat en direct sur vidéoprojecteur
+                    </div>
+                  </div>
+
+                  <div class="s1-prompt-demo">
+                    <div class="s1-prompt-label">
+                      Scénario 2 — La synthèse (pour la Direction)
+                    </div>
+                    <div class="s1-prompt-good">
+                      <span>✅ Prompt</span> "Je te donne ci-dessous une réunion
+                      d'équipe (générique). Fais-moi un résumé en 5 bullet
+                      points, avec les actions à faire et responsables."<br /><em
+                        >[coller texte réunion anonymisée]</em
+                      >
+                    </div>
+                    <div class="s1-prompt-result">
+                      → ChatGPT sort un CR structuré en 30 secondes
+                    </div>
+                  </div>
+
+                  <div class="s1-prompt-demo">
+                    <div class="s1-prompt-label">
+                      Scénario 3 — Création pédagogique (pour les Formateurs)
+                    </div>
+                    <div class="s1-prompt-good">
+                      <span>✅ Prompt</span> "Crée 5 questions de quiz sur le
+                      développement web (HTML/CSS), niveau débutant, avec
+                      réponses à cocher. Format simple."
+                    </div>
+                    <div class="s1-prompt-result">
+                      → ChatGPT génère un quiz utilisable directement dans un
+                      cours
+                    </div>
+                  </div>
+                </div>
+
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">15h10 – 15h30</span>
+                    <span class="s1-sub-title"
+                      >Atelier guidé — Chacun essaie <em>(20 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-groups-grid">
+                    <div class="s1-group-card s1-group-purple">
+                      <div class="s1-group-title">
+                        <i class="fa-solid fa-crown"></i> Groupe 1 — Direction
+                      </div>
+                      <p>Synthétiser un CR fictif</p>
+                    </div>
+                    <div class="s1-group-card s1-group-blue">
+                      <div class="s1-group-title">
+                        <i class="fa-solid fa-envelope"></i> Groupe 2 — Admin
+                      </div>
+                      <p>Rédiger une lettre de relance</p>
+                    </div>
+                    <div class="s1-group-card s1-group-green">
+                      <div class="s1-group-title">
+                        <i class="fa-solid fa-chalkboard-user"></i> Groupe 3 —
+                        Formateurs
+                      </div>
+                      <p>Générer une question d'exercice</p>
+                    </div>
+                  </div>
+                  <ul class="s1-list" style="margin-top: 1rem">
+                    <li>
+                      📄 <strong>Support fourni</strong> : Fiche "5 bons prompts
+                      pour votre métier" (téléchargeable ci-dessous)
+                    </li>
+                    <li>🔗 QR code vers tutoriel YouTube rapide</li>
+                    <li>👤 Le référent IA circule, aide, répond aux questions</li>
+                    <li>
+                      <em
+                        >15 min de test libre · 5 min de restitution rapide</em
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">15h30 – 15h45</span>
+                    <span class="s1-sub-title"
+                      >Débrief &amp; pièges à éviter <em>(15 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-takeaways">
+                    <div class="s1-takeaway s1-ok">
+                      ✅ ChatGPT = gain de temps pour les brouillons, idées,
+                      formatage
+                    </div>
+                    <div class="s1-takeaway s1-ok">
+                      ✅ Il faut <strong>toujours relire et vérifier</strong> —
+                      l'IA peut halluciner
+                    </div>
+                    <div class="s1-takeaway s1-no">
+                      ❌ <strong>Jamais de données perso</strong> dedans
+                    </div>
+                    <div class="s1-takeaway s1-ok">
+                      ✅ Plus le prompt est clair, meilleur le résultat
+                    </div>
+                    <div class="s1-takeaway s1-warn">
+                      ⚠️ L'IA reproduit parfois des biais → relire pour vérifier
+                      l'éthique
+                    </div>
+                  </div>
+                  <div class="s1-slide-card" style="margin-top: 1rem">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-triangle-exclamation"></i> Pièges à
+                      éviter
+                    </div>
+                    <ul class="s1-list s1-list-warn">
+                      <li>
+                        Ne pas copier-coller directement un résultat d'IA
+                        (l'adapter, le relire)
+                      </li>
+                      <li>
+                        Ne pas mettre des données sensibles "par accident"
+                      </li>
+                      <li>
+                        Ne pas croire que l'IA a toujours raison (elle invente
+                        parfois)
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- PAUSE -->
+            <div class="s1-pause-banner">
+              <i class="fa-solid fa-mug-hot"></i>
+              <span><strong>PAUSE</strong> — 15h45 à 16h00 (15 min)</span>
+              <span class="s1-pause-sub">Pause, toilettes, décompression</span>
+            </div>
+
+            <!-- BLOC 4 -->
+            <details class="s1-bloc">
+              <summary class="s1-bloc-summary s1-bloc-purple">
+                <div class="s1-bloc-summary-inner">
+                  <span class="s1-bloc-num">BLOC 4</span>
+                  <span class="s1-bloc-title"
+                    >Tour de table &amp; co-construction</span
+                  >
+                  <span class="s1-bloc-time"
+                    >16h00 – 16h50 <em>(50 min)</em></span
+                  >
+                </div>
+                <i class="fa-solid fa-chevron-down s1-chevron"></i>
+              </summary>
+              <div class="s1-bloc-body">
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">16h00 – 16h20</span>
+                    <span class="s1-sub-title"
+                      >Tour de table structuré <em>(20 min)</em></span
+                    >
+                  </div>
+                  <p class="s1-intro-text">
+                    3 questions pour chacun (la non-réponse est ok) — modération
+                    bienveillante :
+                  </p>
+                  <div class="s1-questions-list">
+                    <div class="s1-question">
+                      <span class="s1-q-num">1</span>
+                      <p>
+                        <strong>"Qu'as-tu découvert qui t'a surpris ?"</strong>
+                        — positif, pour créer de la dynamique
+                      </p>
+                    </div>
+                    <div class="s1-question">
+                      <span class="s1-q-num">2</span>
+                      <p>
+                        <strong>"Quel(s) frein(s) tu as ?"</strong> — peur,
+                        doute, charge de travail ?
+                      </p>
+                    </div>
+                    <div class="s1-question">
+                      <span class="s1-q-num">3</span>
+                      <p>
+                        <strong
+                          >"Un cas d'usage que tu imagines pour toi ?"</strong
+                        >
+                      </p>
+                    </div>
+                  </div>
+                  <ul class="s1-list" style="margin-top: 1rem">
+                    <li>Valoriser toutes les réponses</li>
+                    <li>Transformer les craintes en opportunités</li>
+                    <li>Rassurer les résistants sans les forcer</li>
+                  </ul>
+                </div>
+
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">16h20 – 16h50</span>
+                    <span class="s1-sub-title"
+                      >Co-construction — Notre charte provisoire v0.1
+                      <em>(30 min)</em></span
+                    >
+                  </div>
+                  <p class="s1-intro-text">
+                    Méthode : Paperboard + votes collectifs
+                  </p>
+                  <div class="s1-charte-steps">
+                    <div class="s1-charte-step s1-ok">
+                      <span>1</span> "Quels usages on
+                      <strong>autorise</strong> ?" → liste participative
+                    </div>
+                    <div class="s1-charte-step s1-no">
+                      <span>2</span> "Quels usages on
+                      <strong>interdit</strong> ?" → liste participative
+                    </div>
+                    <div class="s1-charte-step s1-warn">
+                      <span>3</span> "Qui
+                      <strong>valide les cas flous</strong> ?" → désigner les
+                      référents
+                    </div>
+                  </div>
+                  <div class="s1-info-note">
+                    <i class="fa-solid fa-circle-info"></i> Output : Document
+                    prise de notes partagé en PDF — base pour la charte finale
+                    (octobre 2026)
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- BLOC 5 -->
+            <details class="s1-bloc">
+              <summary class="s1-bloc-summary s1-bloc-teal">
+                <div class="s1-bloc-summary-inner">
+                  <span class="s1-bloc-num">BLOC 5</span>
+                  <span class="s1-bloc-title">Clôture &amp; ressources</span>
+                  <span class="s1-bloc-time"
+                    >16h50 – 17h00 <em>(10 min)</em></span
+                  >
+                </div>
+                <i class="fa-solid fa-chevron-down s1-chevron"></i>
+              </summary>
+              <div class="s1-bloc-body">
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">16h50 – 16h55</span>
+                    <span class="s1-sub-title"
+                      >Récap' rapide <em>(5 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      Ce qu'on a fait : démystifier, tester, co-construire
+                    </li>
+                    <li>
+                      Prochaines étapes : sessions thématiques (direction/admin,
+                      formateurs)
+                    </li>
+                    <li>
+                      <em
+                        >"Vous n'êtes pas seuls — je suis là pour vous
+                        guider"</em
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">16h55 – 17h00</span>
+                    <span class="s1-sub-title"
+                      >Ressources &amp; questions finales <em>(5 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      📱 QR code vers dossier de ressources (téléchargeables)
+                    </li>
+                    <li>
+                      📧 Email contact :
+                      <strong>stéphane.assaby@auxilia.fr</strong>
+                    </li>
+                    <li>📋 Questionnaire satisfaction (papier ou QR code)</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <!-- RESSOURCES TÉLÉCHARGEABLES -->
+            <div class="s1-section">
+              <h3 class="s1-section-title">
+                <i class="fa-solid fa-download"></i> Ressources téléchargeables
+              </h3>
+              <div class="s1-resources-grid">
+                <a
+                  href="assets/resources/session-1/prompts-metier.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                    "
+                  >
+                    <i class="fa-solid fa-file-lines"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>5 bons prompts pour votre métier</strong>
+                    <span
+                      >Direction · Admin · Formateurs + mini-guide RGPD</span
+                    >
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+                <a
+                  href="assets/resources/session-1/rgpd-10-regles.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #ef4444, #f59e0b);
+                    "
+                  >
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>10 règles d'or — IA &amp; RGPD</strong>
+                    <span>Format FALC · À afficher + à télécharger</span>
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+                <a
+                  href="assets/resources/session-1/guide-chatgpt.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #10b981, #06b6d4);
+                    "
+                  >
+                    <i class="fa-solid fa-robot"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>Guide ChatGPT pour débutants</strong>
+                    <span>Créer un compte · Interface · Premiers prompts</span>
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+                <a
+                  href="assets/resources/session-1/exercices.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #f59e0b, #ef4444);
+                    "
+                  >
+                    <i class="fa-solid fa-dumbbell"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>Dossier exercices</strong>
+                    <span>3 exercices progressifs · Corrections incluses</span>
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+                <a
+                  href="assets/resources/session-1/questionnaire.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+                    "
+                  >
+                    <i class="fa-solid fa-clipboard-question"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>Questionnaire de satisfaction</strong>
+                    <span>5 questions Likert · Commentaires libres</span>
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+                <a
+                  href="https://chat.openai.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #1a1a2e, #16213e);
+                    "
+                  >
+                    <i class="fa-solid fa-link"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>Accéder à ChatGPT</strong>
+                    <span>chat.openai.com — compte gratuit suffisant</span>
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+
+            <!-- INDICATEURS DE SUCCÈS -->
+            <div class="s1-section">
+              <h3 class="s1-section-title">
+                <i class="fa-solid fa-chart-line"></i> Indicateurs de succès
+              </h3>
+              <div class="s1-table-wrap">
+                <table class="s1-table s1-kpi-table">
+                  <thead>
+                    <tr>
+                      <th>Métrique</th>
+                      <th>Cible</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Taux de présence</td>
+                      <td class="s1-td-ok">≥ 90%</td>
+                    </tr>
+                    <tr>
+                      <td>Taux de participation au tour de table</td>
+                      <td class="s1-td-ok">≥ 70%</td>
+                    </tr>
+                    <tr>
+                      <td>Satisfaction générale (questionnaire)</td>
+                      <td class="s1-td-ok">≥ 80%</td>
+                    </tr>
+                    <tr>
+                      <td>% ayant testé ChatGPT</td>
+                      <td class="s1-td-ok">≥ 60%</td>
+                    </tr>
+                    <tr>
+                      <td>% comprenant le RGPD + IA</td>
+                      <td class="s1-td-ok">≥ 75%</td>
+                    </tr>
+                    <tr>
+                      <td>Récupération des ressources</td>
+                      <td class="s1-td-ok">≥ 80%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- FOOTER MODAL -->
+            <div class="s1-modal-footer">
+              <p>
+                Document produit par <strong>Référent IA</strong> — Référent IA
+                AUXILIA · Session 1 · 18 juin 2026
+              </p>
+              <p>Contact : <strong>stéphane.assaby@auxilia.fr</strong></p>
+            </div>
+          </div>
+          <!-- /s1-modal-body -->
+        </div>
+        <!-- /s1-modal-panel -->
+      </div>
+      <!-- /session1-modal -->
     </section>
     <!-- /view-livrable-1 -->
 

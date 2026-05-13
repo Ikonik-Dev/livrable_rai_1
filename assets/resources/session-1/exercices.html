@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dossier Exercices — Session 1 IA · AUXILIA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+      .print-note {
+        background: #fff3cd;
+        border: 1px solid #f59e0b;
+        border-radius: 8px;
+        padding: 0.65rem 1rem;
+        font-size: 0.78rem;
+        color: #92400e;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      header {
+        background: linear-gradient(135deg, #f59e0b, #ef4444);
+        color: #fff;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      header .tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+      }
+      header h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        font-size: 0.85rem;
+        opacity: 0.85;
+      }
+      .meta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+      .meta span {
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.18);
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+      }
+      .exercice {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
+      .ex-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .ex-badge {
+        min-width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .ex-badge .num {
+        font-size: 1.1rem;
+        line-height: 1;
+      }
+      .ex-badge .label {
+        font-size: 0.55rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+      }
+      .ex-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 0.25rem;
+      }
+      .ex-level {
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 0.15rem 0.55rem;
+        border-radius: 999px;
+      }
+      .level-1 {
+        background: #dcfce7;
+        color: #166534;
+      }
+      .level-2 {
+        background: #fef9c3;
+        color: #854d0e;
+      }
+      .level-3 {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+      .ex-section {
+        margin-bottom: 1rem;
+      }
+      .ex-section-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #94a3b8;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .ex-section-title i {
+        font-size: 0.7rem;
+      }
+      p.ex-text {
+        font-size: 0.85rem;
+        color: #475569;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+      }
+      .prompt-zone {
+        background: #f8fafc;
+        border: 1.5px dashed #cbd5e1;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 0.5rem 0;
+      }
+      .prompt-zone p {
+        font-size: 0.82rem;
+        color: #64748b;
+        margin-bottom: 0.4rem;
+        font-style: italic;
+      }
+      .prompt-zone .prompt-text {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 0.6rem 0.8rem;
+        font-family: "Courier New", monospace;
+        font-size: 0.82rem;
+        color: #334155;
+        line-height: 1.55;
+        white-space: pre-wrap;
+      }
+      .task-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .task-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        font-size: 0.84rem;
+        color: #334155;
+        line-height: 1.45;
+      }
+      .task-num {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #f1f5f9;
+        border: 1.5px solid #cbd5e1;
+        font-size: 0.72rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #64748b;
+      }
+      .corrige {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-top: 0.75rem;
+      }
+      .corrige-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #16a34a;
+        margin-bottom: 0.6rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .corrige p,
+      .corrige li {
+        font-size: 0.82rem;
+        color: #166534;
+        line-height: 1.55;
+      }
+      .corrige ul {
+        padding-left: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      .corrige .prompt-text {
+        background: #fff;
+        border-color: #a7f3d0;
+        color: #15803d;
+      }
+      .rgpd-reminder {
+        background: #fff5f5;
+        border: 1px solid #fecaca;
+        border-radius: 10px;
+        padding: 0.75rem 1rem;
+        margin-top: 0.75rem;
+        font-size: 0.82rem;
+        color: #7f1d1d;
+      }
+      .rgpd-reminder strong {
+        color: #dc2626;
+      }
+      footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e2e8f0;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      @media print {
+        .print-note {
+          display: none;
+        }
+        body {
+          padding: 1rem;
+        }
+        header {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .exercice {
+          break-inside: avoid;
+          border: 1px solid #ccc;
+        }
+        .corrige {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="print-note">
+      💡 <strong>Pour télécharger en PDF :</strong> Fichier → Imprimer →
+      Enregistrer en PDF
+    </div>
+
+    <header>
+      <div class="tag">
+        Session 1 — 18 juin 2026 · AUXILIA · À faire chez vous
+      </div>
+      <h1>Dossier Exercices<br />Session 1</h1>
+      <p>
+        3 exercices progressifs pour pratiquer ChatGPT à votre propre rythme —
+        corrections incluses
+      </p>
+      <div class="meta">
+        <span>💻 ChatGPT requis</span>
+        <span>⏱️ ~30 min total</span>
+        <span>🔴 RGPD respecté</span>
+      </div>
+    </header>
+
+    <!-- EXERCICE 1 -->
+    <div class="exercice">
+      <div class="ex-header">
+        <div
+          class="ex-badge"
+          style="background: linear-gradient(135deg, #10b981, #059669)"
+        >
+          <span class="num">1</span>
+          <span class="label">Débutant</span>
+        </div>
+        <div>
+          <div class="ex-title">Votre premier prompt — Rédiger une annonce</div>
+          <span class="ex-level level-1">🌱 Niveau débutant — 10 min</span>
+        </div>
+      </div>
+
+      <div class="ex-section">
+        <div class="ex-section-title">📖 Contexte</div>
+        <p class="ex-text">
+          AUXILIA organise une journée portes ouvertes. Vous devez créer une
+          courte annonce à publier sur les réseaux sociaux pour inviter les
+          bénéficiaires potentiels.
+        </p>
+      </div>
+
+      <div class="ex-section">
+        <div class="ex-section-title">🎯 Votre mission</div>
+        <ul class="task-list">
+          <li>
+            <span class="task-num">1</span> Ouvrez ChatGPT (chat.openai.com) et
+            créez une nouvelle conversation
+          </li>
+          <li>
+            <span class="task-num">2</span> Essayez d'abord ce prompt vague :
+            <em>"Écris une annonce pour nos portes ouvertes"</em>
+          </li>
+          <li>
+            <span class="task-num">3</span> Notez le résultat — est-il
+            utilisable directement ?
+          </li>
+          <li>
+            <span class="task-num">4</span> Améliorez votre prompt avec plus de
+            détails (voir zone ci-dessous)
+          </li>
+          <li><span class="task-num">5</span> Comparez les deux résultats</li>
+        </ul>
+      </div>
+
+      <div class="prompt-zone">
+        <p>💡 Prompt amélioré à essayer :</p>
+        <div class="prompt-text">
+          Tu es chargé de communication pour AUXILIA, un organisme de formation
+          pour adultes en insertion professionnelle. Rédige une annonce pour une
+          journée portes ouvertes. Contraintes : - Ton : chaleureux, accessible,
+          motivant - Longueur : 3-4 phrases maximum - Inclure un appel à
+          l'action - Utiliser [Date] et [Lieu] comme variables - Pas de jargon
+          technique
+        </div>
+      </div>
+
+      <div class="corrige">
+        <div class="corrige-title">✅ Ce que vous devriez observer</div>
+        <ul>
+          <li>
+            Le premier prompt donne une réponse trop générique (sans contexte,
+            sans ton)
+          </li>
+          <li>
+            Le deuxième prompt donne un résultat directement plus utilisable car
+            vous avez précisé le rôle, la tâche, le contexte et le format
+          </li>
+          <li>
+            La différence illustre l'importance de la méthode RTCF (Rôle / Tâche
+            / Contexte / Format)
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EXERCICE 2 -->
+    <div class="exercice">
+      <div class="ex-header">
+        <div
+          class="ex-badge"
+          style="background: linear-gradient(135deg, #f59e0b, #d97706)"
+        >
+          <span class="num">2</span>
+          <span class="label">Interméd.</span>
+        </div>
+        <div>
+          <div class="ex-title">Créer un quiz pédagogique</div>
+          <span class="ex-level level-2">🌿 Niveau intermédiaire — 10 min</span>
+        </div>
+      </div>
+
+      <div class="ex-section">
+        <div class="ex-section-title">📖 Contexte</div>
+        <p class="ex-text">
+          Vous préparez un module de formation sur la sécurité informatique (un
+          sujet fictif pour cet exercice). Vous souhaitez créer un quiz
+          d'évaluation rapide pour vos apprenants.
+        </p>
+      </div>
+
+      <div class="ex-section">
+        <div class="ex-section-title">🎯 Votre mission</div>
+        <ul class="task-list">
+          <li>
+            <span class="task-num">1</span> Utilisez le prompt ci-dessous pour
+            générer un quiz
+          </li>
+          <li>
+            <span class="task-num">2</span> Vérifiez la qualité et la pertinence
+            des questions générées
+          </li>
+          <li>
+            <span class="task-num">3</span> Demandez à ChatGPT d'ajuster une
+            question qui vous semble incorrecte ou trop facile
+          </li>
+          <li>
+            <span class="task-num">4</span> Testez la commande :
+            <em>"Reformule la question 3 pour la rendre plus difficile"</em>
+          </li>
+        </ul>
+      </div>
+
+      <div class="prompt-zone">
+        <p>💡 Prompt de départ :</p>
+        <div class="prompt-text">
+          Je suis formateur dans un organisme de formation professionnelle. Crée
+          un quiz d'évaluation sur le thème : "Les bonnes pratiques de sécurité
+          informatique au bureau". Caractéristiques : - 5 questions QCM (4 choix
+          de réponse chacune) - Niveau : intermédiaire - Indique la bonne
+          réponse avec ✅ - Ajoute une explication courte (1 phrase) pour chaque
+          bonne réponse - Format lisible, numéroté
+        </div>
+      </div>
+
+      <div class="corrige">
+        <div class="corrige-title">✅ Correction et points clés</div>
+        <ul>
+          <li>
+            <strong>ChatGPT génère un quiz utilisable</strong> en quelques
+            secondes — ce qui prendrait 20-30 min manuellement
+          </li>
+          <li>
+            <strong>Toujours vérifier les réponses</strong> : l'IA peut donner
+            des informations légèrement inexactes, surtout sur des sujets
+            techniques précis
+          </li>
+          <li>
+            <strong>L'itération est normale</strong> : demander à ChatGPT
+            d'ajuster une question fait partie du processus créatif avec l'IA
+          </li>
+          <li>
+            <strong>RGPD ✅</strong> : aucune donnée personnelle impliquée dans
+            cet exercice
+          </li>
+        </ul>
+        <div
+          class="prompt-text"
+          style="
+            margin-top: 0.6rem;
+            background: #fff;
+            border-color: #a7f3d0;
+            color: #15803d;
+          "
+        >
+          Pour ajuster : "La question 3 est trop facile. Reformule-la pour le
+          niveau avancé et change les mauvaises réponses pour les rendre plus
+          proches de la bonne réponse."
+        </div>
+      </div>
+
+      <div class="rgpd-reminder">
+        ⚠️ <strong>Rappel RGPD :</strong> Ne créez jamais de quiz avec les vrais
+        noms de vos apprenants ou des sujets tirés de leurs dossiers personnels.
+      </div>
+    </div>
+
+    <!-- EXERCICE 3 -->
+    <div class="exercice">
+      <div class="ex-header">
+        <div
+          class="ex-badge"
+          style="background: linear-gradient(135deg, #ef4444, #dc2626)"
+        >
+          <span class="num">3</span>
+          <span class="label">Avancé</span>
+        </div>
+        <div>
+          <div class="ex-title">Résumer et structurer une réunion</div>
+          <span class="ex-level level-3">🔥 Niveau avancé — 15 min</span>
+        </div>
+      </div>
+
+      <div class="ex-section">
+        <div class="ex-section-title">📖 Contexte</div>
+        <p class="ex-text">
+          Vous avez participé à une réunion d'équipe et vous devez envoyer un
+          compte-rendu. Le texte de la réunion ci-dessous est fictif et déjà
+          anonymisé — vous pouvez l'utiliser librement dans ChatGPT.
+        </p>
+      </div>
+
+      <div class="prompt-zone">
+        <p>📄 Texte de réunion fictif (à copier et coller dans ChatGPT) :</p>
+        <div class="prompt-text">
+          Réunion d'équipe du service formation — durée : 45 minutes. Points
+          abordés : 1. Bilan du dernier trimestre : 24 stagiaires ont terminé
+          leur parcours sur 30 inscrits, soit 80% de taux d'achèvement. Deux
+          abandons en cours de parcours pour des raisons personnelles. L'équipe
+          pédagogique souhaite renforcer le suivi en milieu de parcours. 2.
+          Planning du prochain trimestre : trois nouveaux groupes seront lancés.
+          Le coordinateur pédagogique rappelle que les référents doivent
+          remettre leurs supports de cours avant le 1er juillet. Deux formateurs
+          ont signalé un besoin de formation sur les outils numériques. 3.
+          Logistique : la salle B sera indisponible en août pour travaux. Les
+          formations prévues seront déplacées en salle C. Le responsable
+          administratif vérifiera les disponibilités. 4. Budget : une enveloppe
+          de 2 000€ est disponible pour l'achat de matériel pédagogique. Les
+          demandes doivent être soumises avant le 15 juin. 5. Divers : la
+          prochaine réunion d'équipe est fixée au premier jeudi de septembre.
+        </div>
+      </div>
+
+      <div class="ex-section">
+        <div class="ex-section-title">🎯 Votre mission</div>
+        <ul class="task-list">
+          <li>
+            <span class="task-num">1</span> Copiez le texte de réunion ci-dessus
+          </li>
+          <li>
+            <span class="task-num">2</span> Utilisez le prompt ci-dessous dans
+            ChatGPT
+          </li>
+          <li>
+            <span class="task-num">3</span> Évaluez la qualité du résumé produit
+          </li>
+          <li>
+            <span class="task-num">4</span> Demandez une version courte (3
+            bullet points) et une version détaillée
+          </li>
+          <li>
+            <span class="task-num">5</span> (Bonus) Demandez une version sous
+            forme d'email à envoyer à l'équipe
+          </li>
+        </ul>
+      </div>
+
+      <div class="prompt-zone">
+        <p>💡 Prompt à utiliser :</p>
+        <div class="prompt-text">
+          Tu es mon assistant de direction. Je vais te soumettre le compte-rendu
+          brut d'une réunion d'équipe. Tu dois produire : 1. Un résumé en 5
+          bullet points maximum (les décisions clés) 2. Un tableau "Actions à
+          faire" avec 3 colonnes : Action | Responsable (rôle) | Échéance 3. Un
+          message Slack/email de 3 lignes max pour informer l'équipe des
+          décisions Règle importante : n'utilise que les rôles (coordinateur,
+          responsable...), pas de noms propres. Voici la réunion : [COLLER LE
+          TEXTE ICI]
+        </div>
+      </div>
+
+      <div class="corrige">
+        <div class="corrige-title">✅ Correction et points clés</div>
+        <ul>
+          <li>
+            <strong>ChatGPT structure parfaitement</strong> un texte brut en
+            informations actionnables — c'est l'un de ses meilleurs atouts
+          </li>
+          <li>
+            <strong>Le tableau actions</strong> est particulièrement utile pour
+            les managers et coordinateurs
+          </li>
+          <li>
+            <strong>La consigne "rôles seulement"</strong> respecte le RGPD —
+            bonne pratique à intégrer systématiquement
+          </li>
+          <li>
+            <strong>Gain de temps estimé</strong> : 20-30 min de rédaction → 2
+            min avec ChatGPT
+          </li>
+          <li>
+            <strong>Important</strong> : relire le résultat pour s'assurer
+            qu'aucune information n'a été oubliée ou déformée
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <span>AUXILIA — Une nouvelle chance · Session 1 · 18 juin 2026</span>
+      <span>Référent IA : stéphane.assaby@auxilia.fr</span>
+    </footer>
+  </body>
+</html>
