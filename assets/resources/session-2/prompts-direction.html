@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modèles de Prompts Direction — AUXILIA Session 2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+      .print-note {
+        background: #ede9fe;
+        border: 1px solid #8b5cf6;
+        border-radius: 8px;
+        padding: 0.65rem 1rem;
+        font-size: 0.78rem;
+        color: #4c1d95;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      header {
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        color: #fff;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      header .tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.8; margin-bottom: 0.5rem; }
+      header h1 { font-family: "Space Grotesk", sans-serif; font-size: 1.55rem; font-weight: 700; margin-bottom: 0.5rem; }
+      header p { font-size: 0.9rem; opacity: 0.85; }
+      section { margin-bottom: 2.5rem; }
+      h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .prompt-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 1.25rem;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      }
+      .prompt-card-header {
+        padding: 0.7rem 1rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: #fff;
+      }
+      .prompt-card-body { padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+      .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.25rem; }
+      .prompt-bad {
+        font-family: "Courier New", monospace;
+        font-size: 0.82rem;
+        padding: 0.5rem 0.75rem;
+        background: #fef2f2;
+        border-left: 3px solid #ef4444;
+        border-radius: 0 8px 8px 0;
+        color: #991b1b;
+        line-height: 1.5;
+      }
+      .prompt-good {
+        font-family: "Courier New", monospace;
+        font-size: 0.82rem;
+        padding: 0.5rem 0.75rem;
+        background: #f0fdf4;
+        border-left: 3px solid #10b981;
+        border-radius: 0 8px 8px 0;
+        color: #065f46;
+        line-height: 1.5;
+      }
+      .prompt-result {
+        font-size: 0.78rem;
+        color: #6366f1;
+        font-style: italic;
+        padding-left: 0.25rem;
+      }
+      .variables-box {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 0.9rem 1rem;
+        font-size: 0.82rem;
+        color: #475569;
+      }
+      .variables-box strong { color: #1e293b; display: block; margin-bottom: 0.5rem; }
+      .variables-box code {
+        background: #e2e8f0;
+        border-radius: 4px;
+        padding: 0.1rem 0.4rem;
+        font-size: 0.78rem;
+        color: #6366f1;
+      }
+      .tip-box {
+        background: #eff6ff;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 10px 10px 0;
+        padding: 0.9rem 1.2rem;
+        font-size: 0.83rem;
+        color: #1e40af;
+        margin-top: 0.75rem;
+      }
+      .rule-box {
+        background: #fef3c7;
+        border: 1px solid #f59e0b;
+        border-radius: 10px;
+        padding: 1rem 1.2rem;
+        font-size: 0.84rem;
+        color: #78350f;
+        margin-bottom: 1rem;
+      }
+      .rule-box strong { display: block; margin-bottom: 0.4rem; font-size: 0.9rem; }
+      footer { text-align: center; font-size: 0.75rem; color: #94a3b8; margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+      @media print { .print-note { display: none; } body { padding: 0; } header { border-radius: 0; } }
+    </style>
+  </head>
+  <body>
+    <div class="print-note">
+      🖨 <strong>Astuce impression :</strong> Fichier → Imprimer → "Arrière-plans graphiques" activé pour conserver les couleurs.
+    </div>
+
+    <header>
+      <div class="tag">📋 Session 2 · Direction &amp; Admin · 11 sept. 2026</div>
+      <h1>Modèles de Prompts Direction</h1>
+      <p>Compte-rendu · Courrier officiel · Note de service — prompts prêts à l'emploi</p>
+    </header>
+
+    <div class="rule-box">
+      <strong>⚠ Règle d'or avant d'utiliser ces prompts</strong>
+      Ne jamais inclure de données personnelles identifiantes (noms réels, IBAN, n° sécu…) dans un prompt envoyé à un outil cloud. Remplacer par <code>[Prénom]</code>, <code>[Service]</code>, <code>[Montant]</code>, etc.
+    </div>
+
+    <!-- COMPTES-RENDUS -->
+    <section>
+      <h2>📝 Compte-rendu de réunion</h2>
+
+      <div class="prompt-card">
+        <div class="prompt-card-header" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+          Prompt 1 — CR formel à partir de notes
+        </div>
+        <div class="prompt-card-body">
+          <div>
+            <div class="label">✘ Prompt insuffisant</div>
+            <div class="prompt-bad">"Écris un compte-rendu de réunion."</div>
+          </div>
+          <div>
+            <div class="label">✔ Prompt optimisé</div>
+            <div class="prompt-good">"Tu es assistant de direction pour [AUXILIA]. Voici les notes brutes d'une réunion du [DATE] réunissant [LISTE DES FONCTIONS : ex. DG, DRH, Responsable compta]. Rédige un compte-rendu formel en 3 parties : 1) Contexte et ordre du jour 2) Décisions prises 3) Actions à mener (responsable + délai). Ton professionnel, style concis, maximum 1 page A4."</div>
+          </div>
+          <div class="prompt-result">→ Résultat : CR structuré exploitable en quelques secondes</div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-card-header" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+          Prompt 2 — CR à partir d'une transcription
+        </div>
+        <div class="prompt-card-body">
+          <div>
+            <div class="label">✔ Prompt optimisé</div>
+            <div class="prompt-good">"Tu es un assistant de direction expérimenté. Voici la transcription brute d'une réunion (données anonymisées). Produis : 1) Un résumé exécutif (5 lignes max) 2) Un tableau Actions/Responsables/Délais 3) Les points en suspens à l'ordre du jour suivant. Format : doc Word-friendly, titres en gras."</div>
+          </div>
+          <div class="prompt-result">→ Résultat : synthèse directement utilisable pour le PV</div>
+        </div>
+      </div>
+
+      <div class="variables-box">
+        <strong>Variables à remplacer :</strong>
+        <code>[DATE]</code> <code>[LISTE DES FONCTIONS]</code> <code>[Responsable X]</code> <code>[Délai]</code>
+      </div>
+      <div class="tip-box">💡 <strong>Astuce :</strong> Copier-coller vos notes directement après le prompt dans le même message. ChatGPT traitera le tout en une seule fois.</div>
+    </section>
+
+    <!-- COURRIERS -->
+    <section>
+      <h2>✉ Courrier officiel</h2>
+
+      <div class="prompt-card">
+        <div class="prompt-card-header" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+          Prompt 3 — Courrier de direction standard
+        </div>
+        <div class="prompt-card-body">
+          <div>
+            <div class="label">✔ Prompt optimisé</div>
+            <div class="prompt-good">"Rédige un courrier officiel de [AUXILIA] à [TYPE DE DESTINATAIRE : ex. partenaire, administration, prestataire] concernant [OBJET EN 1 PHRASE]. Ton : formel, bienveillant mais ferme. Formule de politesse appropriée. Points obligatoires à mentionner : [LISTE DES POINTS]. Signature : [Prénom NOM], [Fonction]."</div>
+          </div>
+          <div class="prompt-result">→ Résultat : courrier complet à relire et personnaliser</div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-card-header" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+          Prompt 4 — Réponse à un courrier reçu
+        </div>
+        <div class="prompt-card-body">
+          <div>
+            <div class="label">✔ Prompt optimisé</div>
+            <div class="prompt-good">"Voici un courrier reçu [coller le texte anonymisé]. Rédige une réponse officielle de la part de [AUXILIA]. Notre position : [RÉSUMER EN 2 PHRASES]. Ton : professionnel, constructif. Inclure une proposition de suite concrète."</div>
+          </div>
+          <div class="prompt-result">→ Résultat : réponse équilibrée, ton professionnel garanti</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES DE SERVICE -->
+    <section>
+      <h2>📌 Note de service interne</h2>
+
+      <div class="prompt-card">
+        <div class="prompt-card-header" style="background: linear-gradient(135deg, #06b6d4, #6366f1);">
+          Prompt 5 — Note de service
+        </div>
+        <div class="prompt-card-body">
+          <div>
+            <div class="label">✔ Prompt optimisé</div>
+            <div class="prompt-good">"Rédige une note de service interne de [AUXILIA] à destination de [SERVICE / TOUS LES SALARIÉS]. Sujet : [OBJET]. Style : direct, clair, sans jargon. Format imposé : 1) Contexte (2 lignes) 2) Ce qui change / les consignes (liste à puces) 3) Date d'entrée en vigueur 4) Contact pour questions."</div>
+          </div>
+          <div class="prompt-result">→ Résultat : note lisible, directement utilisable</div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-card-header" style="background: linear-gradient(135deg, #06b6d4, #6366f1);">
+          Prompt 6 — Rappel de procédure / relance
+        </div>
+        <div class="prompt-card-body">
+          <div>
+            <div class="label">✔ Prompt optimisé</div>
+            <div class="prompt-good">"Rédige un rappel de procédure interne à [SERVICE] concernant [SUJET]. Ton bienveillant mais clair. Expliquer pourquoi c'est important (1 phrase), les étapes à respecter (numérotées), et les conséquences en cas de non-respect (sans être menaçant). Max 15 lignes."</div>
+          </div>
+          <div class="prompt-result">→ Résultat : rappel non culpabilisant, efficace</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSEILS GÉNÉRAUX -->
+    <section>
+      <h2>💡 Conseils pour de meilleurs résultats</h2>
+      <div style="display:flex;flex-direction:column;gap:0.7rem;">
+        <div class="tip-box">
+          🎯 <strong>Rôle + contexte :</strong> Commencer par "Tu es [rôle]" aide l'IA à adopter le bon registre (direction, RH, juridique…)
+        </div>
+        <div class="tip-box">
+          📏 <strong>Contrainte de format :</strong> Indiquer "max 1 page", "liste à puces", "tableau" pour structurer le résultat
+        </div>
+        <div class="tip-box">
+          🔄 <strong>Itération :</strong> Si le résultat n'est pas satisfaisant, demander "Reformule en étant plus [concis / formel / chaleureux]" dans le même fil de conversation
+        </div>
+        <div class="tip-box">
+          🔒 <strong>RGPD :</strong> Remplacer systématiquement les noms réels, coordonnées et montants précis par des variables génériques avant d'envoyer à ChatGPT
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Document AUXILIA — Référent IA Référent IA · Session 2 · 11 septembre 2026 · stéphane.assaby@auxilia.fr
+    </footer>
+  </body>
+</html>

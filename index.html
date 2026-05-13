@@ -676,6 +676,14 @@
                   <div class="session-tag">
                     Public : <strong>Direction + Administration</strong>
                   </div>
+                  <button
+                    class="s2-open-btn"
+                    id="s2-open-btn"
+                    aria-haspopup="dialog"
+                  >
+                    <i class="fa-solid fa-book-open"></i> Voir le programme
+                    détaillé
+                  </button>
                 </div>
               </div>
 
@@ -2076,6 +2084,883 @@
         <!-- /s1-modal-panel -->
       </div>
       <!-- /session1-modal -->
+
+      <!-- ══════════════════════════════════════════════════════════
+           MODALE SESSION 2
+      ══════════════════════════════════════════════════════════ -->
+      <div
+        id="session2-modal"
+        class="s1-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="s2-modal-title"
+        hidden
+      >
+        <div class="s1-modal-overlay" id="s2-modal-overlay"></div>
+        <div class="s1-modal-panel">
+          <!-- HEADER -->
+          <div
+            class="s1-modal-header"
+            style="
+              background: linear-gradient(
+                135deg,
+                rgba(99, 102, 241, 0.18),
+                rgba(139, 92, 246, 0.12)
+              );
+            "
+          >
+            <div class="s1-modal-header-meta">
+              <span
+                class="s1-modal-pill"
+                style="
+                  background: rgba(99, 102, 241, 0.2);
+                  color: #a5b4fc;
+                  border-color: rgba(99, 102, 241, 0.35);
+                "
+                ><i class="fa-solid fa-shield-halved"></i> RGPD
+                obligatoire</span
+              >
+              <span
+                class="s1-modal-pill"
+                style="
+                  background: rgba(139, 92, 246, 0.2);
+                  color: #c4b5fd;
+                  border-color: rgba(139, 92, 246, 0.35);
+                "
+                ><i class="fa-solid fa-user-tie"></i> Direction +
+                Administration</span
+              >
+            </div>
+            <h2 id="s2-modal-title">
+              Session 2 — "L'IA au service de l'organisation :<br />
+              automatiser sans risquer"
+            </h2>
+            <div class="s1-modal-header-info">
+              <span
+                ><i class="fa-solid fa-calendar"></i> Jeudi 11 septembre
+                2026</span
+              >
+              <span
+                ><i class="fa-solid fa-clock"></i> 9h00 – 12h30 (3h30)</span
+              >
+              <span><i class="fa-solid fa-location-dot"></i> Présentiel</span>
+            </div>
+            <button
+              class="s1-modal-close"
+              id="s2-modal-close"
+              aria-label="Fermer la modale"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- BODY -->
+          <div class="s1-modal-body">
+            <!-- OBJECTIFS -->
+            <div class="s1-section">
+              <h3 class="s1-section-title">
+                <i class="fa-solid fa-bullseye"></i> Objectifs pédagogiques
+              </h3>
+              <div class="s1-objectives-grid">
+                <div class="s1-obj-card s1-obj-blue">
+                  <i class="fa-solid fa-microphone"></i>
+                  <p>
+                    <strong>Maîtriser</strong> les outils de transcription et
+                    leurs exigences RGPD
+                  </p>
+                </div>
+                <div class="s1-obj-card s1-obj-purple">
+                  <i class="fa-solid fa-file-alt"></i>
+                  <p>
+                    <strong>Rédiger</strong> comptes-rendus, courriers et notes
+                    internes assistés par IA
+                  </p>
+                </div>
+                <div class="s1-obj-card s1-obj-green">
+                  <i class="fa-solid fa-gears"></i>
+                  <p>
+                    <strong>Automatiser</strong> un compte-rendu réel de A à Z
+                    lors de l'atelier
+                  </p>
+                </div>
+                <div class="s1-obj-card s1-obj-red">
+                  <i class="fa-solid fa-shield-halved"></i>
+                  <p>
+                    <strong>Protéger</strong> les données sensibles : ce qu'on
+                    ne confie jamais à l'IA
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BLOC 1 -->
+            <details class="s1-bloc" open>
+              <summary class="s1-bloc-summary s1-bloc-blue">
+                <div class="s1-bloc-summary-inner">
+                  <span class="s1-bloc-num">BLOC 1</span>
+                  <span class="s1-bloc-title"
+                    >IA &amp; Organisation : de quoi parle-t-on ?</span
+                  >
+                  <span class="s1-bloc-time"
+                    >9h00 – 9h30 <em>(30 min)</em></span
+                  >
+                </div>
+                <i class="fa-solid fa-chevron-down s1-chevron"></i>
+              </summary>
+              <div class="s1-bloc-body">
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">9h00 – 9h10</span>
+                    <span class="s1-sub-title"
+                      >Retour sur Session 1 <em>(10 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      <i class="fa-solid fa-rotate-right"></i> Quiz express : 5
+                      questions sur les acquis de Session 1
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-comments"></i> Tour de table :
+                      qu'avez-vous essayé depuis juin ?
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-exclamation"></i> Ce qui a
+                      fonctionné, ce qui a coincé
+                    </li>
+                  </ul>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">9h10 – 9h25</span>
+                    <span class="s1-sub-title"
+                      >Panorama des outils IA pour l'organisation
+                      <em>(15 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-display"></i> Les 4 outils du jour
+                    </div>
+                    <div class="s1-usecases-grid">
+                      <div class="s1-usecase">
+                        <span class="s1-role-badge s1-role-purple"
+                          >Open-source</span
+                        >
+                        <strong>Whisper</strong>
+                        <span>Transcription locale, RGPD-safe, gratuit</span>
+                      </div>
+                      <div class="s1-usecase">
+                        <span class="s1-role-badge s1-role-blue">Cloud</span>
+                        <strong>Otter.ai</strong>
+                        <span>Précis, multilingue, résumé auto</span>
+                      </div>
+                      <div class="s1-usecase">
+                        <span class="s1-role-badge s1-role-orange">M365</span>
+                        <strong>Teams Premium</strong>
+                        <span>Intégré, transcription réunion native</span>
+                      </div>
+                      <div class="s1-usecase">
+                        <span class="s1-role-badge s1-role-green"
+                          >Rédaction</span
+                        >
+                        <strong>ChatGPT / Copilot</strong>
+                        <span>CR, courriers, notes de service</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">9h25 – 9h30</span>
+                    <span class="s1-sub-title"
+                      >Programme de la matinée <em>(5 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      <i class="fa-solid fa-map"></i> Parcours des 3h30 :
+                      théorie + démos + atelier + RGPD
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-check"></i> Compétences
+                      acquises en sortant
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <!-- BLOC 2 -->
+            <details class="s1-bloc">
+              <summary class="s1-bloc-summary s1-bloc-purple">
+                <div class="s1-bloc-summary-inner">
+                  <span class="s1-bloc-num">BLOC 2</span>
+                  <span class="s1-bloc-title"
+                    >Transcrire et synthétiser des réunions</span
+                  >
+                  <span class="s1-bloc-time"
+                    >9h30 – 10h20 <em>(50 min)</em></span
+                  >
+                </div>
+                <i class="fa-solid fa-chevron-down s1-chevron"></i>
+              </summary>
+              <div class="s1-bloc-body">
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge s1-time-red">9h30 – 9h50</span>
+                    <span class="s1-sub-title"
+                      >Cadre RGPD : quand peut-on transcrire ?
+                      <em>(20 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-regle-or">
+                    <div class="s1-regle-or-title">
+                      <i class="fa-solid fa-gavel"></i> 3 conditions légales
+                      avant de transcrire
+                    </div>
+                    <div class="s1-regle-or-body">
+                      <p class="s1-regle-yes">
+                        ✔ Informer tous les participants AVANT la réunion
+                      </p>
+                      <p class="s1-regle-yes">
+                        ✔ Obtenir leur accord explicite (écrit idéalement)
+                      </p>
+                      <p class="s1-regle-yes">
+                        ✔ Définir la durée de conservation (≤ 1 mois conseillé)
+                      </p>
+                      <p class="s1-regle-no">
+                        ✘ Ne jamais transcrire sans information préalable
+                        <em>→ infraction RGPD</em>
+                      </p>
+                      <p class="s1-regle-no">
+                        ✘ Supprimer l'enregistrement après la synthèse
+                      </p>
+                    </div>
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      <i class="fa-solid fa-file-shield"></i> Base légale :
+                      intérêt légitime de l'employeur
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-clock-rotate-left"></i> Durée de
+                      conservation : politique interne à formaliser
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-user-slash"></i> Anonymisation
+                      recommandée avant tout traitement IA cloud
+                    </li>
+                  </ul>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">9h50 – 10h05</span>
+                    <span class="s1-sub-title"
+                      >Démo en direct : Whisper + Otter.ai
+                      <em>(15 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-play"></i> Scénario démo
+                    </div>
+                    <ul class="s1-list">
+                      <li>
+                        <i class="fa-solid fa-circle-1"></i> Lecture d'un
+                        extrait audio de réunion simulée (2 min)
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-circle-2"></i> Transcription avec
+                        Whisper (local) → résultat brut
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-circle-3"></i> Même extrait avec
+                        Otter.ai → résultat formaté + résumé auto
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-circle-4"></i> Comparaison qualité
+                        / confidentialité
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">10h05 – 10h20</span>
+                    <span class="s1-sub-title"
+                      >Générer une synthèse structurée avec ChatGPT
+                      <em>(15 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-prompt-demo">
+                    <div class="s1-prompt-label">
+                      Prompt — Synthèse de réunion
+                    </div>
+                    <div class="s1-prompt-bad">
+                      <span>✘ Mauvais :</span> "Résume cette réunion."
+                    </div>
+                    <div class="s1-prompt-good">
+                      <span>✔ Bon :</span> "Tu es un assistant de direction.
+                      Voici la transcription d'une réunion RH (données
+                      anonymisées). Produis une synthèse structurée : 1)
+                      Décisions prises 2) Actions à mener (responsable + délai)
+                      3) Points en suspens."
+                    </div>
+                    <div class="s1-prompt-result">
+                      → Résultat : synthèse exploitable en 30 secondes
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- PAUSE -->
+            <div class="s1-pause-banner">
+              <i class="fa-solid fa-mug-hot"></i>
+              <div>
+                <strong>Pause ☕</strong><br />
+                <span style="font-size: 0.8rem; color: #94a3b8"
+                  >10h20 – 10h35</span
+                >
+              </div>
+              <span class="s1-pause-sub">15 min</span>
+            </div>
+
+            <!-- BLOC 3 -->
+            <details class="s1-bloc">
+              <summary class="s1-bloc-summary s1-bloc-green">
+                <div class="s1-bloc-summary-inner">
+                  <span class="s1-bloc-num">BLOC 3</span>
+                  <span class="s1-bloc-title"
+                    >Rédaction assistée : CR, courriers, notes internes</span
+                  >
+                  <span class="s1-bloc-time"
+                    >10h35 – 11h20 <em>(45 min)</em></span
+                  >
+                </div>
+                <i class="fa-solid fa-chevron-down s1-chevron"></i>
+              </summary>
+              <div class="s1-bloc-body">
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">10h35 – 10h50</span>
+                    <span class="s1-sub-title"
+                      >Méthode : du brouillon à la version finale
+                      <em>(15 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      <i class="fa-solid fa-1"></i> Fournir le contexte complet
+                      (rôle, type de doc, destinataire, ton attendu)
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-2"></i> Inclure les points clés à
+                      intégrer (notes prises en réunion)
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-3"></i> Demander un format précis
+                      (bullet points, paragraphes, tableau…)
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-4"></i> Relecture humaine OBLIGATOIRE
+                      avant envoi ou archivage
+                    </li>
+                  </ul>
+                  <div class="s1-info-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span
+                      >L'IA produit une base de travail — la validation reste
+                      sous votre responsabilité professionnelle.</span
+                    >
+                  </div>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">10h50 – 11h10</span>
+                    <span class="s1-sub-title"
+                      >Prompts dédiés par type de document
+                      <em>(20 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-slide-card">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-file-alt"></i> Compte-rendu de
+                      réunion
+                    </div>
+                    <div class="s1-prompt-demo" style="margin: 0.9rem">
+                      <div class="s1-prompt-label">Prompt CR</div>
+                      <div class="s1-prompt-good">
+                        <span>✔</span> "Tu es assistant de direction. Voici mes
+                        notes de réunion du [date] avec [participants]. Rédige un
+                        compte-rendu formel : contexte / décisions / actions.
+                        Tone professionnel, max 1 page."
+                      </div>
+                    </div>
+                  </div>
+                  <div class="s1-slide-card" style="margin-top: 0.75rem">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-envelope"></i> Courrier officiel
+                    </div>
+                    <div class="s1-prompt-demo" style="margin: 0.9rem">
+                      <div class="s1-prompt-label">Prompt courrier</div>
+                      <div class="s1-prompt-good">
+                        <span>✔</span> "Rédige un courrier officiel de
+                        [AUXILIA] à [destinataire] concernant [objet]. Ton
+                        formel, formule de politesse adaptée. Points à
+                        mentionner : [liste]."
+                      </div>
+                    </div>
+                  </div>
+                  <div class="s1-slide-card" style="margin-top: 0.75rem">
+                    <div class="s1-slide-title">
+                      <i class="fa-solid fa-note-sticky"></i> Note de service
+                    </div>
+                    <div class="s1-prompt-demo" style="margin: 0.9rem">
+                      <div class="s1-prompt-label">Prompt note interne</div>
+                      <div class="s1-prompt-good">
+                        <span>✔</span> "Rédige une note de service interne à
+                        [service]. Sujet : [objet]. Court et direct. Format :
+                        contexte (2 lignes) + consignes (bullets) + date
+                        d'application."
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">11h10 – 11h20</span>
+                    <span class="s1-sub-title"
+                      >Charte de qualité rédactionnelle IA
+                      <em>(10 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-charte-steps">
+                    <div class="s1-charte-step s1-ok">
+                      <span>1</span> Relire intégralement avant toute
+                      transmission
+                    </div>
+                    <div class="s1-charte-step s1-ok">
+                      <span>2</span> Vérifier chiffres, dates et noms propres
+                    </div>
+                    <div class="s1-charte-step s1-warn">
+                      <span>3</span> Ajuster le ton si nécessaire (l'IA peut
+                      être trop formel ou trop neutre)
+                    </div>
+                    <div class="s1-charte-step s1-no">
+                      <span>✘</span> Ne jamais envoyer un document IA sans
+                      relecture humaine
+                    </div>
+                    <div class="s1-charte-step s1-no">
+                      <span>✘</span> Ne pas inclure de données personnelles dans
+                      un prompt cloud
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- BLOC 4 -->
+            <details class="s1-bloc">
+              <summary class="s1-bloc-summary s1-bloc-orange">
+                <div class="s1-bloc-summary-inner">
+                  <span class="s1-bloc-num">BLOC 4</span>
+                  <span class="s1-bloc-title"
+                    >Atelier pratique : compte-rendu en direct</span
+                  >
+                  <span class="s1-bloc-time"
+                    >11h20 – 12h05 <em>(45 min)</em></span
+                  >
+                </div>
+                <i class="fa-solid fa-chevron-down s1-chevron"></i>
+              </summary>
+              <div class="s1-bloc-body">
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">11h20 – 11h35</span>
+                    <span class="s1-sub-title"
+                      >Réunion simulée <em>(15 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      <i class="fa-solid fa-video"></i> Lecture d'un scénario :
+                      réunion Direction sur un projet de réorganisation interne
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-pen"></i> Chaque participant prend
+                      ses notes comme il le ferait normalement
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-microphone"></i> Alternative :
+                      enregistrement audio fourni → transcription avec l'outil
+                      de son choix
+                    </li>
+                  </ul>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">11h35 – 11h55</span>
+                    <span class="s1-sub-title"
+                      >Production du CR en groupes <em>(20 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-groups-grid">
+                    <div class="s1-group-card s1-group-purple">
+                      <div class="s1-group-title">
+                        <i class="fa-solid fa-user-tie"></i> Direction
+                      </div>
+                      <span>CR décisionnel + plan d'action</span>
+                    </div>
+                    <div class="s1-group-card s1-group-blue">
+                      <div class="s1-group-title">
+                        <i class="fa-solid fa-users"></i> RH / Paie
+                      </div>
+                      <span>CR centré impacts RH + actions</span>
+                    </div>
+                    <div class="s1-group-card s1-group-green">
+                      <div class="s1-group-title">
+                        <i class="fa-solid fa-calculator"></i> Compta / Gestion
+                      </div>
+                      <span>Synthèse financière + décisions</span>
+                    </div>
+                    <div class="s1-group-card s1-group-purple">
+                      <div class="s1-group-title">
+                        <i class="fa-solid fa-phone"></i> Secrétariat / Accueil
+                      </div>
+                      <span>CR standard + convocations à préparer</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">11h55 – 12h05</span>
+                    <span class="s1-sub-title"
+                      >Restitution et comparaison <em>(10 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      <i class="fa-solid fa-eye"></i> Chaque groupe présente son
+                      CR (1 min)
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-scale-balanced"></i> Comparaison :
+                      qualité, longueur, complétude
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-lightbulb"></i> Bonnes pratiques
+                      identifiées collectivement
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <!-- BLOC 5 -->
+            <details class="s1-bloc">
+              <summary class="s1-bloc-summary s1-bloc-teal">
+                <div class="s1-bloc-summary-inner">
+                  <span class="s1-bloc-num">BLOC 5</span>
+                  <span class="s1-bloc-title"
+                    >RGPD appliqué — Données sensibles &amp; consolidation</span
+                  >
+                  <span class="s1-bloc-time"
+                    >12h05 – 12h30 <em>(25 min)</em></span
+                  >
+                </div>
+                <i class="fa-solid fa-chevron-down s1-chevron"></i>
+              </summary>
+              <div class="s1-bloc-body">
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge s1-time-red">12h05 – 12h15</span>
+                    <span class="s1-sub-title"
+                      >Ce qu'on ne dit JAMAIS à une IA cloud
+                      <em>(10 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-takeaways">
+                    <div class="s1-takeaway s1-no">
+                      ✘ Données personnelles identifiantes : nom complet, IBAN,
+                      N° sécu, adresse
+                    </div>
+                    <div class="s1-takeaway s1-no">
+                      ✘ Données médicales ou sensibles des salariés
+                    </div>
+                    <div class="s1-takeaway s1-no">
+                      ✘ Informations financières confidentielles du client ou de
+                      l'association
+                    </div>
+                    <div class="s1-takeaway s1-no">
+                      ✘ Stratégie commerciale ou projet non public
+                    </div>
+                    <div class="s1-takeaway s1-warn">
+                      ⚠ Données anonymisées / pseudonymisées → évaluer au cas
+                      par cas
+                    </div>
+                    <div class="s1-takeaway s1-ok">
+                      ✔ Textes génériques, structures, modèles vierges → pas de
+                      problème
+                    </div>
+                  </div>
+                </div>
+                <div class="s1-sub-bloc">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">12h15 – 12h22</span>
+                    <span class="s1-sub-title"
+                      >CGU &amp; procédure d'alerte interne
+                      <em>(7 min)</em></span
+                    >
+                  </div>
+                  <ul class="s1-list">
+                    <li>
+                      <i class="fa-solid fa-file-contract"></i> Vérifier que
+                      votre outil n'utilise pas vos données pour entraîner ses
+                      modèles
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-toggle-off"></i> ChatGPT : désactiver
+                      "Améliorer le modèle avec vos conversations"
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-bell"></i> En cas d'envoi accidentel
+                      de données sensibles → contacter immédiatement le DPO /
+                      référent RGPD
+                    </li>
+                  </ul>
+                </div>
+                <div class="s1-sub-bloc s1-rgpd-sub">
+                  <div class="s1-sub-header">
+                    <span class="s1-time-badge">12h22 – 12h30</span>
+                    <span class="s1-sub-title"
+                      >Quiz récap + mot de clôture <em>(8 min)</em></span
+                    >
+                  </div>
+                  <div class="s1-questions-list">
+                    <div class="s1-question">
+                      <span class="s1-q-num">1</span> Citez 2 conditions RGPD
+                      pour transcrire légalement une réunion.
+                    </div>
+                    <div class="s1-question">
+                      <span class="s1-q-num">2</span> Quelle est la première
+                      chose à faire avant d'envoyer un document rédigé par l'IA
+                      ?
+                    </div>
+                    <div class="s1-question">
+                      <span class="s1-q-num">3</span> Peut-on mettre le nom
+                      complet d'un salarié dans un prompt ChatGPT ?
+                    </div>
+                    <div class="s1-question">
+                      <span class="s1-q-num">4</span> Quelle différence
+                      principale entre Whisper et Otter.ai côté RGPD ?
+                    </div>
+                    <div class="s1-question">
+                      <span class="s1-q-num">5</span> Quelles données sont
+                      toujours interdites dans les outils IA cloud ?
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- RESSOURCES -->
+            <div class="s1-section">
+              <h3 class="s1-section-title">
+                <i class="fa-solid fa-folder-open"></i> Ressources à télécharger
+              </h3>
+              <div class="s1-resources-grid">
+                <a
+                  href="assets/resources/session-2/guide-transcription.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                    "
+                  >
+                    <i class="fa-solid fa-microphone"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>Guide Transcription IA</strong>
+                    <span
+                      >Whisper · Otter.ai · Teams Premium — comparatif &amp;
+                      bonnes pratiques RGPD</span
+                    >
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+                <a
+                  href="assets/resources/session-2/prompts-direction.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+                    "
+                  >
+                    <i class="fa-solid fa-file-alt"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>Modèles de prompts Direction</strong>
+                    <span
+                      >CR · courrier officiel · note de service — prêts à
+                      l'emploi</span
+                    >
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+                <a
+                  href="assets/resources/session-2/rgpd-donnees-sensibles.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #ef4444, #f59e0b);
+                    "
+                  >
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>RGPD &amp; IA — Données sensibles</strong>
+                    <span
+                      >Ce qu'on ne dit jamais à l'IA · checklist · procédure
+                      alerte</span
+                    >
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+                <a
+                  href="assets/resources/session-2/exercices-cr.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #10b981, #06b6d4);
+                    "
+                  >
+                    <i class="fa-solid fa-pen-nib"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>Exercices — Comptes-rendus</strong>
+                    <span
+                      >3 scénarios d'atelier avec consignes et corrections
+                      suggérées</span
+                    >
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+                <a
+                  href="assets/resources/session-2/questionnaire.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="s1-resource-card"
+                >
+                  <div
+                    class="s1-resource-icon"
+                    style="
+                      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+                    "
+                  >
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </div>
+                  <div class="s1-resource-info">
+                    <strong>Questionnaire de satisfaction</strong>
+                    <span
+                      >Session 2 · Direction &amp; Admin · 5 questions +
+                      commentaire libre</span
+                    >
+                  </div>
+                  <span class="s1-resource-btn"
+                    >Ouvrir
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+
+            <!-- INDICATEURS DE SUCCÈS -->
+            <div class="s1-section">
+              <h3 class="s1-section-title">
+                <i class="fa-solid fa-chart-line"></i> Indicateurs de succès
+              </h3>
+              <div class="s1-table-wrap">
+                <table class="s1-table s1-kpi-table">
+                  <thead>
+                    <tr>
+                      <th>Métrique</th>
+                      <th>Cible</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Taux de présence</td>
+                      <td class="s1-td-ok">≥ 90%</td>
+                    </tr>
+                    <tr>
+                      <td>Taux de complétion de l'atelier CR</td>
+                      <td class="s1-td-ok">100%</td>
+                    </tr>
+                    <tr>
+                      <td>Satisfaction générale (questionnaire)</td>
+                      <td class="s1-td-ok">≥ 80%</td>
+                    </tr>
+                    <tr>
+                      <td>% sachant utiliser Whisper ou Otter.ai</td>
+                      <td class="s1-td-ok">≥ 70%</td>
+                    </tr>
+                    <tr>
+                      <td>% appliquant les règles RGPD données sensibles</td>
+                      <td class="s1-td-ok">≥ 85%</td>
+                    </tr>
+                    <tr>
+                      <td>Récupération des ressources</td>
+                      <td class="s1-td-ok">≥ 80%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- FOOTER MODAL -->
+            <div class="s1-modal-footer">
+              <p>
+                Document produit par <strong>Référent IA</strong> — Référent IA
+                AUXILIA · Session 2 · 11 septembre 2026
+              </p>
+              <p>Contact : <strong>stéphane.assaby@auxilia.fr</strong></p>
+            </div>
+          </div>
+          <!-- /s1-modal-body -->
+        </div>
+        <!-- /s1-modal-panel -->
+      </div>
+      <!-- /session2-modal -->
     </section>
     <!-- /view-livrable-1 -->
 

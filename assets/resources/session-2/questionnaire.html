@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questionnaire Satisfaction — Session 2 AUXILIA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+      header {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: #fff;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      header .tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.8; margin-bottom: 0.5rem; }
+      header h1 { font-family: "Space Grotesk", sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }
+      header p { font-size: 0.88rem; opacity: 0.85; }
+      .intro {
+        background: #ede9fe;
+        border: 1px solid #c4b5fd;
+        border-radius: 10px;
+        padding: 0.9rem 1.2rem;
+        font-size: 0.83rem;
+        color: #4c1d95;
+        margin-bottom: 2rem;
+      }
+      .question-block {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 1.25rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      }
+      .q-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: #fff;
+        border-radius: 8px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        margin-right: 0.4rem;
+        flex-shrink: 0;
+        vertical-align: middle;
+      }
+      .q-text {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+      .q-sub { font-size: 0.78rem; font-weight: 400; color: #64748b; display: block; margin-top: 0.2rem; }
+      .likert {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .likert label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        cursor: pointer;
+        flex: 1;
+        min-width: 52px;
+      }
+      .likert label input[type="radio"] { display: none; }
+      .likert-btn {
+        width: 100%;
+        min-width: 48px;
+        padding: 0.55rem 0.25rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.1rem;
+        transition: border-color 0.15s, background 0.15s;
+        background: #f8fafc;
+        cursor: pointer;
+      }
+      .likert label input:checked + .likert-btn {
+        border-color: #6366f1;
+        background: #ede9fe;
+      }
+      .likert-btn:hover { border-color: #8b5cf6; background: #ede9fe; }
+      .likert-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.68rem;
+        color: #94a3b8;
+        margin-top: 0.3rem;
+      }
+      .mcq { display: flex; flex-direction: column; gap: 0.5rem; }
+      .mcq label {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.55rem 0.75rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.84rem;
+        transition: border-color 0.15s, background 0.15s;
+      }
+      .mcq label:hover { border-color: #6366f1; background: #f5f3ff; }
+      .mcq input[type="checkbox"] { accent-color: #6366f1; width: 16px; height: 16px; flex-shrink: 0; }
+      textarea {
+        width: 100%;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 0.75rem 1rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.84rem;
+        color: #1e293b;
+        resize: vertical;
+        min-height: 90px;
+        background: #f8fafc;
+        transition: border-color 0.15s;
+      }
+      textarea:focus { outline: none; border-color: #6366f1; background: #fff; }
+      .submit-zone {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      .submit-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 2rem;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: #fff;
+        border: none;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        transition: opacity 0.2s, transform 0.2s;
+      }
+      .submit-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+      .submit-note { font-size: 0.75rem; color: #94a3b8; margin-top: 0.75rem; }
+      .thank-you {
+        display: none;
+        background: #f0fdf4;
+        border: 1px solid #6ee7b7;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #065f46;
+        margin-top: 1.5rem;
+      }
+      .thank-you h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+      footer { text-align: center; font-size: 0.75rem; color: #94a3b8; margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+      @media print {
+        .submit-zone { display: none; }
+        .likert-btn, .mcq label { border: 1px solid #ccc; }
+        body { padding: 0; }
+        header { border-radius: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="tag">📋 Session 2 · Direction &amp; Admin · 11 sept. 2026</div>
+      <h1>Questionnaire de satisfaction</h1>
+      <p>Vos retours nous aident à améliorer les prochaines sessions — 3 min maximum</p>
+    </header>
+
+    <div class="intro">
+      🔒 Réponses anonymes · Aucune donnée personnelle collectée · Résultats partagés en synthèse collective
+    </div>
+
+    <form id="satisfaction-form" onsubmit="handleSubmit(event)">
+
+      <!-- Q1 -->
+      <div class="question-block">
+        <div class="q-text">
+          <span class="q-num">1</span>
+          Évaluez votre satisfaction globale pour cette session
+          <span class="q-sub">Dans l'ensemble, la formation a répondu à mes attentes</span>
+        </div>
+        <div class="likert">
+          <label><input type="radio" name="q1" value="1" /><div class="likert-btn">😞</div></label>
+          <label><input type="radio" name="q1" value="2" /><div class="likert-btn">😕</div></label>
+          <label><input type="radio" name="q1" value="3" /><div class="likert-btn">😐</div></label>
+          <label><input type="radio" name="q1" value="4" /><div class="likert-btn">😊</div></label>
+          <label><input type="radio" name="q1" value="5" /><div class="likert-btn">🤩</div></label>
+        </div>
+        <div class="likert-labels"><span>Pas du tout</span><span>Tout à fait</span></div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question-block">
+        <div class="q-text">
+          <span class="q-num">2</span>
+          L'atelier pratique (compte-rendu en direct) était :
+          <span class="q-sub">Pertinence et niveau de difficulté de l'exercice</span>
+        </div>
+        <div class="likert">
+          <label><input type="radio" name="q2" value="1" /><div class="likert-btn">1</div></label>
+          <label><input type="radio" name="q2" value="2" /><div class="likert-btn">2</div></label>
+          <label><input type="radio" name="q2" value="3" /><div class="likert-btn">3</div></label>
+          <label><input type="radio" name="q2" value="4" /><div class="likert-btn">4</div></label>
+          <label><input type="radio" name="q2" value="5" /><div class="likert-btn">5</div></label>
+        </div>
+        <div class="likert-labels"><span>Trop simple / pas pertinent</span><span>Très utile / bien calibré</span></div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question-block">
+        <div class="q-text">
+          <span class="q-num">3</span>
+          Quels sujets vous ont été les plus utiles ?
+          <span class="q-sub">Plusieurs réponses possibles</span>
+        </div>
+        <div class="mcq">
+          <label><input type="checkbox" name="q3" value="transcription" /> Transcription de réunions (Whisper, Otter.ai)</label>
+          <label><input type="checkbox" name="q3" value="rgpd_transcription" /> RGPD et conditions pour transcrire</label>
+          <label><input type="checkbox" name="q3" value="redaction" /> Rédaction assistée (CR, courriers, notes)</label>
+          <label><input type="checkbox" name="q3" value="atelier" /> Atelier pratique en groupe</label>
+          <label><input type="checkbox" name="q3" value="donnees_sensibles" /> RGPD données sensibles — ce qu'on ne dit pas à l'IA</label>
+          <label><input type="checkbox" name="q3" value="comparatif_outils" /> Comparatif des outils IA</label>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question-block">
+        <div class="q-text">
+          <span class="q-num">4</span>
+          Après cette session, vous vous sentez capable de :
+          <span class="q-sub">Cochez ce qui s'applique à vous</span>
+        </div>
+        <div class="mcq">
+          <label><input type="checkbox" name="q4" value="transcrire" /> Transcrire une réunion en respectant le RGPD</label>
+          <label><input type="checkbox" name="q4" value="synthese" /> Générer une synthèse de réunion avec ChatGPT</label>
+          <label><input type="checkbox" name="q4" value="cr_prompt" /> Produire un CR de qualité à l'aide d'un prompt adapté</label>
+          <label><input type="checkbox" name="q4" value="donnees" /> Identifier les données à ne jamais mettre dans un prompt IA</label>
+          <label><input type="checkbox" name="q4" value="alerte" /> Réagir correctement en cas d'incident de données IA</label>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question-block">
+        <div class="q-text">
+          <span class="q-num">5</span>
+          Votre commentaire libre
+          <span class="q-sub">Ce qui vous a plu, ce qui peut être amélioré, vos suggestions pour la prochaine session</span>
+        </div>
+        <textarea name="q5" placeholder="Partagez vos retours ici..."></textarea>
+      </div>
+
+      <div class="submit-zone">
+        <button type="submit" class="submit-btn">✓ Envoyer mes réponses</button>
+        <div class="submit-note">Vos réponses sont anonymes. Merci pour votre temps !</div>
+      </div>
+    </form>
+
+    <div class="thank-you" id="thank-you">
+      <h3>🙏 Merci pour votre retour !</h3>
+      <p>Vos réponses ont bien été enregistrées et seront intégrées à la synthèse de Session 2.<br />À bientôt pour la Session 3 !</p>
+    </div>
+
+    <footer>
+      Document AUXILIA — Référent IA Référent IA · Session 2 · 11 septembre 2026 · stéphane.assaby@auxilia.fr
+    </footer>
+
+    <script>
+      function handleSubmit(e) {
+        e.preventDefault();
+        document.getElementById("satisfaction-form").style.display = "none";
+        document.getElementById("thank-you").style.display = "block";
+        window.scrollTo({ top: document.getElementById("thank-you").offsetTop - 20, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>

@@ -578,9 +578,42 @@ tr:hover td {
 }
 
 /* ═══════════════════════════════════════════
+   BOUTON OUVRIR SESSION 2
+═══════════════════════════════════════════ */
+.s2-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.55rem 1.2rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+}
+.s2-open-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px rgba(99, 102, 241, 0.55);
+}
+.s2-open-btn:focus-visible {
+  outline: 2px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+/* ═══════════════════════════════════════════
    MODALE SESSION 1 — OVERLAY & PANEL
 ═══════════════════════════════════════════ */
-body.s1-modal-open {
+body.s1-modal-open,
+body.s2-modal-open {
   overflow: hidden;
 }
 
