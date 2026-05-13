@@ -3,12 +3,11 @@
    portal.css — Styles de la navigation et de la vue portail
 ═══════════════════════════════════════════ */
 
-/* ── SYSTÈME DE VUES ── */
+/* ── SYSTÈME DE VUES ──
+   L'affichage est géré exclusivement via style.display en JS.
+   Ce règle CSS assure l'état initial avant chargement du script. */
 .view {
   display: none;
-}
-.view.view-active {
-  display: block;
 }
 
 /* ── NAVIGATION PORTAIL ── */

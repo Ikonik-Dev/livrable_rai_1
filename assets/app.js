@@ -3,44 +3,57 @@
 //  app.js — SPA Hash Router
 // ═══════════════════════════════════════════
 
-document.addEventListener("DOMContentLoaded", () => {
-  const views = document.querySelectorAll(".view");
-  const navLinks = document.querySelectorAll(".nav-link[href]");
+(function () {
   const VALID_VIEWS = ["portal", "livrable-1", "livrable-2", "livrable-3"];
 
-  function navigate(hash) {
-    const viewId = hash.replace("#", "") || "portal";
+  function navigate(rawHash) {
+    const viewId = (rawHash || "").replace(/^#/, "") || "portal";
     const targetId = VALID_VIEWS.includes(viewId) ? viewId : "portal";
 
-    // Masquer toutes les vues
-    views.forEach((v) => v.classList.remove("view-active"));
+    console.log("[Router] → navigate:", targetId);
 
-    // Mettre à jour l'état actif de la nav
-    navLinks.forEach((link) => {
-      const linkId = link.getAttribute("href").replace("#", "");
-      link.classList.toggle("active", linkId === targetId);
+    // Masquer toutes les vues (inline style = priorité absolue sur le CSS)
+    VALID_VIEWS.forEach(function (id) {
+      const el = document.getElementById("view-" + id);
+      if (el) el.style.display = "none";
     });
 
     // Afficher la vue cible
     const target = document.getElementById("view-" + targetId);
-    if (target) target.classList.add("view-active");
+    if (target) {
+      target.style.display = "block";
+    } else {
+      console.error("[Router] ❌ Vue introuvable: view-" + targetId);
+    }
+
+    // Mettre à jour l'état actif de la nav
+    document.querySelectorAll(".nav-link[href]").forEach(function (link) {
+      const linkId = link.getAttribute("href").replace(/^#/, "");
+      link.classList.toggle("active", linkId === targetId);
+    });
 
     // Initialiser les modules de la vue
-    if (targetId === "livrable-1" && window.Livrable1) {
-      window.Livrable1.init();
+    if (targetId === "livrable-1") {
+      if (window.Livrable1 && typeof window.Livrable1.init === "function") {
+        window.Livrable1.init();
+      } else {
+        console.warn("[Router] window.Livrable1 introuvable");
+      }
     }
 
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  // Navigation initiale
-  navigate(window.location.hash || "#portal");
+  // Écouter les changements de hash
+  window.addEventListener("hashchange", function () {
+    navigate(window.location.hash);
+  });
 
-  // Écouter les changements de hash (liens <a href="#..."> natifs)
-  window.addEventListener("hashchange", () => navigate(window.location.hash));
+  // Navigation initiale — scripts en bas de body : DOM déjà prêt
+  navigate(window.location.hash || "#portal");
 
   console.log(
     "%c🤖 AUXILIA — Portail Formation IA 2026 chargé",
     "background:#6366f1;color:#fff;padding:6px 12px;border-radius:8px;font-weight:bold;",
   );
-});
+})();
