@@ -33,15 +33,6 @@
     });
 
     // Initialiser les modules de la vue
-    if (targetId === "portal") {
-      // Déclencher les animations reveal des cards du portail
-      if (target) {
-        target.querySelectorAll(".reveal:not(.visible)").forEach(function (el) {
-          el.classList.add("visible");
-        });
-      }
-    }
-
     if (targetId === "livrable-1") {
       if (window.Livrable1 && typeof window.Livrable1.init === "function") {
         window.Livrable1.init();
