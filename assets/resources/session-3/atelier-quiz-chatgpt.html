@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atelier Quiz & Fiches — AUXILIA Session 3</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; font-size: 15px; }
+      header { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #fff; padding: 2rem 2.5rem; }
+      header h1 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+      header p { opacity: 0.88; font-size: 0.95rem; }
+      .badge { display: inline-block; background: rgba(255,255,255,0.2); border-radius: 999px; padding: 0.25rem 0.9rem; font-size: 0.8rem; margin-top: 0.75rem; margin-right: 0.4rem; }
+      main { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+      .intro { background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(59,130,246,0.06)); border: 1px solid rgba(6,182,212,0.25); border-radius: 12px; padding: 1.2rem 1.5rem; margin-bottom: 2.5rem; }
+      .exercise-card { background: #fff; border-radius: 16px; padding: 1.75rem; margin-bottom: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+      .exercise-card.level-1 { border-top: 5px solid #10b981; }
+      .exercise-card.level-2 { border-top: 5px solid #3b82f6; }
+      .exercise-card.level-3 { border-top: 5px solid #8b5cf6; }
+      .ex-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+      .level-badge { padding: 0.35rem 0.9rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+      .badge-beginner { background: #d1fae5; color: #065f46; }
+      .badge-inter { background: #dbeafe; color: #1e40af; }
+      .badge-expert { background: #ede9fe; color: #5b21b6; }
+      .ex-header-text h2 { font-size: 1.1rem; margin-bottom: 0.35rem; }
+      .ex-header-text p { font-size: 0.88rem; color: #64748b; }
+      .section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.6rem; }
+      .section-label.green { color: #10b981; }
+      .section-label.blue { color: #3b82f6; }
+      .section-label.purple { color: #8b5cf6; }
+      .consignes-list { background: #f8fafc; border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1rem; }
+      .consignes-list ol { padding-left: 1.2rem; }
+      .consignes-list li { margin-bottom: 0.4rem; font-size: 0.9rem; }
+      .hint-block { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 0.9rem 1.2rem; margin: 1rem 0; }
+      .hint-block .hint-title { font-size: 0.82rem; font-weight: 700; color: #1d4ed8; margin-bottom: 0.4rem; }
+      .hint-block .prompt-text { font-family: 'Courier New', monospace; font-size: 0.83rem; color: #1e3a8a; white-space: pre-wrap; line-height: 1.7; }
+      details { margin-top: 1rem; }
+      summary {
+        cursor: pointer;
+        background: #f1f5f9;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        list-style: none;
+        user-select: none;
+      }
+      summary::before { content: '▶'; font-size: 0.75rem; transition: transform 0.2s; }
+      details[open] summary::before { transform: rotate(90deg); }
+      summary:hover { background: #e2e8f0; }
+      .correction { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0 0 8px 8px; padding: 1.2rem; font-size: 0.88rem; }
+      .correction h4 { color: #166534; margin-bottom: 0.75rem; }
+      .correction .prompt-exemple { background: #fff; border-left: 3px solid #10b981; border-radius: 0 6px 6px 0; padding: 0.75rem 1rem; margin: 0.5rem 0; font-family: 'Courier New', monospace; font-size: 0.82rem; color: #14532d; white-space: pre-wrap; line-height: 1.7; }
+      .correction .result-exemple { background: #ecfdf5; border-radius: 6px; padding: 0.75rem 1rem; margin-top: 0.5rem; font-size: 0.88rem; color: #166534; }
+      .tip-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+      .tip-pill { background: #f0fdfe; border: 1px solid #a5f3fc; border-radius: 8px; padding: 0.5rem 0.85rem; font-size: 0.82rem; color: #0e7490; }
+      .divider { border: none; border-top: 1px solid #e2e8f0; margin: 2rem 0; }
+      footer { text-align: center; padding: 1.5rem; background: #f1f5f9; color: #64748b; font-size: 0.8rem; margin-top: 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+      @media print { body { background: #fff; } details { break-inside: avoid; } }
+      @media (max-width: 600px) { header { padding: 1.5rem; } main { padding: 1rem; } .ex-header { flex-direction: column; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🛠 Atelier pratique — Fiches de cours &amp; Quiz avec ChatGPT</h1>
+      <p>3 exercices progressifs pour maîtriser la création de ressources pédagogiques avec l'IA</p>
+      <span class="badge">🎓 Session 3 — Formateurs</span>
+      <span class="badge">📅 12 novembre 2026</span>
+      <span class="badge">⏱ 45 min</span>
+    </header>
+
+    <main>
+      <div class="intro">
+        <strong>Organisation de l'atelier :</strong> Travaillez à votre rythme sur les exercices. Chaque correction est accessible en cliquant sur <em>"Voir la correction"</em>. L'exercice 3 est à réaliser en groupe (15 min). Un prompt de départ vous est fourni — l'objectif est de l'adapter et de l'améliorer.
+      </div>
+
+      <!-- EXERCICE 1 -->
+      <div class="exercise-card level-1">
+        <div class="ex-header">
+          <span class="level-badge badge-beginner">⭐ Débutant</span>
+          <div class="ex-header-text">
+            <h2>Exercice 1 — Créer une fiche de cours sur le RGPD</h2>
+            <p>Objectif : générer une fiche structurée avec les bons paramètres dans le prompt</p>
+          </div>
+        </div>
+
+        <div class="section-label green">📋 Consignes</div>
+        <div class="consignes-list">
+          <ol>
+            <li>Ouvrez ChatGPT (ou l'outil IA de votre choix)</li>
+            <li>Rédigez un prompt pour créer une fiche de cours sur le <strong>RGPD (Règlement Général sur la Protection des Données)</strong></li>
+            <li>Public cible : salariés AUXILIA (aides à domicile, responsables de secteur)</li>
+            <li>Durée de la séance : <strong>1h30</strong></li>
+            <li>La fiche doit inclure : objectifs, plan, contenu essentiel, exercice pratique</li>
+            <li>Évaluez le résultat : est-ce utilisable en formation ? Qu'est-ce qui manque ?</li>
+            <li>Demandez une amélioration spécifique (ex : "Ajoute un exemple concret d'entreprise")</li>
+          </ol>
+        </div>
+
+        <div class="hint-block">
+          <div class="hint-title">💡 Aide — Structure de prompt suggérée</div>
+          <span class="prompt-text">Tu es formateur expert en droit du travail. Crée une fiche de cours sur le RGPD destinée à des salariés d'une structure d'aide à domicile (niveaux variés). Durée : 1h30.
+Inclure : 3 objectifs pédagogiques, plan avec horaires, 5 points clés à retenir, 1 exercice pratique (mis en situation), encadré "À retenir".
+Vocabulaire accessible, exemples issus du secteur médico-social.</span>
+        </div>
+
+        <div class="tip-row">
+          <span class="tip-pill">⏱ 10 min</span>
+          <span class="tip-pill">👤 Individuel</span>
+          <span class="tip-pill">🖥 ChatGPT ou outil au choix</span>
+        </div>
+
+        <details>
+          <summary>Voir la correction — Exercice 1</summary>
+          <div class="correction">
+            <h4>Points essentiels d'un bon prompt pour cet exercice</h4>
+            <div class="prompt-exemple">Tu es formateur expert en protection des données. Crée une fiche de cours sur le RGPD pour des salariés d'une association d'aide à domicile (niveaux CAP à Bac+2, publics variés). Durée : 1h30.
+
+Obligatoire :
+• 3 objectifs pédagogiques (formulation : "le stagiaire sera capable de…")
+• Plan horodaté (accueil 10 min, contenu 40 min, exercice 25 min, débrief 15 min)
+• 5 points clés à retenir (format encadré)
+• 1 mise en situation : "Marie, aide à domicile, reçoit une demande d'accès aux données d'un bénéficiaire…"
+• Vocabulaire simple, pas de jargon juridique non expliqué</div>
+            <div class="result-exemple">
+              <strong>Ce qui fait la différence :</strong>
+              <ul style="padding-left:1.2rem; margin-top:0.4rem;">
+                <li>Préciser le rôle de l'IA ("Tu es formateur expert")</li>
+                <li>Décrire le public avec précision (niveau, secteur)</li>
+                <li>Demander les éléments un par un (liste claire)</li>
+                <li>Proposer un exemple concret ancré dans le secteur</li>
+                <li>Préciser les contraintes de vocabulaire</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- EXERCICE 2 -->
+      <div class="exercise-card level-2">
+        <div class="ex-header">
+          <span class="level-badge badge-inter">⭐⭐ Intermédiaire</span>
+          <div class="ex-header-text">
+            <h2>Exercice 2 — Générer un quiz professionnel</h2>
+            <p>Objectif : créer un quiz à 8 questions sur les gestes et postures, avec corrections</p>
+          </div>
+        </div>
+
+        <div class="section-label blue">📋 Consignes</div>
+        <div class="consignes-list">
+          <ol>
+            <li>Rédigez un prompt pour créer un quiz de <strong>8 questions</strong> sur les <strong>gestes et postures</strong> (prévention des risques professionnels) pour des aides à domicile</li>
+            <li>Format souhaité : QCM (4 propositions), avec la bonne réponse indiquée et une explication</li>
+            <li>Intégrer au moins 2 niveaux de difficulté (basique + intermédiaire)</li>
+            <li>Ensuite, demandez à l'IA : <strong>"Génère maintenant la version Kahoot de ce quiz"</strong> (format simplifié, durée par question)</li>
+            <li>Comparez les deux versions — que gagne-t-on en spécifiant le format ?</li>
+          </ol>
+        </div>
+
+        <div class="hint-block">
+          <div class="hint-title">💡 Aide — Prompt de départ</div>
+          <span class="prompt-text">Génère un quiz de 8 questions sur les gestes et postures pour des aides à domicile (secteur aide à domicile). Public : niveau débutant à intermédiaire.
+Pour chaque question :
+• Formulation claire, vocabulaire terrain
+• 4 propositions (A/B/C/D), une seule bonne réponse
+• Bonne réponse indiquée + explication (2 lignes)
+• Niveau : ⭐ ou ⭐⭐
+6 questions niveau ⭐, 2 questions niveau ⭐⭐. Format tableau.</span>
+        </div>
+
+        <div class="tip-row">
+          <span class="tip-pill">⏱ 15 min</span>
+          <span class="tip-pill">👤 Individuel ou binôme</span>
+          <span class="tip-pill">🔄 2 prompts enchaînés</span>
+        </div>
+
+        <details>
+          <summary>Voir la correction — Exercice 2</summary>
+          <div class="correction">
+            <h4>Exemple de prompt avancé — Quiz Gestes & Postures</h4>
+            <div class="prompt-exemple">Génère un quiz professionnel de 8 questions sur les gestes et postures pour prévenir les troubles musculo-squelettiques (TMS) chez les aides à domicile.
+Format : tableau avec colonnes N° / Question / A / B / C / D / Bonne réponse / Explication (2 lignes) / Niveau (⭐ ou ⭐⭐).
+• Questions 1 à 6 : niveau ⭐ (règles de base, vocabulaire courant)
+• Questions 7 et 8 : niveau ⭐⭐ (situations complexes, raisonnement)
+Contextualiser dans le quotidien de l'aide à domicile (transferts, portage, ménage, aide à la toilette).</div>
+            <div class="result-exemple">
+              <strong>Bonus — Prompt de conversion Kahoot :</strong><br/>
+              "Reformate ce quiz en version Kahoot : titre de la question (max 95 caractères), 4 réponses courtes (max 60 caractères chacune), durée suggérée (15 ou 20 sec), bonne réponse numérotée."
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- EXERCICE 3 -->
+      <div class="exercise-card level-3">
+        <div class="ex-header">
+          <span class="level-badge badge-expert">⭐⭐⭐ Expert — En groupe</span>
+          <div class="ex-header-text">
+            <h2>Exercice 3 — Séquence pédagogique complète</h2>
+            <p>Objectif : produire un package complet (plan + exercice + grille) sur un thème au choix</p>
+          </div>
+        </div>
+
+        <div class="section-label purple">📋 Consignes</div>
+        <div class="consignes-list">
+          <ol>
+            <li>En groupe de 2-3 personnes, <strong>choisissez un thème de formation</strong> lié à votre pratique (ex : hygiène, communication avec les familles, gestion du stress, protection de l'enfance…)</li>
+            <li><strong>En 3 prompts enchaînés</strong>, générez :
+              <ul style="padding-left:1.2rem; margin-top:0.3rem;">
+                <li>Prompt 1 : Plan de séance horodaté (1h30)</li>
+                <li>Prompt 2 : <em>Sur la base de ce plan</em>, crée 1 exercice pratique pour la séquence centrale</li>
+                <li>Prompt 3 : <em>Pour cet exercice</em>, crée une grille d'évaluation (5 critères, 3 niveaux)</li>
+              </ul>
+            </li>
+            <li>Évaluez : la cohérence entre les 3 éléments est-elle satisfaisante ? Qu'avez-vous dû corriger ?</li>
+            <li>Partagez votre retour en grand groupe (2 min par équipe)</li>
+          </ol>
+        </div>
+
+        <div class="hint-block">
+          <div class="hint-title">💡 Conseils pour cet exercice</div>
+          <span class="prompt-text">Conseil 1 : Gardez le contexte entre les prompts
+→ Dans le prompt 2, commencez par "Sur la base du plan de séance ci-dessus…" et collez le plan généré.
+
+Conseil 2 : Soyez précis sur la grille
+→ Demandez des "descripteurs observables" (ce que l'évaluateur voit concrètement), pas des critères abstraits.
+
+Conseil 3 : Testez l'alignement pédagogique
+→ Les objectifs du plan → l'exercice → la grille doivent évaluer la même compétence.</span>
+        </div>
+
+        <div class="tip-row">
+          <span class="tip-pill">⏱ 20 min</span>
+          <span class="tip-pill">👥 Groupes de 2-3</span>
+          <span class="tip-pill">🔄 3 prompts en chaîne</span>
+          <span class="tip-pill">🗣 Restitution 2 min/groupe</span>
+        </div>
+
+        <details>
+          <summary>Voir la correction — Exercice 3</summary>
+          <div class="correction">
+            <h4>Exemple de chaîne de prompts — Thème : Communication avec les familles</h4>
+            <div class="prompt-exemple">PROMPT 1 — Plan de séance
+Génère un plan de séance de 1h30 sur "La communication bienveillante avec les familles de bénéficiaires" pour des aides à domicile expérimentés. Objectif : adapter sa communication en situation difficile.
+Format tableau : horaire / séquence / activité formateur / activité stagiaire / méthode / matériel.</div>
+            <div class="prompt-exemple">PROMPT 2 — Exercice
+Sur la base du plan de séance ci-dessus, crée un exercice de jeu de rôle de 25 min pour la séquence "Mise en pratique".
+Scénario : une aide à domicile doit annoncer à une famille une dégradation constatée chez le bénéficiaire.
+Fiche formateur (briefing rôles) + fiche participant + consignes d'observation (3 critères).</div>
+            <div class="prompt-exemple">PROMPT 3 — Grille
+Pour le jeu de rôle ci-dessus, crée une grille d'évaluation formative.
+5 critères observables, 3 niveaux : En développement / Satisfaisant / Expert.
+Chaque niveau = description de ce qu'on observe concrètement.
+Format tableau.</div>
+            <div class="result-exemple">
+              <strong>Points de vigilance identifiés en formation :</strong>
+              <ul style="padding-left:1.2rem; margin-top:0.4rem;">
+                <li>L'IA peut générer des critères trop génériques ("communique bien") — demandez des indicateurs comportementaux observables</li>
+                <li>Vérifiez que l'exercice respecte bien la durée prévue dans le plan</li>
+                <li>Relire la grille en imaginant un apprenant réel — les descripteurs sont-ils réalistes ?</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+    </main>
+
+    <footer>
+      <span>AUXILIA — Une nouvelle chance · Session 3 · 12 novembre 2026</span>
+      <span>Référent IA AUXILIA</span>
+    </footer>
+  </body>
+</html>

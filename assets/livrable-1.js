@@ -17,6 +17,7 @@ window.Livrable1 = (() => {
       setupKeyboard(root);
       setupSession1Modal();
       setupSession2Modal();
+      setupSession3Modal();
       initialized = true;
     }
 
@@ -200,6 +201,35 @@ window.Livrable1 = (() => {
     function closeModal() {
       modal.hidden = true;
       document.body.classList.remove("s2-modal-open");
+      openBtn.focus();
+    }
+
+    openBtn.addEventListener("click", openModal);
+    closeBtn && closeBtn.addEventListener("click", closeModal);
+    overlay && overlay.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.hidden) closeModal();
+    });
+  }
+
+  // ── MODALE SESSION 3 ────────────────────
+  function setupSession3Modal() {
+    const openBtn = document.getElementById("s3-open-btn");
+    const modal = document.getElementById("session3-modal");
+    const closeBtn = document.getElementById("s3-modal-close");
+    const overlay = document.getElementById("s3-modal-overlay");
+    if (!openBtn || !modal) return;
+
+    function openModal() {
+      modal.hidden = false;
+      document.body.classList.add("s3-modal-open");
+      closeBtn && closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      document.body.classList.remove("s3-modal-open");
       openBtn.focus();
     }
 

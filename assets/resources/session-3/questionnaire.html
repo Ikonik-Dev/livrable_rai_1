@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questionnaire de satisfaction — Session 3</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; font-size: 15px; }
+      header { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #fff; padding: 2rem 2.5rem; }
+      header h1 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+      header p { opacity: 0.88; font-size: 0.95rem; }
+      .badge { display: inline-block; background: rgba(255,255,255,0.2); border-radius: 999px; padding: 0.25rem 0.9rem; font-size: 0.8rem; margin-top: 0.75rem; margin-right: 0.4rem; }
+      main { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+      .intro { background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(59,130,246,0.06)); border: 1px solid rgba(6,182,212,0.22); border-radius: 12px; padding: 1.1rem 1.4rem; margin-bottom: 2rem; font-size: 0.92rem; color: #475569; }
+      .question-card { background: #fff; border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+      .q-label { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+      .q-num { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #fff; border-radius: 50%; width: 2rem; height: 2rem; min-width: 2rem; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.88rem; }
+      .q-text { font-weight: 600; font-size: 0.98rem; }
+      /* Q1 — Emoji Likert */
+      .emoji-scale { display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+      .emoji-option { flex: 1; min-width: 80px; }
+      .emoji-option input[type="radio"] { display: none; }
+      .emoji-option label { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; padding: 0.75rem 0.5rem; border: 2px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 0.78rem; color: #64748b; text-align: center; }
+      .emoji-option label .em { font-size: 1.8rem; line-height: 1; }
+      .emoji-option input:checked + label { border-color: #06b6d4; background: rgba(6,182,212,0.08); color: #0e7490; }
+      .emoji-option label:hover { border-color: #06b6d4; }
+      /* Q2 — Numeric Likert */
+      .numeric-scale { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+      .numeric-scale .scale-labels { display: flex; justify-content: space-between; width: 100%; font-size: 0.78rem; color: #94a3b8; margin-top: 0.4rem; }
+      .num-row { display: flex; gap: 0.5rem; align-items: center; }
+      .num-option input[type="radio"] { display: none; }
+      .num-option label { width: 2.8rem; height: 2.8rem; display: flex; align-items: center; justify-content: center; border: 2px solid #e2e8f0; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 1rem; color: #64748b; transition: all 0.2s; }
+      .num-option input:checked + label { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #fff; border-color: transparent; }
+      .num-option label:hover { border-color: #06b6d4; color: #0e7490; }
+      /* Q3 & Q4 — Checkboxes & Radio */
+      .checkbox-list, .radio-list { display: grid; gap: 0.6rem; margin-top: 0.25rem; }
+      .check-opt input[type="checkbox"], .radio-opt input[type="radio"] { display: none; }
+      .check-opt label, .radio-opt label { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border: 2px solid #e2e8f0; border-radius: 10px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+      .check-opt label::before { content: ''; width: 1.2rem; height: 1.2rem; min-width: 1.2rem; border: 2px solid #cbd5e1; border-radius: 4px; transition: all 0.2s; }
+      .radio-opt label::before { content: ''; width: 1.2rem; height: 1.2rem; min-width: 1.2rem; border: 2px solid #cbd5e1; border-radius: 50%; transition: all 0.2s; }
+      .check-opt input:checked + label { border-color: #06b6d4; background: rgba(6,182,212,0.07); }
+      .check-opt input:checked + label::before { background: #06b6d4; border-color: #06b6d4; box-shadow: inset 0 0 0 3px #fff; }
+      .radio-opt input:checked + label { border-color: #3b82f6; background: rgba(59,130,246,0.07); }
+      .radio-opt input:checked + label::before { background: #3b82f6; border-color: #3b82f6; box-shadow: inset 0 0 0 3px #fff; }
+      .check-opt label:hover, .radio-opt label:hover { border-color: #06b6d4; }
+      /* Q5 — Textarea */
+      textarea { width: 100%; border: 2px solid #e2e8f0; border-radius: 10px; padding: 0.85rem 1rem; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.9rem; resize: vertical; min-height: 110px; transition: border-color 0.2s; color: #1e293b; background: #fff; }
+      textarea:focus { outline: none; border-color: #06b6d4; }
+      .submit-btn { display: block; width: 100%; margin-top: 2rem; padding: 1rem; background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #fff; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
+      .submit-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+      .submit-btn:focus-visible { outline: 2px solid #06b6d4; outline-offset: 3px; }
+      /* Thank you */
+      #thankyou { display: none; text-align: center; padding: 2.5rem 1.5rem; background: #fff; border-radius: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+      #thankyou .ty-emoji { font-size: 3rem; margin-bottom: 1rem; }
+      #thankyou h2 { font-size: 1.5rem; color: #0e7490; margin-bottom: 0.75rem; }
+      #thankyou p { color: #475569; font-size: 0.95rem; margin-bottom: 0.5rem; }
+      #thankyou .next-session { display: inline-block; margin-top: 1.25rem; padding: 0.7rem 1.5rem; background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #fff; border-radius: 999px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+      footer { text-align: center; padding: 1.5rem; background: #f1f5f9; color: #64748b; font-size: 0.8rem; margin-top: 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+      @media (max-width: 600px) { header { padding: 1.5rem; } main { padding: 1rem; } .emoji-scale { justify-content: center; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>📝 Questionnaire de satisfaction</h1>
+      <p>Session 3 — L'IA comme co-créateur pédagogique</p>
+      <span class="badge">🎓 Session 3 — Formateurs</span>
+      <span class="badge">📅 12 novembre 2026</span>
+      <span class="badge">⏱ 3 min</span>
+    </header>
+
+    <main>
+      <div class="intro">
+        Votre retour nous est précieux pour améliorer les prochaines sessions. Ce questionnaire est anonyme et prend environ 3 minutes. Merci de répondre sincèrement !
+      </div>
+
+      <form id="satisfaction-form" novalidate>
+
+        <!-- Q1 — Emoji Likert -->
+        <div class="question-card">
+          <div class="q-label">
+            <div class="q-num">1</div>
+            <div class="q-text">Quelle est votre satisfaction globale de cette session ?</div>
+          </div>
+          <div class="emoji-scale" role="radiogroup" aria-label="Satisfaction globale">
+            <div class="emoji-option">
+              <input type="radio" name="q1" id="q1-1" value="1" />
+              <label for="q1-1"><span class="em">😞</span>Très insatisfait</label>
+            </div>
+            <div class="emoji-option">
+              <input type="radio" name="q1" id="q1-2" value="2" />
+              <label for="q1-2"><span class="em">😕</span>Insatisfait</label>
+            </div>
+            <div class="emoji-option">
+              <input type="radio" name="q1" id="q1-3" value="3" />
+              <label for="q1-3"><span class="em">😐</span>Neutre</label>
+            </div>
+            <div class="emoji-option">
+              <input type="radio" name="q1" id="q1-4" value="4" />
+              <label for="q1-4"><span class="em">🙂</span>Satisfait</label>
+            </div>
+            <div class="emoji-option">
+              <input type="radio" name="q1" id="q1-5" value="5" />
+              <label for="q1-5"><span class="em">😊</span>Très satisfait</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2 — Numeric Likert -->
+        <div class="question-card">
+          <div class="q-label">
+            <div class="q-num">2</div>
+            <div class="q-text">L'atelier pratique (création de ressources avec ChatGPT) était-il utile à votre pratique professionnelle ?</div>
+          </div>
+          <div class="numeric-scale">
+            <div class="num-row" role="radiogroup" aria-label="Utilité atelier pratique">
+              <div class="num-option"><input type="radio" name="q2" id="q2-1" value="1" /><label for="q2-1">1</label></div>
+              <div class="num-option"><input type="radio" name="q2" id="q2-2" value="2" /><label for="q2-2">2</label></div>
+              <div class="num-option"><input type="radio" name="q2" id="q2-3" value="3" /><label for="q2-3">3</label></div>
+              <div class="num-option"><input type="radio" name="q2" id="q2-4" value="4" /><label for="q2-4">4</label></div>
+              <div class="num-option"><input type="radio" name="q2" id="q2-5" value="5" /><label for="q2-5">5</label></div>
+            </div>
+            <div class="scale-labels" style="width:100%"><span>Peu utile</span><span>Très utile</span></div>
+          </div>
+        </div>
+
+        <!-- Q3 — Multi-select -->
+        <div class="question-card">
+          <div class="q-label">
+            <div class="q-num">3</div>
+            <div class="q-text">Quels sujets abordés vous ont semblé les plus utiles ? <small style="font-weight:400;color:#94a3b8">(plusieurs réponses possibles)</small></div>
+          </div>
+          <div class="checkbox-list" role="group" aria-label="Sujets les plus utiles">
+            <div class="check-opt"><input type="checkbox" name="q3" id="q3-1" value="fiche-cours" /><label for="q3-1">Créer des fiches de cours avec l'IA</label></div>
+            <div class="check-opt"><input type="checkbox" name="q3" id="q3-2" value="quiz" /><label for="q3-2">Générer des quiz et exercices</label></div>
+            <div class="check-opt"><input type="checkbox" name="q3" id="q3-3" value="differenciation" /><label for="q3-3">Différenciation pédagogique</label></div>
+            <div class="check-opt"><input type="checkbox" name="q3" id="q3-4" value="scenarisation" /><label for="q3-4">Scénarisation et supports engageants</label></div>
+            <div class="check-opt"><input type="checkbox" name="q3" id="q3-5" value="echanges" /><label for="q3-5">Les échanges avec les autres formateurs</label></div>
+          </div>
+        </div>
+
+        <!-- Q4 — Single select -->
+        <div class="question-card">
+          <div class="q-label">
+            <div class="q-num">4</div>
+            <div class="q-text">Suite à cette session, qu'envisagez-vous de faire en premier ?</div>
+          </div>
+          <div class="radio-list" role="radiogroup" aria-label="Action envisagée">
+            <div class="radio-opt"><input type="radio" name="q4" id="q4-1" value="fiche" /><label for="q4-1">Créer une fiche de cours avec ChatGPT pour ma prochaine formation</label></div>
+            <div class="radio-opt"><input type="radio" name="q4" id="q4-2" value="quiz" /><label for="q4-2">Générer un quiz pour évaluer mes apprenants</label></div>
+            <div class="radio-opt"><input type="radio" name="q4" id="q4-3" value="adapter" /><label for="q4-3">Adapter un support existant avec l'IA (FALC, différenciation…)</label></div>
+            <div class="radio-opt"><input type="radio" name="q4" id="q4-4" value="explorer" /><label for="q4-4">Explorer davantage les possibilités avant de me lancer</label></div>
+            <div class="radio-opt"><input type="radio" name="q4" id="q4-5" value="rien" /><label for="q4-5">Je ne suis pas encore convaincu(e)</label></div>
+          </div>
+        </div>
+
+        <!-- Q5 — Texte libre -->
+        <div class="question-card">
+          <div class="q-label">
+            <div class="q-num">5</div>
+            <div class="q-text">Vos suggestions ou remarques pour améliorer cette formation</div>
+          </div>
+          <textarea id="q5" name="q5" placeholder="Partagez librement vos idées, ce qui vous a manqué, ce qui vous a surpris, vos attentes pour la prochaine session…" aria-label="Suggestions et remarques"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Envoyer mon questionnaire →</button>
+      </form>
+
+      <div id="thankyou" role="alert" aria-live="polite">
+        <div class="ty-emoji">🎉</div>
+        <h2>Merci pour votre retour !</h2>
+        <p>Vos réponses ont bien été enregistrées.</p>
+        <p>Elles seront prises en compte pour améliorer les prochaines sessions.</p>
+        <p style="margin-top:1rem;font-weight:600;color:#0e7490">À bientôt pour la Session 4 !</p>
+        <a href="../../../index.html#livrable-1" class="next-session">← Revenir au programme</a>
+      </div>
+    </main>
+
+    <footer>
+      <span>AUXILIA — Une nouvelle chance · Session 3 · 12 novembre 2026</span>
+      <span>Référent IA AUXILIA</span>
+    </footer>
+
+    <script>
+      document.getElementById('satisfaction-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        this.style.display = 'none';
+        var ty = document.getElementById('thankyou');
+        ty.style.display = 'block';
+        ty.scrollIntoView({ behavior: 'smooth' });
+      });
+    </script>
+  </body>
+</html>

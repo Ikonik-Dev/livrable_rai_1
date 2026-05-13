@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supports Engageants — AUXILIA Session 3</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; font-size: 15px; }
+      header { background: linear-gradient(135deg, #3b82f6, #06b6d4); color: #fff; padding: 2rem 2.5rem; }
+      header h1 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+      header p { opacity: 0.88; font-size: 0.95rem; }
+      .badge { display: inline-block; background: rgba(255,255,255,0.2); border-radius: 999px; padding: 0.25rem 0.9rem; font-size: 0.8rem; margin-top: 0.75rem; margin-right: 0.4rem; }
+      main { max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+      h2 { font-size: 1.15rem; color: #1d4ed8; border-left: 4px solid #3b82f6; padding-left: 0.75rem; margin: 2.5rem 0 1rem; }
+      .intro-box { background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(6,182,212,0.06)); border: 1px solid rgba(59,130,246,0.22); border-radius: 12px; padding: 1.2rem 1.5rem; margin-bottom: 2rem; }
+      .technique-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; }
+      .tech-card { background: #fff; border-radius: 12px; padding: 1.3rem; box-shadow: 0 1px 6px rgba(0,0,0,0.08); border-top: 3px solid #3b82f6; }
+      .tech-card.cyan { border-color: #06b6d4; }
+      .tech-card.green { border-color: #10b981; }
+      .tech-card.purple { border-color: #8b5cf6; }
+      .tech-card.amber { border-color: #f59e0b; }
+      .tech-card h3 { font-size: 0.98rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+      .tech-card p { font-size: 0.87rem; color: #475569; margin-bottom: 0.75rem; }
+      .prompt-mini { background: #f1f5f9; border-left: 3px solid #3b82f6; border-radius: 0 6px 6px 0; padding: 0.6rem 0.9rem; font-family: 'Courier New', monospace; font-size: 0.8rem; color: #334155; white-space: pre-wrap; }
+      .prompt-mini.cyan { border-color: #06b6d4; }
+      .prompt-mini.green { border-color: #10b981; }
+      .prompt-mini.purple { border-color: #8b5cf6; }
+      .prompt-mini.amber { border-color: #f59e0b; }
+      .table-wrap { overflow-x: auto; margin: 1rem 0; }
+      table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+      th { background: linear-gradient(135deg, #3b82f6, #06b6d4); color: #fff; padding: 0.65rem 1rem; text-align: left; }
+      td { padding: 0.6rem 1rem; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+      tr:hover td { background: #f0f4ff; }
+      .tag { display: inline-block; padding: 0.18rem 0.55rem; border-radius: 999px; font-size: 0.73rem; font-weight: 600; }
+      .tag-free { background: #d1fae5; color: #065f46; }
+      .tag-paid { background: #fef3c7; color: #92400e; }
+      .tag-freemium { background: #ede9fe; color: #5b21b6; }
+      .charter { background: #fff; border-radius: 14px; padding: 1.5rem; box-shadow: 0 1px 6px rgba(0,0,0,0.08); border: 2px solid rgba(59,130,246,0.2); }
+      .charter h3 { color: #1d4ed8; margin-bottom: 1rem; }
+      .rule { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid #f1f5f9; }
+      .rule:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+      .rule-num { background: linear-gradient(135deg, #3b82f6, #06b6d4); color: #fff; border-radius: 50%; width: 1.8rem; height: 1.8rem; min-width: 1.8rem; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; }
+      .rule-text strong { display: block; margin-bottom: 0.2rem; color: #1e293b; }
+      .rule-text span { font-size: 0.87rem; color: #64748b; }
+      footer { text-align: center; padding: 1.5rem; background: #f1f5f9; color: #64748b; font-size: 0.8rem; margin-top: 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+      @media print { body { background: #fff; } .tech-card { break-inside: avoid; } }
+      @media (max-width: 600px) { header { padding: 1.5rem; } main { padding: 1rem; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>✨ Créer des supports pédagogiques engageants</h1>
+      <p>Techniques et prompts pour rendre vos formations plus dynamiques, accessibles et efficaces</p>
+      <span class="badge">🎓 Session 3 — Formateurs</span>
+      <span class="badge">📅 12 novembre 2026</span>
+    </header>
+
+    <main>
+      <div class="intro-box">
+        <strong>Principe :</strong> un support engageant n'est pas un support beau — c'est un support qui <em>fait agir, penser, pratiquer</em>. L'IA peut vous aider à transformer un contenu "à lire" en contenu "à vivre". Ces 4 techniques sont complémentaires et s'adaptent à tous les formats de formation.
+      </div>
+
+      <h2>1 — Scénarisation pédagogique</h2>
+      <p style="margin-bottom:1rem;color:#475569;">Transformer un contenu abstrait en récit ou situation réelle pour favoriser la mémorisation et l'adhésion.</p>
+      <div class="technique-grid">
+        <div class="tech-card cyan">
+          <h3>🎭 Récit d'introduction</h3>
+          <p>Ouvrir une séquence par un micro-scénario ancré dans le quotidien professionnel pour créer l'engagement.</p>
+          <div class="prompt-mini cyan">Écris une courte histoire (8 lignes) mettant en scène une aide à domicile confrontée à [situation liée au thème]. Histoire réaliste, sans résolution — s'arrête au moment du dilemme. Ton : neutre, professionnel.</div>
+        </div>
+        <div class="tech-card">
+          <h3>💬 Dialogue formateur</h3>
+          <p>Présenter un concept sous forme de dialogue Q&R pour varier le rythme et impliquer les apprenants.</p>
+          <div class="prompt-mini">Transforme ce contenu en dialogue entre un formateur et un apprenant : [contenu]. 8 échanges max. Inclure 1 question difficile posée par l'apprenant et la réponse experte du formateur.</div>
+        </div>
+        <div class="tech-card green">
+          <h3>📊 Étude de cas</h3>
+          <p>Créer une situation réaliste qui oblige les apprenants à analyser, décider et justifier leurs choix.</p>
+          <div class="prompt-mini green">Crée une étude de cas de 1 page sur [thème] dans le secteur aide à domicile. Contexte détaillé, 3 questions progressives (compréhension → analyse → décision), corrigé détaillé.</div>
+        </div>
+        <div class="tech-card purple">
+          <h3>🔄 Conclusion narrative</h3>
+          <p>Clore la séquence en revenant sur le scénario initial avec la solution apprise.</p>
+          <div class="prompt-mini purple">Reprends l'histoire d'introduction : [coller l'histoire]. Écris maintenant la suite : comment Marie applique ce qu'elle vient d'apprendre pour résoudre la situation. 6 lignes max.</div>
+        </div>
+      </div>
+
+      <h2>2 — Gamification légère</h2>
+      <p style="margin-bottom:1rem;color:#475569;">Introduire des mécaniques ludiques sans complexifier la logistique — augmenter la motivation et la mémorisation.</p>
+      <div class="technique-grid">
+        <div class="tech-card amber">
+          <h3>🏆 Défi chronométré</h3>
+          <p>Mettre les apprenants en situation de performance contrôlée : question à répondre en 30 secondes.</p>
+          <div class="prompt-mini amber">Génère 5 questions flash sur [thème] pour une activité "30 secondes pour répondre". Questions courtes, réponse tient en 1 phrase. Format : Q1 / Réponse courte.</div>
+        </div>
+        <div class="tech-card cyan">
+          <h3>❓ Quiz surprise</h3>
+          <p>Lancer un quiz en début de séance sur la séance précédente pour ancrer les acquis.</p>
+          <div class="prompt-mini cyan">Génère un quiz surprise de 5 questions sur [thème session précédente]. Format : 1 bonne réponse, pas de propositions (réponse libre), difficulté croissante. Durée : 5 min.</div>
+        </div>
+        <div class="tech-card green">
+          <h3>🎯 Vote emoji</h3>
+          <p>Évaluation express de l'ambiance et de la compréhension avec un sondage emoji en 1 minute.</p>
+          <div class="prompt-mini green">Crée 3 questions de sondage rapide pour évaluer la compréhension de [thème] en utilisant les emojis comme échelle : 😕 / 😐 / 🙂 / 😄. Questions courtes (max 10 mots). À projeter sur écran.</div>
+        </div>
+        <div class="tech-card purple">
+          <h3>📋 Bingo pédagogique</h3>
+          <p>Créer un bingo avec les concepts-clés de la séance pour favoriser l'écoute active.</p>
+          <div class="prompt-mini purple">Génère une grille de bingo 4×4 avec 16 mots ou concepts-clés liés à [thème]. Chaque case = 1 mot/concept que les apprenants cochent quand le formateur l'aborde. Liste des 16 termes suggérés.</div>
+        </div>
+      </div>
+
+      <h2>3 — Reformulation et accessibilité</h2>
+      <p style="margin-bottom:1rem;color:#475569;">Adapter le niveau de langue et la structure pour maximiser la compréhension et l'autonomie des apprenants.</p>
+      <div class="technique-grid">
+        <div class="tech-card">
+          <h3>📝 Simplification FALC</h3>
+          <p>Réécrire en Facile À Lire et à Comprendre pour les apprenants en difficulté avec l'écrit.</p>
+          <div class="prompt-mini">Réécris ce texte en FALC : phrases courtes (max 15 mots), une idée par phrase, vocabulaire courant, pas de subordonnées complexes. Signale les mots difficiles avec leur définition entre parenthèses. [Coller le texte]</div>
+        </div>
+        <div class="tech-card cyan">
+          <h3>🔤 Glossaire métier</h3>
+          <p>Générer automatiquement un lexique des termes techniques d'une fiche ou d'un support.</p>
+          <div class="prompt-mini cyan">Identifie les 10 termes techniques ou peu courants de ce texte : [texte]. Pour chaque terme : définition simple (2 lignes), exemple dans le contexte aide à domicile. Format : terme → définition → exemple.</div>
+        </div>
+        <div class="tech-card green">
+          <h3>📢 Reformulation consigne</h3>
+          <p>Améliorer la clarté des consignes d'exercice pour éviter les blocages et les mauvaises interprétations.</p>
+          <div class="prompt-mini green">Améliore cette consigne pour la rendre plus claire et motivante : [consigne actuelle]. Critères : verbe d'action précis, résultat attendu explicite, durée mentionnée, ton engageant. Propose 2 versions.</div>
+        </div>
+        <div class="tech-card amber">
+          <h3>📊 Synthèse visuelle</h3>
+          <p>Transformer un contenu dense en liste ou tableau visuel facilement mémorisable.</p>
+          <div class="prompt-mini amber">Transforme ce contenu en : 1) liste de 5 points clés maximum 2) tableau comparatif si pertinent 3) encadré "À retenir" en 3 phrases. [Coller le contenu] Priorité : mémorisation rapide.</div>
+        </div>
+      </div>
+
+      <h2>4 — Outils numériques complémentaires</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Outil</th><th>Usage principal</th><th>Points forts</th><th>Modèle</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Kahoot</strong></td>
+              <td>Quiz interactif en direct (projecteur)</td>
+              <td>Compétition bienveillante, très engageant, résultats en temps réel</td>
+              <td><span class="tag tag-freemium">Freemium</span></td>
+            </tr>
+            <tr>
+              <td><strong>Wooclap</strong></td>
+              <td>Sondages, QCM, nuage de mots, questions ouvertes</td>
+              <td>Multiformat, sans inscription apprenants, RGPD compliant</td>
+              <td><span class="tag tag-freemium">Freemium</span></td>
+            </tr>
+            <tr>
+              <td><strong>Genially</strong></td>
+              <td>Présentations interactives, escape games pédagogiques</td>
+              <td>Visuellement très riche, clics interactifs, intégration vidéo</td>
+              <td><span class="tag tag-freemium">Freemium</span></td>
+            </tr>
+            <tr>
+              <td><strong>Mentimeter</strong></td>
+              <td>Sondages en direct, barèmes, classements</td>
+              <td>Très simple d'utilisation, résultats visuels immédiats</td>
+              <td><span class="tag tag-freemium">Freemium</span></td>
+            </tr>
+            <tr>
+              <td><strong>Padlet</strong></td>
+              <td>Mur collaboratif, brainstorming, partage de ressources</td>
+              <td>Asynchrone possible, organisation par thèmes, visuel</td>
+              <td><span class="tag tag-freemium">Freemium</span></td>
+            </tr>
+            <tr>
+              <td><strong>Canva</strong></td>
+              <td>Création de visuels, présentations, infographies</td>
+              <td>Templates pédagogiques, IA intégrée pour les textes</td>
+              <td><span class="tag tag-freemium">Freemium</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.82rem;color:#94a3b8;margin-top:0.5rem;">Vérifiez les conditions d'utilisation et la conformité RGPD avant tout déploiement avec des apprenants.</p>
+
+      <h2>Charte pédagogique IA</h2>
+      <div class="charter">
+        <h3>5 principes pour utiliser l'IA de façon responsable en formation</h3>
+        <div class="rule">
+          <div class="rule-num">1</div>
+          <div class="rule-text"><strong>Transparence</strong><span>Indiquez aux apprenants quand un support a été produit avec l'aide de l'IA. Favorise la confiance et l'exemplarité.</span></div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">2</div>
+          <div class="rule-text"><strong>Vérification</strong><span>Relisez et validez chaque contenu généré. Vous restez responsable de l'exactitude pédagogique des supports utilisés.</span></div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">3</div>
+          <div class="rule-text"><strong>Protection des données</strong><span>Ne saisissez jamais de données personnelles d'apprenants dans un prompt cloud. Utilisez des données fictives ou anonymisées pour les mises en situation.</span></div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">4</div>
+          <div class="rule-text"><strong>Contextualisation</strong><span>L'IA ne connaît pas vos apprenants. Ajoutez systématiquement les exemples terrain, les références à AUXILIA, la culture de votre public.</span></div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">5</div>
+          <div class="rule-text"><strong>Complémentarité</strong><span>L'IA produit une base de travail, pas un produit fini. Votre expertise pédagogique, votre connaissance du terrain et votre relation avec les apprenants restent irremplaçables.</span></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>AUXILIA — Une nouvelle chance · Session 3 · 12 novembre 2026</span>
+      <span>Référent IA AUXILIA</span>
+    </footer>
+  </body>
+</html>

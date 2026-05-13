@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompts Formateurs — AUXILIA Session 3</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; font-size: 15px; }
+      header { background: linear-gradient(135deg, #3b82f6, #06b6d4); color: #fff; padding: 2rem 2.5rem; }
+      header h1 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+      header p { opacity: 0.88; font-size: 0.95rem; }
+      .badge { display: inline-block; background: rgba(255,255,255,0.2); border-radius: 999px; padding: 0.25rem 0.9rem; font-size: 0.8rem; margin-top: 0.75rem; margin-right: 0.4rem; }
+      main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+      .intro { background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(6,182,212,0.06)); border: 1px solid rgba(59,130,246,0.25); border-radius: 12px; padding: 1.2rem 1.5rem; margin-bottom: 2rem; }
+      .prompt-section { background: #fff; border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 6px rgba(0,0,0,0.08); border-top: 4px solid #06b6d4; }
+      .prompt-section.blue { border-color: #3b82f6; }
+      .prompt-section.green { border-color: #10b981; }
+      .prompt-section.purple { border-color: #8b5cf6; }
+      .prompt-section.amber { border-color: #f59e0b; }
+      .prompt-section.teal { border-color: #06b6d4; }
+      .prompt-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+      .prompt-num { width: 2rem; height: 2rem; border-radius: 50%; background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+      .prompt-section.blue .prompt-num { background: linear-gradient(135deg, #3b82f6, #6366f1); }
+      .prompt-section.green .prompt-num { background: linear-gradient(135deg, #10b981, #06b6d4); }
+      .prompt-section.purple .prompt-num { background: linear-gradient(135deg, #8b5cf6, #3b82f6); }
+      .prompt-section.amber .prompt-num { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+      .prompt-section.teal .prompt-num { background: linear-gradient(135deg, #06b6d4, #10b981); }
+      .prompt-header h2 { font-size: 1.05rem; color: #1e293b; }
+      .prompt-header h2 small { display: block; font-weight: 400; font-size: 0.82rem; color: #64748b; margin-top: 0.1rem; }
+      .bad-block { background: #fef2f2; border-left: 3px solid #ef4444; border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin: 0.5rem 0; font-size: 0.88rem; }
+      .bad-block .label { font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: #ef4444; margin-bottom: 0.25rem; }
+      .good-block { background: #f0fdf4; border-left: 3px solid #10b981; border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin: 0.5rem 0; font-size: 0.88rem; }
+      .good-block .label { font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: #10b981; margin-bottom: 0.25rem; }
+      .prompt-text { font-family: 'Courier New', monospace; font-size: 0.84rem; color: #334155; white-space: pre-wrap; line-height: 1.7; }
+      .result-block { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 0.75rem 1rem; margin-top: 0.75rem; font-size: 0.85rem; color: #1d4ed8; }
+      .tip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+      .tip-card { background: #f0fdfe; border: 1px solid #a5f3fc; border-radius: 10px; padding: 0.9rem 1rem; font-size: 0.88rem; }
+      .tip-card strong { display: block; color: #0e7490; margin-bottom: 0.25rem; }
+      footer { text-align: center; padding: 1.5rem; background: #f1f5f9; color: #64748b; font-size: 0.8rem; margin-top: 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+      @media print { body { background: #fff; } .prompt-section { break-inside: avoid; } }
+      @media (max-width: 600px) { header { padding: 1.5rem; } main { padding: 1rem; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🎯 Modèles de prompts — Formateurs</h1>
+      <p>6 prompts prêts à l'emploi pour créer vos ressources pédagogiques avec l'IA</p>
+      <span class="badge">🎓 Session 3 — Formateurs</span>
+      <span class="badge">📅 12 novembre 2026</span>
+    </header>
+
+    <main>
+      <div class="intro">
+        <strong>Comment utiliser cette fiche ?</strong><br />
+        Chaque prompt est un modèle. Remplacez les éléments entre crochets <code>[comme ceci]</code> par vos informations réelles. Vous pouvez ensuite demander des ajustements : "Simplifie le point 2", "Ajoute un exemple concret", "Adapte pour un apprenant débutant".
+      </div>
+
+      <!-- PROMPT 1 -->
+      <div class="prompt-section">
+        <div class="prompt-header">
+          <div class="prompt-num">1</div>
+          <h2>Fiche de cours complète <small>Usage : préparer un nouveau module rapidement</small></h2>
+        </div>
+        <div class="bad-block">
+          <div class="label">❌ Trop vague</div>
+          <span class="prompt-text">"Fais une fiche sur les gestes barrières."</span>
+        </div>
+        <div class="good-block">
+          <div class="label">✔ Prompt efficace</div>
+          <span class="prompt-text">Tu es formateur expert en [domaine]. Crée une fiche de cours sur [sujet] pour un public de [public et niveau]. Durée : [durée].
+Inclure obligatoirement :
+• 3 objectifs pédagogiques (formulation : « À l'issue de cette séance, le stagiaire sera capable de… »)
+• Plan structuré avec durées indicatives
+• Contenu essentiel (5 points clés max)
+• 1 exercice d'application pratique
+• Points à mémoriser absolument (encadré)
+Ton professionnel et accessible. Contextualiser au secteur [secteur].</span>
+        </div>
+        <div class="result-block">→ Fiche complète et structurée en moins de 1 minute. Relisez et adaptez au contexte terrain de vos apprenants.</div>
+      </div>
+
+      <!-- PROMPT 2 -->
+      <div class="prompt-section blue">
+        <div class="prompt-header">
+          <div class="prompt-num">2</div>
+          <h2>Quiz QCM engageant <small>Usage : évaluation diagnostique ou formative</small></h2>
+        </div>
+        <div class="bad-block">
+          <div class="label">❌ Insuffisant</div>
+          <span class="prompt-text">"Fais des questions sur le RGPD."</span>
+        </div>
+        <div class="good-block">
+          <div class="label">✔ Prompt efficace</div>
+          <span class="prompt-text">Génère un quiz de [N] questions sur [sujet] pour évaluer [compétence cible]. Public : [public].
+Pour chaque question :
+• Formulation claire et sans ambiguïté
+• 4 propositions (A/B/C/D), une seule bonne réponse
+• Indiquer la bonne réponse
+• Explication de la bonne réponse (2 lignes max)
+• Niveau : ⭐ basique / ⭐⭐ intermédiaire / ⭐⭐⭐ avancé
+Format tableau. Adapter le vocabulaire au secteur de l'aide à domicile.</span>
+        </div>
+        <div class="result-block">→ Quiz prêt à intégrer dans Kahoot, Wooclap, ou à imprimer. Vérifiez l'exactitude des réponses avant utilisation.</div>
+      </div>
+
+      <!-- PROMPT 3 -->
+      <div class="prompt-section green">
+        <div class="prompt-header">
+          <div class="prompt-num">3</div>
+          <h2>Plan de séance horodaté <small>Usage : structurer une session de 1h à 3h</small></h2>
+        </div>
+        <div class="good-block">
+          <div class="label">✔ Prompt efficace</div>
+          <span class="prompt-text">Génère un plan de séance de formation de [durée] sur [sujet].
+Public : [public et niveau]. Objectif principal : [objectif].
+Pour chaque séquence, indiquer :
+• Horaire et durée
+• Titre de la séquence
+• Activité formateur (ce que je fais)
+• Activité stagiaire (ce qu'il fait)
+• Méthode pédagogique (exposé / question-réponse / exercice / jeu de rôle…)
+• Matériel nécessaire
+Format tableau. Inclure accueil, contenu, pratique, débrief, clôture.</span>
+        </div>
+        <div class="result-block">→ Plan utilisable directement comme guide d'animation. Ajoutez vos anecdotes et exemples terrain.</div>
+      </div>
+
+      <!-- PROMPT 4 -->
+      <div class="prompt-section purple">
+        <div class="prompt-header">
+          <div class="prompt-num">4</div>
+          <h2>Différenciation pédagogique <small>Usage : adapter une ressource existante</small></h2>
+        </div>
+        <div class="good-block">
+          <div class="label">✔ Prompt efficace</div>
+          <span class="prompt-text">Voici [un exercice / une fiche / une consigne] :
+[Coller le contenu existant]
+
+Adapte ce contenu en 3 versions :
+1. Version FACILE : pour un apprenant en difficulté ou débutant (vocabulaire simple, étapes guidées, exemples concrets)
+2. Version STANDARD : niveau attendu normal
+3. Version AVANCÉE : pour un apprenant rapide (plus autonome, aller plus loin)
+Conserver le même objectif pédagogique pour les 3 versions.</span>
+        </div>
+        <div class="result-block">→ 3 versions en 1 prompt. Idéal pour les groupes hétérogènes ou les formations en autonomie.</div>
+      </div>
+
+      <!-- PROMPT 5 -->
+      <div class="prompt-section amber">
+        <div class="prompt-header">
+          <div class="prompt-num">5</div>
+          <h2>Mise en situation réaliste <small>Usage : ancrer l'apprentissage dans le réel</small></h2>
+        </div>
+        <div class="good-block">
+          <div class="label">✔ Prompt efficace</div>
+          <span class="prompt-text">Crée une mise en situation professionnelle pour illustrer [compétence] dans le secteur [secteur].
+Structure :
+• Contexte (5 lignes) : lieu, personnes impliquées, situation
+• Rôles : ce que fait le formateur, ce que fait l'apprenant
+• Consignes claires pour l'apprenant
+• 3 questions de débrief pour le formateur
+• Points d'attention pédagogiques
+Durée de l'activité : [durée]. Ton réaliste, ancré dans le quotidien professionnel.</span>
+        </div>
+        <div class="result-block">→ Scénario immédiatement utilisable. Modifiez les noms et détails pour correspondre à votre contexte.</div>
+      </div>
+
+      <!-- PROMPT 6 -->
+      <div class="prompt-section teal">
+        <div class="prompt-header">
+          <div class="prompt-num">6</div>
+          <h2>Feedback et grille d'évaluation <small>Usage : évaluer une production ou compétence</small></h2>
+        </div>
+        <div class="good-block">
+          <div class="label">✔ Prompt efficace</div>
+          <span class="prompt-text">Crée une grille d'évaluation pour évaluer [compétence ou production attendue].
+Inclure :
+• 5 critères d'évaluation clairs et observables
+• 3 niveaux par critère : Insuffisant / En développement / Maîtrisé
+• Descripteurs concrets pour chaque niveau (ce qu'on observe)
+• Pondération suggérée si pertinent
+Format tableau.
+
+Ensuite, crée un modèle de feedback écrit de 3-5 lignes : 1 point fort, 1 axe d'amélioration, 1 conseil concret.</span>
+        </div>
+        <div class="result-block">→ Grille + modèle de feedback prêts à personnaliser. Vérifiez l'alignement avec vos objectifs pédagogiques.</div>
+      </div>
+
+      <h2 style="color:#0e7490; border-left:4px solid #06b6d4; padding-left:0.75rem; margin: 2rem 0 1rem">Conseils pour aller plus loin</h2>
+      <div class="tip-grid">
+        <div class="tip-card"><strong>Itérer en chaîne</strong>Demandez d'abord une fiche, puis "Génère maintenant le quiz correspondant à cette fiche", puis "Crée la grille d'évaluation de l'exercice 2".</div>
+        <div class="tip-card"><strong>Reformater rapidement</strong>"Transforme ce contenu en diaporama (10 slides)" · "Version synthétique en 1 page A4" · "Résumé en 5 bullet points"</div>
+        <div class="tip-card"><strong>Adapter le niveau de langue</strong>"Réécris pour un niveau CE1" · "Adapte en langage FALC" · "Simplifie les termes techniques" · "Utilise un vocabulaire métier aide à domicile"</div>
+        <div class="tip-card"><strong>Contextualiser AUXILIA</strong>Mentionnez "secteur aide à domicile", "formation professionnelle continue", "public varié avec niveaux différents" pour ancrer les résultats.</div>
+      </div>
+    </main>
+
+    <footer>
+      <span>AUXILIA — Une nouvelle chance · Session 3 · 12 novembre 2026</span>
+      <span>Référent IA AUXILIA</span>
+    </footer>
+  </body>
+</html>
