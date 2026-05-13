@@ -9,7 +9,11 @@
       rel="stylesheet"
     />
     <style>
-      * { box-sizing: border-box; margin: 0; padding: 0; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
       body {
         font-family: "Inter", sans-serif;
         background: #f8fafc;
@@ -37,16 +41,31 @@
         padding: 2rem;
         margin-bottom: 2rem;
       }
-      header .tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.8; margin-bottom: 0.5rem; }
-      header h1 { font-family: "Space Grotesk", sans-serif; font-size: 1.55rem; font-weight: 700; margin-bottom: 0.5rem; }
-      header p { font-size: 0.9rem; opacity: 0.85; }
+      header .tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+      }
+      header h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.55rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
       .exercise {
         background: #fff;
         border: 1px solid #e2e8f0;
         border-radius: 16px;
         overflow: hidden;
         margin-bottom: 2rem;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
       }
       .exercise-header {
         padding: 1rem 1.5rem;
@@ -58,7 +77,7 @@
       .exercise-num {
         width: 36px;
         height: 36px;
-        background: rgba(255,255,255,0.2);
+        background: rgba(255, 255, 255, 0.2);
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -68,10 +87,30 @@
         font-weight: 700;
         flex-shrink: 0;
       }
-      .exercise-header h2 { font-size: 1rem; font-weight: 700; }
-      .exercise-header .meta { font-size: 0.78rem; opacity: 0.85; margin-top: 0.2rem; }
-      .exercise-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
-      h3 { font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+      .exercise-header h2 {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .exercise-header .meta {
+        font-size: 0.78rem;
+        opacity: 0.85;
+        margin-top: 0.2rem;
+      }
+      .exercise-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+      h3 {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
       .scenario-box {
         background: #f8fafc;
         border: 1px solid #e2e8f0;
@@ -92,10 +131,33 @@
         line-height: 1.7;
         white-space: pre-line;
       }
-      .notes-box .notes-title { font-family: "Inter", sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #92400e; margin-bottom: 0.5rem; display: block; }
-      .consignes-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.84rem; }
-      .consignes-list li { display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem 0; border-bottom: 1px solid #f1f5f9; }
-      .consignes-list li:last-child { border-bottom: none; }
+      .notes-box .notes-title {
+        font-family: "Inter", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #92400e;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .consignes-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        font-size: 0.84rem;
+      }
+      .consignes-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .consignes-list li:last-child {
+        border-bottom: none;
+      }
       .prompt-hint {
         background: #f0fdf4;
         border-left: 3px solid #10b981;
@@ -106,8 +168,21 @@
         font-family: "Courier New", monospace;
         line-height: 1.5;
       }
-      .prompt-hint .label { font-family: "Inter", sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #059669; margin-bottom: 0.35rem; display: block; }
-      details.correction { border: 1px solid #bbf7d0; border-radius: 10px; overflow: hidden; }
+      .prompt-hint .label {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #059669;
+        margin-bottom: 0.35rem;
+        display: block;
+      }
+      details.correction {
+        border: 1px solid #bbf7d0;
+        border-radius: 10px;
+        overflow: hidden;
+      }
       details.correction summary {
         background: #ecfdf5;
         padding: 0.7rem 1rem;
@@ -120,7 +195,9 @@
         align-items: center;
         gap: 0.5rem;
       }
-      details.correction summary::-webkit-details-marker { display: none; }
+      details.correction summary::-webkit-details-marker {
+        display: none;
+      }
       details.correction .correction-body {
         padding: 1rem;
         font-size: 0.83rem;
@@ -128,68 +205,121 @@
         background: #fff;
         line-height: 1.6;
       }
-      details.correction .correction-body ul { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
-      details.correction .correction-body ul li::before { content: "→ "; color: #10b981; font-weight: 700; }
-      footer { text-align: center; font-size: 0.75rem; color: #94a3b8; margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
-      @media print { .print-note { display: none; } details.correction { display: none; } body { padding: 0; } header { border-radius: 0; } }
+      details.correction .correction-body ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      details.correction .correction-body ul li::before {
+        content: "→ ";
+        color: #10b981;
+        font-weight: 700;
+      }
+      footer {
+        text-align: center;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        margin-top: 2.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e2e8f0;
+      }
+      @media print {
+        .print-note {
+          display: none;
+        }
+        details.correction {
+          display: none;
+        }
+        body {
+          padding: 0;
+        }
+        header {
+          border-radius: 0;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="print-note">
-      🖨 <strong>Impression :</strong> Les corrections sont masquées à l'impression. Ouvrez les accordéons "Correction" à l'écran uniquement.
+      🖨 <strong>Impression :</strong> Les corrections sont masquées à
+      l'impression. Ouvrez les accordéons "Correction" à l'écran uniquement.
     </div>
 
     <header>
-      <div class="tag">📋 Session 2 · Direction &amp; Admin · 11 sept. 2026</div>
+      <div class="tag">
+        📋 Session 2 · Direction &amp; Admin · 11 sept. 2026
+      </div>
       <h1>Exercices — Comptes-rendus assistés par IA</h1>
       <p>3 scénarios progressifs · Atelier pratique · Corrections suggérées</p>
     </header>
 
     <!-- EXERCICE 1 -->
     <div class="exercise">
-      <div class="exercise-header" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+      <div
+        class="exercise-header"
+        style="background: linear-gradient(135deg, #6366f1, #8b5cf6)"
+      >
         <div class="exercise-num">1</div>
         <div>
           <h2>CR de réunion Direction — à partir de notes brutes</h2>
-          <div class="meta">⏱ 15 min · Niveau : Débutant · Travail individuel</div>
+          <div class="meta">
+            ⏱ 15 min · Niveau : Débutant · Travail individuel
+          </div>
         </div>
       </div>
       <div class="exercise-body">
         <div>
           <h3>📋 Scénario</h3>
           <div class="scenario-box">
-            Vous sortez d'une réunion de Direction de 45 minutes sur la <strong>mise en place du télétravail régulier</strong> chez AUXILIA (association fictive). Vous avez pris des notes rapides. Vous devez produire un CR formel pour les participants dans l'heure.
+            Vous sortez d'une réunion de Direction de 45 minutes sur la
+            <strong>mise en place du télétravail régulier</strong> chez AUXILIA
+            (association fictive). Vous avez pris des notes rapides. Vous devez
+            produire un CR formel pour les participants dans l'heure.
           </div>
         </div>
         <div>
           <h3>📝 Vos notes brutes (fictives)</h3>
           <div class="notes-box">
-<span class="notes-title">Notes de réunion — non formatées</span>Réunion 11 sept. — présents : DG, DRH, 3 responsables de service
-Ordre du jour : télétravail 2027
-
-Point DG : besoin de formaliser avant fin octobre
-DRH : accord déjà 3 jours/semaine max négocié avec délégués
-Point financier : pas de budget matériel prévu, salariés utilisent leur propre équipement
-Problème soulevé : connexion internet pas toujours fiable en dehors du bureau
-Action : DRH rédige charte télétravail pour le 15 oct.
-Action : DSI vérifie solutions VPN d'ici 30 sept.
-Vote : 4/5 OK pour démarrage pilote janvier 2027
-Prochain RDV : 20 oct. pour valider charte</div>
+            <span class="notes-title">Notes de réunion — non formatées</span
+            >Réunion 11 sept. — présents : DG, DRH, 3 responsables de service
+            Ordre du jour : télétravail 2027 Point DG : besoin de formaliser
+            avant fin octobre DRH : accord déjà 3 jours/semaine max négocié avec
+            délégués Point financier : pas de budget matériel prévu, salariés
+            utilisent leur propre équipement Problème soulevé : connexion
+            internet pas toujours fiable en dehors du bureau Action : DRH rédige
+            charte télétravail pour le 15 oct. Action : DSI vérifie solutions
+            VPN d'ici 30 sept. Vote : 4/5 OK pour démarrage pilote janvier 2027
+            Prochain RDV : 20 oct. pour valider charte
+          </div>
         </div>
         <div>
           <h3>🎯 Consignes</h3>
           <ul class="consignes-list">
-            <li><span>1.</span> Rédigez un prompt adapté en utilisant le modèle de la fiche "Prompts Direction"</li>
-            <li><span>2.</span> Collez vos notes après le prompt et soumettez à ChatGPT</li>
+            <li>
+              <span>1.</span> Rédigez un prompt adapté en utilisant le modèle de
+              la fiche "Prompts Direction"
+            </li>
+            <li>
+              <span>2.</span> Collez vos notes après le prompt et soumettez à
+              ChatGPT
+            </li>
             <li><span>3.</span> Relisez et corrigez le résultat obtenu</li>
-            <li><span>4.</span> Le CR final doit comporter : contexte, décisions, actions + responsables + délais</li>
+            <li>
+              <span>4.</span> Le CR final doit comporter : contexte, décisions,
+              actions + responsables + délais
+            </li>
           </ul>
         </div>
         <div>
           <h3>💡 Aide — Prompt de départ suggéré</h3>
           <div class="prompt-hint">
             <span class="label">Prompt à adapter</span>
-            "Tu es assistant de direction pour une association. Voici les notes brutes d'une réunion Direction du [date] réunissant DG, DRH et responsables de service. Rédige un compte-rendu formel en 3 parties : 1) Contexte et participants 2) Décisions actées 3) Plan d'action (responsable + délai). Ton professionnel, max 1 page A4."
+            "Tu es assistant de direction pour une association. Voici les notes
+            brutes d'une réunion Direction du [date] réunissant DG, DRH et
+            responsables de service. Rédige un compte-rendu formel en 3 parties
+            : 1) Contexte et participants 2) Décisions actées 3) Plan d'action
+            (responsable + délai). Ton professionnel, max 1 page A4."
           </div>
         </div>
         <details class="correction">
@@ -197,13 +327,26 @@ Prochain RDV : 20 oct. pour valider charte</div>
           <div class="correction-body">
             <p><strong>Un bon CR obtenu devrait contenir :</strong></p>
             <ul>
-              <li>En-tête : date, participants (fonctions), objet de la réunion</li>
-              <li>Décision 1 : télétravail 3 jours/semaine max — démarrage pilote janvier 2027 (4 voix pour)</li>
-              <li>Décision 2 : pas de budget matériel — équipement personnel des salariés</li>
+              <li>
+                En-tête : date, participants (fonctions), objet de la réunion
+              </li>
+              <li>
+                Décision 1 : télétravail 3 jours/semaine max — démarrage pilote
+                janvier 2027 (4 voix pour)
+              </li>
+              <li>
+                Décision 2 : pas de budget matériel — équipement personnel des
+                salariés
+              </li>
               <li>Action 1 : DRH → charte télétravail → avant le 15 octobre</li>
               <li>Action 2 : DSI → solutions VPN → avant le 30 septembre</li>
-              <li>Prochaine réunion : 20 octobre pour validation de la charte</li>
-              <li>Point de vigilance à corriger : l'IA peut inventer des détails (chiffres, noms) → toujours vérifier</li>
+              <li>
+                Prochaine réunion : 20 octobre pour validation de la charte
+              </li>
+              <li>
+                Point de vigilance à corriger : l'IA peut inventer des détails
+                (chiffres, noms) → toujours vérifier
+              </li>
             </ul>
           </div>
         </details>
@@ -212,38 +355,65 @@ Prochain RDV : 20 oct. pour valider charte</div>
 
     <!-- EXERCICE 2 -->
     <div class="exercise">
-      <div class="exercise-header" style="background: linear-gradient(135deg, #10b981, #06b6d4);">
+      <div
+        class="exercise-header"
+        style="background: linear-gradient(135deg, #10b981, #06b6d4)"
+      >
         <div class="exercise-num">2</div>
         <div>
           <h2>Synthèse de transcription — réunion RH sensible</h2>
-          <div class="meta">⏱ 20 min · Niveau : Intermédiaire · Travail en binôme</div>
+          <div class="meta">
+            ⏱ 20 min · Niveau : Intermédiaire · Travail en binôme
+          </div>
         </div>
       </div>
       <div class="exercise-body">
         <div>
           <h3>📋 Scénario</h3>
           <div class="scenario-box">
-            Vous disposez d'une transcription partielle d'une réunion RH sur <strong>la gestion des absences récurrentes</strong>. Les données ont été anonymisées. Vous devez produire une synthèse opérationnelle à usage interne uniquement — <strong>jamais à distribuer en dehors des personnes présentes.</strong>
+            Vous disposez d'une transcription partielle d'une réunion RH sur
+            <strong>la gestion des absences récurrentes</strong>. Les données
+            ont été anonymisées. Vous devez produire une synthèse opérationnelle
+            à usage interne uniquement —
+            <strong
+              >jamais à distribuer en dehors des personnes présentes.</strong
+            >
           </div>
         </div>
         <div>
           <h3>📝 Transcription anonymisée (fictive)</h3>
           <div class="notes-box">
-<span class="notes-title">Transcription — anonymisée</span>[DRH] : On a trois situations récurrentes sur les 6 derniers mois. [Salarié A] — 14 jours d'absence, certificats médicaux fournis. [Salarié B] — 9 jours, dont 4 sans justificatif. [Salarié C] — contexte familial difficile, on en a parlé en entretien.
-
-[Responsable service] : Pour B, on a déjà fait un entretien de retour. Pas de changement.
-
-[DRH] : Je propose : pour A, on déclenche le protocole médecine du travail. Pour B, entretien formel avec mise en demeure si ça continue. Pour C, on attend le bilan RH du 15.
-
-[DG] : OK pour A et B. Pour C, on reste discrets, contexte trop personnel.</div>
+            <span class="notes-title">Transcription — anonymisée</span>[DRH] :
+            On a trois situations récurrentes sur les 6 derniers mois. [Salarié
+            A] — 14 jours d'absence, certificats médicaux fournis. [Salarié B] —
+            9 jours, dont 4 sans justificatif. [Salarié C] — contexte familial
+            difficile, on en a parlé en entretien. [Responsable service] : Pour
+            B, on a déjà fait un entretien de retour. Pas de changement. [DRH] :
+            Je propose : pour A, on déclenche le protocole médecine du travail.
+            Pour B, entretien formel avec mise en demeure si ça continue. Pour
+            C, on attend le bilan RH du 15. [DG] : OK pour A et B. Pour C, on
+            reste discrets, contexte trop personnel.
+          </div>
         </div>
         <div>
           <h3>🎯 Consignes</h3>
           <ul class="consignes-list">
-            <li><span>1.</span> ⚠ RGPD : vérifiez que la transcription est bien anonymisée avant tout usage IA</li>
-            <li><span>2.</span> Rédigez un prompt demandant une synthèse opérationnelle (pas de CR formel)</li>
-            <li><span>3.</span> La synthèse doit distinguer les 3 cas et les actions décidées</li>
-            <li><span>4.</span> Indiquer clairement "usage interne confidentiel" dans le prompt</li>
+            <li>
+              <span>1.</span> ⚠ RGPD : vérifiez que la transcription est bien
+              anonymisée avant tout usage IA
+            </li>
+            <li>
+              <span>2.</span> Rédigez un prompt demandant une synthèse
+              opérationnelle (pas de CR formel)
+            </li>
+            <li>
+              <span>3.</span> La synthèse doit distinguer les 3 cas et les
+              actions décidées
+            </li>
+            <li>
+              <span>4.</span> Indiquer clairement "usage interne confidentiel"
+              dans le prompt
+            </li>
           </ul>
         </div>
         <details class="correction">
@@ -251,12 +421,25 @@ Prochain RDV : 20 oct. pour valider charte</div>
           <div class="correction-body">
             <p><strong>Points à vérifier dans la production IA :</strong></p>
             <ul>
-              <li>Cas [A] : médecine du travail → protocole déclenché → suivi RH</li>
-              <li>Cas [B] : entretien formel programmé → mise en demeure si récidive</li>
+              <li>
+                Cas [A] : médecine du travail → protocole déclenché → suivi RH
+              </li>
+              <li>
+                Cas [B] : entretien formel programmé → mise en demeure si
+                récidive
+              </li>
               <li>Cas [C] : attente bilan RH du 15 → discrétion totale</li>
-              <li>L'IA ne doit PAS avoir réintroduit des données personnelles → vérifier</li>
-              <li>La synthèse doit être marquée "confidentiel — usage interne uniquement"</li>
-              <li>Ce document ne doit jamais transiter par email non chiffré</li>
+              <li>
+                L'IA ne doit PAS avoir réintroduit des données personnelles →
+                vérifier
+              </li>
+              <li>
+                La synthèse doit être marquée "confidentiel — usage interne
+                uniquement"
+              </li>
+              <li>
+                Ce document ne doit jamais transiter par email non chiffré
+              </li>
             </ul>
           </div>
         </details>
@@ -265,62 +448,106 @@ Prochain RDV : 20 oct. pour valider charte</div>
 
     <!-- EXERCICE 3 -->
     <div class="exercise">
-      <div class="exercise-header" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+      <div
+        class="exercise-header"
+        style="background: linear-gradient(135deg, #f59e0b, #ef4444)"
+      >
         <div class="exercise-num">3</div>
         <div>
           <h2>Note de service + courrier — scénario complet</h2>
-          <div class="meta">⏱ 25 min · Niveau : Avancé · Travail en groupe (4 pers.)</div>
+          <div class="meta">
+            ⏱ 25 min · Niveau : Avancé · Travail en groupe (4 pers.)
+          </div>
         </div>
       </div>
       <div class="exercise-body">
         <div>
           <h3>📋 Scénario</h3>
           <div class="scenario-box">
-            Suite à la réunion de l'Exercice 1, vous devez produire <strong>deux documents</strong> : (1) une note de service interne informant les salariés du projet pilote télétravail, et (2) un courrier officiel à votre bailleur pour demander un accès VPN sécurisé aux locaux. Chaque personne du groupe rédige l'un des deux en parallèle, puis vous comparez.
+            Suite à la réunion de l'Exercice 1, vous devez produire
+            <strong>deux documents</strong> : (1) une note de service interne
+            informant les salariés du projet pilote télétravail, et (2) un
+            courrier officiel à votre bailleur pour demander un accès VPN
+            sécurisé aux locaux. Chaque personne du groupe rédige l'un des deux
+            en parallèle, puis vous comparez.
           </div>
         </div>
         <div>
           <h3>🎯 Consignes — Document A : Note de service</h3>
           <ul class="consignes-list">
             <li><span>1.</span> Destinataire : tous les salariés d'AUXILIA</li>
-            <li><span>2.</span> Objet : lancement du projet pilote télétravail — janvier 2027</li>
-            <li><span>3.</span> Inclure : contexte (1 phrase), ce qui va changer, ce qui reste à définir, point de contact</li>
-            <li><span>4.</span> Ton : rassurant, participatif, pas de jargon</li>
+            <li>
+              <span>2.</span> Objet : lancement du projet pilote télétravail —
+              janvier 2027
+            </li>
+            <li>
+              <span>3.</span> Inclure : contexte (1 phrase), ce qui va changer,
+              ce qui reste à définir, point de contact
+            </li>
+            <li>
+              <span>4.</span> Ton : rassurant, participatif, pas de jargon
+            </li>
           </ul>
         </div>
         <div>
           <h3>🎯 Consignes — Document B : Courrier officiel DSI/IT</h3>
           <ul class="consignes-list">
-            <li><span>1.</span> Destinataire : prestataire informatique (nom fictif : "InfoSécure Solutions")</li>
-            <li><span>2.</span> Objet : demande de devis pour solution VPN sécurisée — télétravail</li>
-            <li><span>3.</span> Inclure : contexte du projet, nombre d'utilisateurs (~28), contraintes RGPD, délai souhaité (devis avant le 30 sept.)</li>
+            <li>
+              <span>1.</span> Destinataire : prestataire informatique (nom
+              fictif : "InfoSécure Solutions")
+            </li>
+            <li>
+              <span>2.</span> Objet : demande de devis pour solution VPN
+              sécurisée — télétravail
+            </li>
+            <li>
+              <span>3.</span> Inclure : contexte du projet, nombre
+              d'utilisateurs (~28), contraintes RGPD, délai souhaité (devis
+              avant le 30 sept.)
+            </li>
             <li><span>4.</span> Ton : professionnel, concis</li>
           </ul>
         </div>
         <div>
           <h3>🔍 Comparaison de groupe</h3>
           <div class="scenario-box">
-            Une fois les deux documents produits, comparez-les avec ceux des autres binômes. Notez : quelles différences de ton ? Quelles informations manquent ou sont en trop ? Lequel enverriez-vous tel quel ?
+            Une fois les deux documents produits, comparez-les avec ceux des
+            autres binômes. Notez : quelles différences de ton ? Quelles
+            informations manquent ou sont en trop ? Lequel enverriez-vous tel
+            quel ?
           </div>
         </div>
         <details class="correction">
           <summary>📖 Voir la correction suggérée (formateur)</summary>
           <div class="correction-body">
-            <p><strong>Critères de qualité pour la note de service :</strong></p>
+            <p>
+              <strong>Critères de qualité pour la note de service :</strong>
+            </p>
             <ul>
               <li>Clairement datée et signée (DG ou DRH)</li>
-              <li>Ne génère pas d'inquiétude ("le télétravail est optionnel")</li>
-              <li>Cite les prochaines étapes concrètes (consultation, charte, pilote)</li>
+              <li>
+                Ne génère pas d'inquiétude ("le télétravail est optionnel")
+              </li>
+              <li>
+                Cite les prochaines étapes concrètes (consultation, charte,
+                pilote)
+              </li>
               <li>Propose un point de contact pour les questions</li>
             </ul>
-            <p style="margin-top:0.75rem;"><strong>Critères de qualité pour le courrier :</strong></p>
+            <p style="margin-top: 0.75rem">
+              <strong>Critères de qualité pour le courrier :</strong>
+            </p>
             <ul>
               <li>Objet clair dès la première ligne</li>
               <li>Contexte en 2 lignes max</li>
-              <li>Spécifications techniques mentionnées (nb utilisateurs, RGPD)</li>
+              <li>
+                Spécifications techniques mentionnées (nb utilisateurs, RGPD)
+              </li>
               <li>Délai de réponse souhaité précisé</li>
               <li>Formule de politesse adaptée à un prestataire</li>
-              <li>⚠ Pas de données financières réelles d'AUXILIA dans le prompt</li>
+              <li>
+                ⚠ Pas de données financières réelles d'AUXILIA dans le prompt
+              </li>
             </ul>
           </div>
         </details>
@@ -328,7 +555,7 @@ Prochain RDV : 20 oct. pour valider charte</div>
     </div>
 
     <footer>
-      Document AUXILIA — Référent IA Référent IA · Session 2 · 11 septembre 2026 · stéphane.assaby@auxilia.fr
+      Document AUXILIA — Référent IA · Session 2 · 11 septembre 2026
     </footer>
   </body>
 </html>
